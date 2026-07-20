@@ -3,8 +3,8 @@ export const site = {
   domain: "katem.com.ar",
   url: "https://katem.com.ar",
   email: "hola@katem.com.ar",
-  /** Update with the real WhatsApp business number (country code, no +). */
-  whatsapp: "5491112345678",
+  whatsapp: "541131121463",
+  instagram: "https://www.instagram.com/katembsas",
   year: new Date().getFullYear(),
 } as const;
 

@@ -18,6 +18,6 @@ npm run dev
 
 Abrí [http://localhost:3000](http://localhost:3000).
 
-## Configuración de contacto
+## Contacto
 
-Editá el número de WhatsApp y el email en `src/lib/site.ts` antes de publicar.
+WhatsApp, Instagram y email se configuran en `src/lib/site.ts`.
