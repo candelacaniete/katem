@@ -7,20 +7,20 @@ export type Pillar = {
 export const pillars: Pillar[] = [
   {
     id: "tecnologia",
-    title: "Tecnología con alma",
+    title: "Tecnología al servicio de tu negocio",
     description:
-      "Automatizaciones y sitios que trabajan por vos, sin perder la calidez de un negocio humano. La herramienta al servicio de la persona, no al revés.",
+      "Creamos sitios rápidos, funcionales e integrados con herramientas que simplifican tu trabajo diario.",
   },
   {
-    id: "cercania",
-    title: "Cercanía con filo",
+    id: "comunicacion",
+    title: "Comunicación clara",
     description:
-      "Hablamos claro, decidimos rápido y te decimos lo que conviene — aunque no sea lo más fácil de vender. Socios, no proveedores distantes.",
+      "Te acompañamos durante todo el proyecto con un proceso simple, transparente y sin complicaciones.",
   },
   {
-    id: "estetica",
-    title: "Estética propia",
+    id: "diseno",
+    title: "Diseño con identidad",
     description:
-      "Nada de plantillas genéricas ni look de agencia de siempre. Tu marca se ve distinta porque así lo pedís vos… y porque así trabajamos nosotros.",
+      "Cada sitio se diseña de acuerdo con la personalidad de tu marca. No utilizamos soluciones genéricas.",
   },
 ];

@@ -18,16 +18,15 @@ export function ForWhom() {
         <Reveal>
           <p className="section__label">&gt; para quién_</p>
           <h2 id="para-quien-heading" className="section__title">
-            Profesionales del bienestar latinos en USA
+            Diseñado para profesionales del bienestar.
           </h2>
           <p className="section__lead">
-            No hacemos sitios “para cualquiera”. Trabajamos con vos que
-            acompañás a otras personas — y necesitás una web que hable tu
-            idioma, entienda tu cultura y convierta visitas en consultas reales.
+            Trabajamos con psicólogos, terapeutas, coaches, nutricionistas y
+            otros profesionales que acompañan personas.
           </p>
           <p className="mt-4 max-w-2xl font-body text-base leading-relaxed text-tinta/75 sm:text-lg">
-            Si tu mundo es Instagram y WhatsApp, y querés dejar de improvisar el
-            “mandame un mensaje”, esto es para vos.
+            Creamos sitios web pensados para comunicar con claridad, transmitir
+            profesionalismo y facilitar el primer contacto con futuros clientes.
           </p>
         </Reveal>
 

@@ -12,11 +12,11 @@ export function Process() {
         <Reveal>
           <p className="section__label">&gt; cómo trabajamos_</p>
           <h2 id="proceso-heading" className="section__title">
-            Del primer mensaje a un sitio que funciona
+            Así trabajamos.
           </h2>
           <p className="section__lead">
-            Un proceso corto y transparente. Sin rodeos ni presentaciones de 40
-            slides.
+            Un proceso simple, transparente y pensado para que puedas enfocarte
+            en tu trabajo mientras nosotros nos ocupamos del resto.
           </p>
         </Reveal>
 

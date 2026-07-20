@@ -13,12 +13,8 @@ export function Services() {
         <Reveal>
           <p className="section__label">&gt; qué hacemos_</p>
           <h2 id="servicios-heading" className="section__title">
-            Lo que armamos para tu negocio
+            Elegí la solución que mejor se adapta a tu negocio.
           </h2>
-          <p className="section__lead">
-            Tres caminos claros. El que elijas tiene un solo objetivo: que tus
-            clientes te encuentren y den el siguiente paso.
-          </p>
         </Reveal>
 
         <ul className="mt-10 grid gap-5 md:grid-cols-3">
@@ -40,9 +36,21 @@ export function Services() {
                   <p className="font-body text-sm leading-relaxed text-tinta/80 sm:text-base">
                     {service.description}
                   </p>
-                  <p className="mt-auto pt-6 font-accent text-base text-tinta/65">
-                    → {service.result}
-                  </p>
+                  <div className="mt-auto pt-6">
+                    <p className="font-body text-sm font-semibold text-tinta/80 sm:text-base">
+                      {service.pointsIntro}
+                    </p>
+                    <ul className="mt-3 space-y-2">
+                      {service.points.map((point) => (
+                        <li
+                          key={point}
+                          className="font-body text-sm leading-relaxed text-tinta/75 sm:text-base"
+                        >
+                          ✓ {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </article>
               </Reveal>
             </li>

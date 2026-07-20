@@ -2,29 +2,48 @@ export type Service = {
   id: string;
   title: string;
   description: string;
-  result: string;
+  pointsIntro: string;
+  points: string[];
 };
 
 export const services: Service[] = [
   {
     id: "landing",
-    title: "Landing pages",
+    title: "Landing Pages",
     description:
-      "Una página clara que cuenta quién sos, qué ofrecés y cómo agendar. Pensada para Instagram y WhatsApp: el visitante entiende y actúa.",
-    result: "Más consultas, menos idas y vueltas.",
+      "Ideal para profesionales que quieren empezar con una presencia online clara y enfocada en convertir visitas en consultas.",
+    pointsIntro: "Es para vos si:",
+    points: [
+      "Querés dejar de depender únicamente de Instagram.",
+      "Necesitás un lugar donde enviar a tus potenciales clientes.",
+      "Buscás transmitir profesionalismo desde el primer contacto.",
+      "Querés facilitar el paso de visitante a consulta.",
+    ],
   },
   {
     id: "institucional",
-    title: "Sitios institucionales",
+    title: "Sitio institucional",
     description:
-      "Tu espacio online completo: servicios, historia, preguntas frecuentes y contacto. Se siente profesional sin parecer una clínica fría.",
-    result: "Presencia que genera confianza desde el primer scroll.",
+      "Un sitio completo donde tu marca cuenta quién sos, cómo trabajás y por qué elegirte.",
+    pointsIntro: "Es para vos si:",
+    points: [
+      "Querés generar más confianza antes de la primera sesión.",
+      "Tenés varios servicios o especialidades.",
+      "Buscás fortalecer tu marca personal.",
+      "Necesitás una presencia digital sólida a largo plazo.",
+    ],
   },
   {
     id: "ecommerce",
-    title: "E-commerce",
+    title: "Tienda online",
     description:
-      "Vendé cursos, sesiones o productos digitales sin complicarte. Checkout simple, pagos listos y una experiencia que no ahuyenta.",
-    result: "Ventas que no dependen de estar todo el día online.",
+      "Vendé cursos, programas, sesiones o recursos digitales desde una plataforma propia.",
+    pointsIntro: "Es para vos si:",
+    points: [
+      "Querés generar ingresos más allá de las sesiones individuales.",
+      "Tenés productos digitales o pensás lanzarlos.",
+      "Buscás automatizar cobros y entregas.",
+      "Querés que tu negocio siga vendiendo incluso cuando no estás trabajando.",
+    ],
   },
 ];

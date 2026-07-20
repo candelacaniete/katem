@@ -23,11 +23,15 @@ export function FinalCta() {
         <Reveal>
           <p className="section__label">&gt; siguiente paso_</p>
           <h2 id="contacto-heading" className="section__title">
-            Dale, contanos qué necesitás y lo vemos juntos.
+            Hablemos de tu proyecto.
           </h2>
           <p className="section__lead mx-auto">
-            Agendá una llamada de diagnóstico. En 20 minutos sabés si tiene
-            sentido trabajar juntos — sin compromiso raro ni presión de venta.
+            Agendá una llamada de diagnóstico para conocer tus objetivos y
+            evaluar la mejor solución para tu negocio.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl font-body text-base leading-relaxed text-tinta/80 sm:text-lg">
+            En solo 20 minutos vas a tener una propuesta clara y un camino para
+            empezar.
           </p>
 
           <div className="mt-8 flex justify-center">

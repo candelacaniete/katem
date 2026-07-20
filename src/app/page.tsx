@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { ForWhom } from "@/components/sections/ForWhom";
 import { Hero } from "@/components/sections/Hero";
-import { Portfolio } from "@/components/sections/Portfolio";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
 import { WhyKatem } from "@/components/sections/WhyKatem";
@@ -18,7 +17,6 @@ export default function Home() {
         <ForWhom />
         <Process />
         <WhyKatem />
-        <Portfolio />
         <FinalCta />
       </main>
       <Footer />

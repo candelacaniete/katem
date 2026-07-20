@@ -9,7 +9,7 @@ export const site = {
 } as const;
 
 export const bookingHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-  "Hola Katem, quiero agendar una llamada de diagnóstico."
+  "Hola Katem, me gustaría agendar una llamada de diagnóstico."
 )}`;
 
 export const navLinks = [
@@ -17,5 +17,4 @@ export const navLinks = [
   { href: "#para-quien", label: "Para quién" },
   { href: "#proceso", label: "Cómo trabajamos" },
   { href: "#por-que", label: "Por qué Katem" },
-  { href: "#portafolio", label: "Demos" },
 ] as const;

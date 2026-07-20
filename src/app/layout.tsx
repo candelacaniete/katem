@@ -24,14 +24,14 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Katem — Sitios que convierten, experiencias que enamoran",
+  title: "Katem — Sitios web que inspiran confianza y generan consultas",
   description:
-    "Diseño web y automatizaciones para profesionales del bienestar latinos en USA. Landing pages, sitios institucionales y e-commerce con estética propia.",
+    "Diseñamos experiencias web para psicólogos, terapeutas, coaches y profesionales del bienestar. Landing pages, sitios institucionales y tiendas online.",
   metadataBase: new URL("https://katem.com.ar"),
   openGraph: {
-    title: "Katem — Sitios que convierten, experiencias que enamoran",
+    title: "Katem — Sitios web que inspiran confianza y generan consultas",
     description:
-      "Diseño web y automatizaciones para psicólogos, coaches y nutricionistas latinos en USA.",
+      "Experiencias web para profesionales del bienestar: presencia online profesional, clara y pensada para generar consultas.",
     url: "https://katem.com.ar",
     siteName: "Katem",
     locale: "es_AR",

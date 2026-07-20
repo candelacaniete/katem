@@ -12,11 +12,11 @@ export function WhyKatem() {
         <Reveal>
           <p className="section__label">&gt; por qué katem_</p>
           <h2 id="por-que-heading" className="section__title">
-            No somos una agencia más
+            ¿Por qué elegir Katem?
           </h2>
           <p className="section__lead">
-            Tres pilares que guían cada proyecto. Cortos de decir, serios de
-            cumplir.
+            Cada proyecto combina diseño, estrategia y tecnología para construir
+            una presencia digital que represente el valor de tu trabajo.
           </p>
         </Reveal>
 

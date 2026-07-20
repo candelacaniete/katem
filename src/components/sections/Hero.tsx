@@ -44,12 +44,17 @@ export function Hero() {
             id="hero-heading"
             className="mt-5 text-balance font-display text-2xl font-semibold leading-snug text-tinta sm:text-3xl lg:text-[2.25rem]"
           >
-            Sitios que convierten, experiencias que enamoran.
+            Sitios web que inspiran confianza y generan consultas.
           </h1>
 
           <p className="mt-4 max-w-lg text-base leading-relaxed text-tinta/80 sm:text-lg">
-            Diseño web y automatizaciones para negocios que quieren crecer, con
-            una estética que no se parece a ninguna otra.
+            Diseñamos experiencias web para psicólogos, terapeutas, coaches y
+            profesionales del bienestar que quieren una presencia online tan
+            profesional como el servicio que ofrecen.
+          </p>
+          <p className="mt-3 max-w-lg text-base leading-relaxed text-tinta/80 sm:text-lg">
+            Landing pages, sitios institucionales y tiendas online pensadas para
+            atraer clientes y simplificar tu trabajo.
           </p>
 
           <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
