@@ -51,10 +51,6 @@ export function Hero() {
             Diseñamos experiencias web para profesionales que quieren una
             presencia online tan profesional como el servicio que ofrecen.
           </p>
-          <p className="mt-3 max-w-lg text-base leading-relaxed text-tinta/80 sm:text-lg">
-            Landing pages, sitios institucionales y tiendas online pensadas para
-            atraer clientes y simplificar tu trabajo.
-          </p>
 
           <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
             <motion.div
