@@ -48,9 +48,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-4 max-w-lg text-base leading-relaxed text-tinta/80 sm:text-lg">
-            Diseñamos experiencias web para psicólogos, terapeutas, coaches y
-            profesionales del bienestar que quieren una presencia online tan
-            profesional como el servicio que ofrecen.
+            Diseñamos experiencias web para profesionales que quieren una
+            presencia online tan profesional como el servicio que ofrecen.
           </p>
           <p className="mt-3 max-w-lg text-base leading-relaxed text-tinta/80 sm:text-lg">
             Landing pages, sitios institucionales y tiendas online pensadas para

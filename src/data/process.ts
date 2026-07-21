@@ -11,7 +11,7 @@ export const processSteps: ProcessStep[] = [
     code: "01",
     title: "Contacto",
     description:
-      "Escribinos por WhatsApp o completá el formulario. Queremos conocer tu proyecto y entender qué necesitás.",
+      "Escribinos por WhatsApp. Queremos conocer tu proyecto y entender qué necesitás.",
   },
   {
     id: "diagnostico",
