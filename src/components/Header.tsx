@@ -27,6 +27,9 @@ export function Header() {
               key={link.href}
               href={link.href}
               className="font-body text-sm text-tinta/80 transition-colors hover:text-tinta"
+              {...(link.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
             >
               {link.label}
             </a>
@@ -62,6 +65,9 @@ export function Header() {
                 href={link.href}
                 className="py-2 font-body text-base text-tinta/90"
                 onClick={() => setOpen(false)}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
               >
                 {link.label}
               </a>

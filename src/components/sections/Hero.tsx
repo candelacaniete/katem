@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { StatusBadge } from "@/components/ui/StatusBadge";
-import { bookingHref, site } from "@/lib/site";
+import { bookingHref, demosHref, site } from "@/lib/site";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -66,8 +66,13 @@ export function Hero() {
               </CtaLink>
             </motion.div>
 
-            <CtaLink href="#servicios" variant="secondary">
-              ver más
+            <CtaLink
+              href={demosHref}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver demos en vivo
               <ArrowRight size={16} strokeWidth={1.5} aria-hidden />
             </CtaLink>
           </div>
