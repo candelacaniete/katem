@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --papel: #f3ebdd;
+  --tinta: #241621;
+  --rosa-katem: #e8a8bc;
+  --rosa-suave: #f7dde4;
+  --neon: #ff2ec4;
+  --grid: #aecbda;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-papel text-tinta font-body antialiased;
+  }
+
+  ::selection {
+    background: rgba(232, 168, 188, 0.55);
+    color: var(--tinta);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--neon);
+    outline-offset: 3px;
+  }
+
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply relative min-h-screen overflow-x-hidden;
+  }
+
+  .papel-surface {
+    @apply bg-papel bg-papel-grid;
+  }
+
+  .section {
+    @apply relative px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24;
+  }
+
+  .section--alt {
+    @apply bg-rosa-suave;
+  }
+
+  .section__inner {
+    @apply mx-auto w-full max-w-content;
+  }
+
+  .section__label {
+    @apply mb-3 font-accent text-lg tracking-wide text-tinta/70;
+  }
+
+  .section__title {
+    @apply font-display text-3xl font-semibold leading-tight tracking-tight text-tinta sm:text-4xl lg:text-[2.75rem];
+  }
+
+  .section__lead {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-tinta/80 sm:text-lg;
+  }
+
+  .torn-edge {
+    border: 1px solid rgba(174, 203, 218, 0.7);
+    border-radius: 2px 10px 3px 12px / 8px 3px 11px 4px;
+  }
+
+  .scanline {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(36, 22, 33, 0.04) 2px,
+      rgba(36, 22, 33, 0.04) 3px
+    );
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scanline {
+      display: none;
+    }
+  }
+
+  .cta {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 font-body text-sm font-semibold tracking-wide transition-colors duration-200 sm:text-base;
+  }
+
+  .cta--primary {
+    @apply bg-tinta text-papel;
+  }
+
+  .cta--primary:hover {
+    color: #fff;
+    box-shadow: 0 0 0 1px #ff2ec4, 0 0 18px rgba(255, 46, 196, 0.45);
+  }
+
+  .cta--primary:focus-visible {
+    box-shadow: 0 0 0 1px #ff2ec4, 0 0 18px rgba(255, 46, 196, 0.45);
+  }
+
+  .cta--secondary {
+    @apply border border-rosa-katem bg-transparent text-tinta;
+  }
+
+  .cta--secondary:hover {
+    @apply border-rosa-katem text-rosa-katem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta--primary:hover,
+    .cta--primary:focus-visible {
+      box-shadow: 0 0 0 2px #ff2ec4;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
