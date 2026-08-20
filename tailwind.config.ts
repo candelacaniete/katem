@@ -9,31 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        papel: "#F3EBDD",
-        tinta: "#241621",
-        "rosa-katem": "#E8A8BC",
-        "rosa-suave": "#F7DDE4",
-        neon: "#FF2EC4",
-        grid: "#AECBDA",
+        black: "#070609",
+        "purple-black": "#100A16",
+        "off-white": "#F5F0F5",
+        pink: "#FF4FD8",
+        violet: "#8B5CF6",
+        lavender: "#DCC6FF",
+        "ui-gray": "#1A171D",
       },
       fontFamily: {
-        display: ["var(--font-fredoka)", "sans-serif"],
-        body: ["var(--font-jakarta)", "sans-serif"],
-        accent: ["var(--font-vt323)", "monospace"],
+        display: ["var(--font-display)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
-        neon: "0 0 0 1px #FF2EC4, 0 0 18px rgba(255, 46, 196, 0.45)",
-        "neon-soft": "0 0 22px rgba(255, 46, 196, 0.28)",
+        "glow-pink": "0 0 24px rgba(255, 79, 216, 0.28)",
+        "glow-violet": "0 0 28px rgba(139, 92, 246, 0.22)",
+        window: "0 24px 80px rgba(0, 0, 0, 0.55)",
       },
       backgroundImage: {
-        "papel-grid":
-          "linear-gradient(rgba(174, 203, 218, 0.38) 1px, transparent 1px), linear-gradient(90deg, rgba(174, 203, 218, 0.38) 1px, transparent 1px)",
+        "katem-grid":
+          "linear-gradient(rgba(245, 240, 245, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 240, 245, 0.04) 1px, transparent 1px)",
+        "katem-dots":
+          "radial-gradient(rgba(245, 240, 245, 0.12) 0.6px, transparent 0.7px)",
       },
       backgroundSize: {
-        "papel-grid": "28px 28px",
+        "katem-grid": "48px 48px",
+        "katem-dots": "22px 22px",
       },
       maxWidth: {
-        content: "72rem",
+        content: "80rem",
+      },
+      transitionTimingFunction: {
+        katem: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
     },
   },

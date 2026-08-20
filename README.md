@@ -1,13 +1,13 @@
 # Katem
 
-Landing de [Katem](https://katem.com.ar): estudio de diseño y desarrollo web para profesionales del bienestar latinos en USA.
+Landing de [Katem](https://katem.com.ar): estudio digital boutique.
 
 ## Stack
 
 - Next.js 14 (App Router) + TypeScript
-- Tailwind CSS (tokens de marca)
-- Framer Motion
-- Lucide React
+- Tailwind CSS (tokens de marca oscuros)
+- Framer Motion + GSAP ScrollTrigger + Lenis
+- i18n: `/` (ES) y `/en` (EN)
 
 ## Desarrollo
 
@@ -16,8 +16,7 @@ npm install
 npm run dev
 ```
 
-Abrí [http://localhost:3000](http://localhost:3000).
-
 ## Contacto
 
-WhatsApp, Instagram y email se configuran en `src/lib/site.ts`.
+WhatsApp, Instagram y demos se configuran en `src/lib/site.ts`.
+Copy traducible en `src/i18n/dictionaries/`.

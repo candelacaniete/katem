@@ -1,41 +1,51 @@
 import type { Metadata } from "next";
-import { Fredoka, Plus_Jakarta_Sans, VT323 } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const fredoka = Fredoka({
+const display = Syne({
   subsets: ["latin"],
-  variable: "--font-fredoka",
+  variable: "--font-display",
   display: "swap",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const body = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const vt323 = VT323({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-vt323",
+  variable: "--font-mono",
   display: "swap",
-  weight: "400",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Katem — Sitios web que inspiran confianza y generan consultas",
-  description:
-    "Diseñamos experiencias web para profesionales que quieren una presencia online tan profesional como el servicio que ofrecen.",
   metadataBase: new URL("https://katem.com.ar"),
+  title: {
+    default: "KATEM® — Estudio digital boutique",
+    template: "%s · KATEM®",
+  },
+  description:
+    "Diseñamos experiencias digitales para marcas que quieren ser recordadas. Estudio independiente en Buenos Aires.",
   openGraph: {
-    title: "Katem — Sitios web que inspiran confianza y generan consultas",
+    title: "KATEM® — Estudio digital boutique",
     description:
-      "Experiencias web para profesionales del bienestar: presencia online profesional, clara y pensada para generar consultas.",
+      "Experiencias digitales con criterio, identidad y tecnología. Buenos Aires / Mundo.",
     url: "https://katem.com.ar",
     siteName: "Katem",
     locale: "es_AR",
     type: "website",
+  },
+  alternates: {
+    canonical: "https://katem.com.ar",
+    languages: {
+      es: "https://katem.com.ar",
+      en: "https://katem.com.ar/en",
+    },
   },
 };
 
@@ -45,16 +55,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body
-        className={`${fredoka.variable} ${jakarta.variable} ${vt323.variable} font-body`}
+        className={`${display.variable} ${body.variable} ${mono.variable} font-body bg-black text-off-white`}
       >
-        <a
-          href="#inicio"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-tinta focus:px-4 focus:py-2 focus:font-body focus:text-sm focus:font-semibold focus:text-papel"
-        >
-          Saltar al contenido
-        </a>
         {children}
       </body>
     </html>

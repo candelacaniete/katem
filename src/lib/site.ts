@@ -1,30 +1,19 @@
 export const site = {
   name: "Katem",
+  brand: "KATEM®",
+  tagline: "ESTUDIO DIGITAL",
   domain: "katem.com.ar",
   url: "https://katem.com.ar",
   email: "hola@katem.com.ar",
   whatsapp: "541131121463",
   instagram: "https://www.instagram.com/katembsas",
   demos: "https://www.katem.store",
-  year: new Date().getFullYear(),
+  year: 2026,
+  location: "Buenos Aires, Argentina",
 } as const;
 
 export const bookingHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-  "Hola Katem, me gustaría agendar una llamada de diagnóstico."
+  "Hola Katem, me gustaría iniciar un proyecto."
 )}`;
 
 export const demosHref = site.demos;
-
-export type NavLink = {
-  href: string;
-  label: string;
-  external?: boolean;
-};
-
-export const navLinks: NavLink[] = [
-  { href: "#servicios", label: "Qué hacemos" },
-  { href: "#para-quien", label: "Para quién" },
-  { href: "#proceso", label: "Cómo trabajamos" },
-  { href: "#por-que", label: "Por qué Katem" },
-  { href: demosHref, label: "Ver demos", external: true },
-];
