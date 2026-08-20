@@ -18,7 +18,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { MetodoSection } from "@/components/sections/MetodoSection";
 import { ServiciosSection } from "@/components/sections/ServiciosSection";
 import { StatementSection } from "@/components/sections/StatementSection";
-import { TerminalSection } from "@/components/sections/TerminalSection";
 import { WhyKatemSection } from "@/components/sections/WhyKatemSection";
 
 type Props = {
@@ -57,7 +56,6 @@ export function HomeExperience({ dict, locale }: Props) {
           <WhyKatemSection dict={dict.why} />
           <MetodoSection dict={dict.metodo} />
           <EstudioSection dict={dict.estudio} />
-          <TerminalSection dict={dict.terminal} locale={locale} />
           <CtaSection dict={dict.cta} />
         </main>
         <FooterSection

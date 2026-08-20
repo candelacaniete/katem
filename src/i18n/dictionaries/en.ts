@@ -218,29 +218,6 @@ const en: Dictionary = {
     windowCapabilities: ["DESIGN", "STRATEGY", "DEVELOPMENT", "AUTOMATION"],
     windowStatus: "STATUS: ONLINE",
   },
-  terminal: {
-    title: "KATEM / TERMINAL",
-    prompt: ">",
-    lines: [
-      { cmd: "who_we_are", out: ["INDEPENDENT DIGITAL STUDIO"] },
-      {
-        cmd: "what_we_do",
-        out: ["DESIGN", "STRATEGY", "DEVELOPMENT", "AUTOMATION"],
-      },
-      { cmd: "where", out: ["BUENOS AIRES", "ARGENTINA", "WORLD"] },
-      { cmd: "status", out: ["ACCEPTING NEW PROJECTS"] },
-    ],
-    placeholder: "type a command…",
-    help: ["commands: help, studio, services, projects, contact"],
-    responses: {
-      ayuda: ["available commands:", "help · studio · services · projects · contact"],
-      estudio: ["boutique digital studio.", "judgment, design, systems."],
-      servicios: ["experiences · strategy · products · systems"],
-      proyectos: ["archive: /demos/nova · /demos/norte · /demos/morrow"],
-      contacto: [`email / ${site.email}`, `whatsapp / +${site.whatsapp}`],
-      unknown: ["command not recognized.", 'try typing "help".'],
-    },
-  },
   cta: {
     lines: ["YOUR NEXT DIGITAL MOVE", "STARTS HERE."],
     accent: "STARTS HERE.",

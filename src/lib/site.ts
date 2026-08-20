@@ -12,9 +12,7 @@ export const site = {
   location: "Buenos Aires, Argentina",
 } as const;
 
-export const bookingHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-  "Hola Katem, quiero agendar una llamada de descubrimiento."
-)}`;
+export const bookingHref = "https://calendar.app.google/bL7uXed3AjdYejF96";
 
 export const emailHref = `mailto:${site.email}?subject=${encodeURIComponent(
   "Quiero iniciar un proyecto con Katem"
