@@ -35,7 +35,7 @@ export function CtaSection({ dict }: Props) {
           ))}
         </h2>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
           <KatemButton
             href={dict.href}
             target="_blank"
@@ -44,9 +44,23 @@ export function CtaSection({ dict }: Props) {
           >
             {dict.button}
           </KatemButton>
+          <KatemButton
+            href={dict.secondaryHref}
+            variant="ghost"
+          >
+            {dict.secondary}
+          </KatemButton>
         </div>
 
-        <p className="mt-8 whitespace-pre-line font-mono text-[11px] uppercase tracking-[0.18em] text-off-white/40">
+        <a
+          href={`mailto:${dict.email}`}
+          className="mt-8 inline-block font-mono text-sm tracking-[0.08em] text-off-white/70 transition-colors hover:text-pink"
+          data-cursor="open"
+        >
+          {dict.email}
+        </a>
+
+        <p className="mt-4 whitespace-pre-line font-mono text-[11px] uppercase tracking-[0.18em] text-off-white/40">
           {dict.note}
         </p>
       </div>

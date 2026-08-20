@@ -26,7 +26,9 @@ export function EstudioSection({ dict }: Props) {
           </h2>
           <div className="mt-8 max-w-xl space-y-4 text-base leading-relaxed text-off-white/70">
             {dict.paragraphs.map((p) => (
-              <p key={p}>{p}</p>
+              <p key={p} className="whitespace-pre-line">
+                {p}
+              </p>
             ))}
           </div>
           <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-pink/80">
@@ -35,17 +37,16 @@ export function EstudioSection({ dict }: Props) {
         </div>
 
         <KatemWindow
-          title="KATEM_PORTRAIT.exe"
+          title={`${dict.windowTitle}.exe`}
           className="mx-auto w-full max-w-md lg:max-w-none"
-          footer={<span>SYSTEM 01 · ARCHIVE 002</span>}
+          footer={<span className="text-pink">{dict.windowStatus}</span>}
         >
           <div
-            className="group relative aspect-[4/5] overflow-hidden"
+            className="group relative aspect-[4/5] overflow-hidden p-5 sm:p-6"
             data-cursor="explore"
           >
-            {/* Editorial abstract stand-in — no founder photo asset in repo */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,79,216,0.35),transparent_40%),linear-gradient(180deg,#1A171D,#070609)] grayscale contrast-125 transition-[filter] duration-500 group-hover:grayscale-[0.35]" />
-            <div className="absolute inset-0 opacity-40 mix-blend-color bg-violet/30 transition-opacity duration-500 group-hover:opacity-20" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(255,79,216,0.28),transparent_40%),linear-gradient(180deg,#1A171D,#070609)]" />
+            <div className="absolute inset-0 opacity-30 mix-blend-color bg-violet/25 transition-opacity duration-500 group-hover:opacity-15" />
             <div
               aria-hidden
               className="absolute inset-0 opacity-[0.08]"
@@ -54,11 +55,29 @@ export function EstudioSection({ dict }: Props) {
                   "repeating-linear-gradient(to bottom, transparent 0, transparent 2px, #fff 2px, #fff 3px)",
               }}
             />
-            <div className="absolute left-1/2 top-[38%] h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink/25 blur-3xl" />
-            <div className="absolute inset-x-8 bottom-8 top-[28%] rounded-t-full bg-gradient-to-b from-off-white/10 to-black/60" />
-            <p className="absolute bottom-5 left-5 font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/50">
-              KATEM_OS · 2026
-            </p>
+
+            <div className="relative z-10 flex h-full flex-col">
+              <p className="font-display text-3xl font-semibold tracking-tight text-off-white">
+                {dict.windowTitle}
+              </p>
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pink">
+                {dict.windowSubtitle}
+              </p>
+
+              <ul className="mt-8 space-y-1 font-mono text-[11px] uppercase tracking-[0.16em] text-off-white/60">
+                {dict.windowPlaces.map((place) => (
+                  <li key={place}>{place}</li>
+                ))}
+              </ul>
+
+              <ul className="mt-auto grid grid-cols-2 gap-3 border-t border-off-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/70">
+                {dict.windowCapabilities.map((cap) => (
+                  <li key={cap} className="border border-off-white/10 px-2 py-2">
+                    {cap}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </KatemWindow>
       </div>

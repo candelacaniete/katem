@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import gsap from "gsap";
@@ -17,12 +18,6 @@ type Props = {
 };
 
 const offsets = ["lg:mt-0 lg:ml-0", "lg:mt-12 lg:ml-4", "lg:mt-6 lg:-ml-2"];
-
-const accents = [
-  "from-[#FF4FD8]/50 via-[#F5D0D8]/20 to-transparent",
-  "from-[#C4B5A0]/40 via-[#1A171D] to-transparent",
-  "from-[#8B7355]/45 via-[#2A2420] to-transparent",
-];
 
 export function ArchivoSection({ dict }: Props) {
   const root = useRef<HTMLElement>(null);
@@ -76,20 +71,18 @@ export function ArchivoSection({ dict }: Props) {
           {dict.projects.map((project, i) => {
             const isActive = active === project.id;
             const dimmed = active !== null && !isActive;
-            const isExternal = Boolean(
-              "external" in project ? project.external : true
-            );
 
             const media = (
-              <div className="group block aspect-[5/4] overflow-hidden">
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-gradient-to-br transition-transform duration-[1200ms] ease-katem group-hover:scale-105",
-                    accents[i]
-                  )}
+              <div className="group relative block aspect-[5/4] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-[1200ms] ease-katem group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 katem-grid-bg opacity-40" />
-                <div className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-40 bg-[linear-gradient(90deg,rgba(255,0,80,0.25),transparent_40%,rgba(0,200,255,0.2))]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                <div className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-30 bg-[linear-gradient(90deg,rgba(255,79,216,0.25),transparent_45%)]" />
                 <div className="absolute inset-0 flex flex-col justify-end p-4">
                   <p className="font-mono text-[10px] text-off-white/50">
                     ARCHIVE_{project.id}.EXE
@@ -97,11 +90,9 @@ export function ArchivoSection({ dict }: Props) {
                   <p className="mt-1 font-display text-xl font-semibold text-off-white">
                     {project.title}
                   </p>
-                  {"subtitle" in project && project.subtitle ? (
-                    <p className="mt-1 text-xs text-off-white/55">
-                      {project.subtitle}
-                    </p>
-                  ) : null}
+                  <p className="mt-1 text-xs text-off-white/55">
+                    {project.subtitle}
+                  </p>
                 </div>
               </div>
             );
@@ -130,47 +121,23 @@ export function ArchivoSection({ dict }: Props) {
                       <span className={cn(isActive && "text-pink")}>
                         {project.tags}
                       </span>
-                      {isExternal ? (
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-off-white/70 transition-colors hover:text-pink"
-                          data-cursor="view"
-                        >
-                          {dict.view}
-                        </a>
-                      ) : (
-                        <Link
-                          href={project.href}
-                          className="text-off-white/70 transition-colors hover:text-pink"
-                          data-cursor="view"
-                        >
-                          {dict.view}
-                        </Link>
-                      )}
+                      <Link
+                        href={project.href}
+                        className="text-off-white/70 transition-colors hover:text-pink"
+                        data-cursor="view"
+                      >
+                        {dict.view}
+                      </Link>
                     </>
                   }
                 >
-                  {isExternal ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block"
-                      data-cursor="view"
-                    >
-                      {media}
-                    </a>
-                  ) : (
-                    <Link
-                      href={project.href}
-                      className="relative block"
-                      data-cursor="view"
-                    >
-                      {media}
-                    </Link>
-                  )}
+                  <Link
+                    href={project.href}
+                    className="relative block"
+                    data-cursor="view"
+                  >
+                    {media}
+                  </Link>
                 </KatemWindow>
               </div>
             );

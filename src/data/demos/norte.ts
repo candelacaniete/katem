@@ -33,7 +33,7 @@ export const norte = {
       year: "2023",
       category: "Residential",
       image:
-        "https://images.unsplash.com/photo-1600607687939-ce8a79c027af?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80",
       summary:
         "Elevated living above the delta waters — open plans, weathered materials, and rooms that track the river's mood.",
     },

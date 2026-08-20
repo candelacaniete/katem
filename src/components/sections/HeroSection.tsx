@@ -104,20 +104,14 @@ export function HeroSection({ dict }: Props) {
           <motion.div
             className="mx-auto w-full max-w-md lg:max-w-none"
             initial={
-              reduce
-                ? false
-                : { opacity: 0, scale: 0.92, rotateY: 5 }
+              reduce ? false : { opacity: 0, scale: 0.92, rotateY: 5 }
             }
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ delay: 0.35, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             style={{ perspective: 1000 }}
           >
             <motion.div
-              animate={
-                reduce
-                  ? undefined
-                  : { y: [-6, 6, -6] }
-              }
+              animate={reduce ? undefined : { y: [-6, 6, -6] }}
               transition={
                 reduce
                   ? undefined
@@ -135,17 +129,41 @@ export function HeroSection({ dict }: Props) {
                 }
               >
                 <div
-                  className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:aspect-[4/5]"
+                  className="relative aspect-[4/5] overflow-hidden p-5 sm:aspect-[5/4] sm:p-6 lg:aspect-[4/5]"
                   data-cursor="explore"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_35%,rgba(255,79,216,0.45),transparent_42%),linear-gradient(160deg,#100A16,#070609)]" />
-                  <div className="absolute inset-0 opacity-30 mix-blend-overlay katem-grid-bg" />
-                  <div className="absolute left-1/2 top-[42%] h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink/30 blur-2xl sm:h-52 sm:w-52" />
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
-                  <p className="absolute bottom-5 left-5 font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/55">
-                    {dict.visualLabel}
-                  </p>
-                  <div className="absolute right-5 top-5 h-2 w-2 rounded-full bg-pink shadow-glow-pink" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,79,216,0.28),transparent_42%),linear-gradient(160deg,#100A16,#070609)]" />
+                  <div className="absolute inset-0 opacity-25 mix-blend-overlay katem-grid-bg" />
+
+                  <div className="relative z-10 flex h-full flex-col">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-pink">
+                      {dict.visualLabel}
+                    </p>
+
+                    <ul className="mt-8 space-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-off-white/75 sm:text-xs">
+                      {dict.systemRows.map((row) => (
+                        <li
+                          key={row.id}
+                          className="flex items-center justify-between gap-4 border-b border-off-white/10 pb-2"
+                        >
+                          <span>
+                            <span className="text-pink">{row.id}</span>{" "}
+                            {row.label}
+                          </span>
+                          <span className="text-pink/80">{row.state}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto pt-8">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/45">
+                        {dict.signalLabel}
+                      </p>
+                      <p className="mt-2 font-mono text-xs text-pink sm:text-sm">
+                        {dict.signalBar}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </KatemWindow>
             </motion.div>

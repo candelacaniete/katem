@@ -1,5 +1,5 @@
 import type { Dictionary } from "./es";
-import { bookingHref, site } from "@/lib/site";
+import { bookingHref, emailHref, site } from "@/lib/site";
 
 const en: Dictionary = {
   meta: {
@@ -15,6 +15,7 @@ const en: Dictionary = {
     links: [
       { href: "#archivo", label: "WORK" },
       { href: "#servicios", label: "SERVICES" },
+      { href: "#why", label: "WHY" },
       { href: "#metodo", label: "METHOD" },
       { href: "#estudio", label: "STUDIO" },
       { href: "#contacto", label: "CONTACT" },
@@ -48,10 +49,18 @@ const en: Dictionary = {
     line3: "THAN A WEBSITE.",
     sub: "We design digital experiences\nfor brands that want to be remembered.",
     ctaPrimary: "VIEW PROJECTS →",
-    ctaSecondary: "START A PROJECT ↗",
+    ctaSecondary: "BOOK A DISCOVERY CALL →",
     windowTitle: "KATEM_SYSTEM.exe",
-    status: "STATUS: ONLINE",
-    visualLabel: "SYSTEM / IDENTITY",
+    status: "STATUS: ACCEPTING PROJECTS",
+    visualLabel: "SYSTEM / DIGITAL EXPERIENCE",
+    systemRows: [
+      { id: "01", label: "STRATEGY", state: "ONLINE" },
+      { id: "02", label: "DESIGN", state: "ONLINE" },
+      { id: "03", label: "DEVELOPMENT", state: "ONLINE" },
+      { id: "04", label: "AUTOMATION", state: "ONLINE" },
+    ],
+    signalLabel: "SIGNAL",
+    signalBar: "████████████ 100%",
   },
   statement: {
     blocks: [
@@ -72,6 +81,8 @@ const en: Dictionary = {
         href: "/demos/nova",
         external: false,
         subtitle: "Creative Consultancy · Landing",
+        image:
+          "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80",
       },
       {
         id: "002",
@@ -80,6 +91,8 @@ const en: Dictionary = {
         href: "/demos/norte",
         external: false,
         subtitle: "Architecture & Design · Institutional",
+        image:
+          "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80",
       },
       {
         id: "003",
@@ -88,6 +101,8 @@ const en: Dictionary = {
         href: "/demos/morrow",
         external: false,
         subtitle: "Objects · Ecommerce",
+        image:
+          "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
       },
     ],
   },
@@ -120,6 +135,36 @@ const en: Dictionary = {
           "Integrations and flows that keep your business working even when you're not at the screen.",
       },
     ],
+  },
+  why: {
+    label: "CRITERIA",
+    title: "WHY KATEM?",
+    lead: "You don't need another website.\nYou need a digital presence that works.",
+    reasons: [
+      {
+        id: "01",
+        title: "NO TEMPLATES",
+        body: "We never start from a template. We design the experience around your business, audience, and goals.",
+      },
+      {
+        id: "02",
+        title: "DESIGN + STRATEGY",
+        body: "We don't separate aesthetics from strategy. Every visual decision has a reason.",
+      },
+      {
+        id: "03",
+        title: "BUILT FOR YOUR BUSINESS",
+        body: "From a landing page to ecommerce or a full digital system, we build what you actually need.",
+      },
+      {
+        id: "04",
+        title: "PERSONAL COLLABORATION",
+        body: "You work directly with the studio. Clear communication, fast decisions, and a process without unnecessary layers.",
+      },
+    ],
+    closing: ["YOUR BUSINESS IS UNIQUE.", "YOUR WEBSITE SHOULD BE TOO."],
+    cta: "LET'S BUILD IT →",
+    href: bookingHref,
   },
   metodo: {
     label: "METHOD",
@@ -161,11 +206,17 @@ const en: Dictionary = {
     label: "STUDIO",
     title: ["KATEM", "WAS BORN FROM", "RESTLESSNESS."],
     paragraphs: [
-      "Every project combines design, strategy, and technology to build a digital presence that reflects the value of your work.",
-      "We work with professionals and brands that support people — psychologists, therapists, coaches, nutritionists, and teams who need to look as professional as the service they offer.",
-      "Clear communication. Design with identity. No generic solutions.",
+      "We believe the internet should feel less generic.",
+      "We combine design, strategy and technology to build digital experiences that make businesses easier to understand, trust and remember.",
+      "We work with professionals, brands and teams that have something worth building.",
+      "Clear communication.\nDesign with identity.\nTechnology with purpose.",
     ],
-    meta: "BUENOS AIRES / ARGENTINA / WORLD",
+    meta: "BUENOS AIRES / ARGENTINA / WORLDWIDE",
+    windowTitle: "KATEM_OS",
+    windowSubtitle: "INDEPENDENT DIGITAL STUDIO",
+    windowPlaces: ["BUENOS AIRES", "ARGENTINA", "WORLDWIDE"],
+    windowCapabilities: ["DESIGN", "STRATEGY", "DEVELOPMENT", "AUTOMATION"],
+    windowStatus: "STATUS: ONLINE",
   },
   terminal: {
     title: "KATEM / TERMINAL",
@@ -186,16 +237,19 @@ const en: Dictionary = {
       estudio: ["boutique digital studio.", "judgment, design, systems."],
       servicios: ["experiences · strategy · products · systems"],
       proyectos: ["archive: /demos/nova · /demos/norte · /demos/morrow"],
-      contacto: [`whatsapp / ${site.email}`],
+      contacto: [`email / ${site.email}`, `whatsapp / +${site.whatsapp}`],
       unknown: ["command not recognized.", 'try typing "help".'],
     },
   },
   cta: {
-    lines: ["YOUR NEXT", "DIGITAL", "MOVE", "STARTS HERE."],
+    lines: ["YOUR NEXT DIGITAL MOVE", "STARTS HERE."],
     accent: "STARTS HERE.",
-    button: "START A PROJECT ↗",
-    note: "Selected projects.\nBuenos Aires / Argentina / World.",
+    button: "BOOK A DISCOVERY CALL →",
+    secondary: "START A PROJECT →",
+    email: site.email,
+    note: "Buenos Aires / Argentina / World.",
     href: bookingHref,
+    secondaryHref: emailHref,
   },
   footer: {
     brand: site.brand,
