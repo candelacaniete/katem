@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,20 +16,12 @@ type Props = {
   dict: Dictionary["archivo"];
 };
 
-const offsets = [
-  "lg:mt-0 lg:ml-0",
-  "lg:mt-10 lg:-ml-4",
-  "lg:mt-4 lg:ml-6",
-  "lg:mt-14 lg:-ml-2",
-  "lg:mt-8 lg:ml-4",
-];
+const offsets = ["lg:mt-0 lg:ml-0", "lg:mt-12 lg:ml-4", "lg:mt-6 lg:-ml-2"];
 
 const accents = [
-  "from-pink/40 via-violet/20 to-transparent",
-  "from-violet/40 via-pink/15 to-transparent",
-  "from-lavender/30 via-violet/25 to-transparent",
-  "from-pink/30 via-purple-black to-transparent",
-  "from-violet/35 via-pink/20 to-transparent",
+  "from-[#FF4FD8]/50 via-[#F5D0D8]/20 to-transparent",
+  "from-[#C4B5A0]/40 via-[#1A171D] to-transparent",
+  "from-[#8B7355]/45 via-[#2A2420] to-transparent",
 ];
 
 export function ArchivoSection({ dict }: Props) {
@@ -79,10 +72,40 @@ export function ArchivoSection({ dict }: Props) {
           ))}
         </ul>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {dict.projects.map((project, i) => {
             const isActive = active === project.id;
             const dimmed = active !== null && !isActive;
+            const isExternal = Boolean(
+              "external" in project ? project.external : true
+            );
+
+            const media = (
+              <div className="group block aspect-[5/4] overflow-hidden">
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-br transition-transform duration-[1200ms] ease-katem group-hover:scale-105",
+                    accents[i]
+                  )}
+                />
+                <div className="absolute inset-0 katem-grid-bg opacity-40" />
+                <div className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-40 bg-[linear-gradient(90deg,rgba(255,0,80,0.25),transparent_40%,rgba(0,200,255,0.2))]" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                  <p className="font-mono text-[10px] text-off-white/50">
+                    ARCHIVE_{project.id}.EXE
+                  </p>
+                  <p className="mt-1 font-display text-xl font-semibold text-off-white">
+                    {project.title}
+                  </p>
+                  {"subtitle" in project && project.subtitle ? (
+                    <p className="mt-1 text-xs text-off-white/55">
+                      {project.subtitle}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+            );
+
             return (
               <div
                 key={project.id}
@@ -95,7 +118,7 @@ export function ArchivoSection({ dict }: Props) {
                 )}
               >
                 <KatemWindow
-                  title={`ARCHIVO_${project.id}.exe`}
+                  title={`ARCHIVE_${project.id}.EXE`}
                   className={cn(
                     "transition-shadow duration-300",
                     isActive && "shadow-glow-pink"
@@ -107,47 +130,47 @@ export function ArchivoSection({ dict }: Props) {
                       <span className={cn(isActive && "text-pink")}>
                         {project.tags}
                       </span>
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-off-white/70 transition-colors hover:text-pink"
-                        data-cursor="view"
-                      >
-                        {dict.view}
-                      </a>
+                      {isExternal ? (
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-off-white/70 transition-colors hover:text-pink"
+                          data-cursor="view"
+                        >
+                          {dict.view}
+                        </a>
+                      ) : (
+                        <Link
+                          href={project.href}
+                          className="text-off-white/70 transition-colors hover:text-pink"
+                          data-cursor="view"
+                        >
+                          {dict.view}
+                        </Link>
+                      )}
                     </>
                   }
                 >
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block aspect-[5/4] overflow-hidden"
-                    data-cursor="view"
-                  >
-                    <div
-                      className={cn(
-                        "absolute inset-0 bg-gradient-to-br transition-transform duration-[1200ms] ease-katem group-hover:scale-105",
-                        accents[i]
-                      )}
-                    />
-                    <div className="absolute inset-0 katem-grid-bg opacity-40" />
-                    <div
-                      className={cn(
-                        "absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-40",
-                        "bg-[linear-gradient(90deg,rgba(255,0,80,0.25),transparent_40%,rgba(0,200,255,0.2))]"
-                      )}
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-end p-4">
-                      <p className="font-mono text-[10px] text-off-white/50">
-                        {project.id}
-                      </p>
-                      <p className="mt-1 font-display text-xl font-semibold text-off-white">
-                        {project.title}
-                      </p>
-                    </div>
-                  </a>
+                  {isExternal ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative block"
+                      data-cursor="view"
+                    >
+                      {media}
+                    </a>
+                  ) : (
+                    <Link
+                      href={project.href}
+                      className="relative block"
+                      data-cursor="view"
+                    >
+                      {media}
+                    </Link>
+                  )}
                 </KatemWindow>
               </div>
             );

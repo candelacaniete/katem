@@ -8,6 +8,7 @@ export function middleware(request: NextRequest) {
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/demos") ||
     pathname.includes(".")
   ) {
     return NextResponse.next();
@@ -18,7 +19,6 @@ export function middleware(request: NextRequest) {
   );
 
   if (hasLocale) {
-    // Keep Spanish at `/` — redirect `/es` → `/`
     if (pathname === "/es" || pathname.startsWith("/es/")) {
       const url = request.nextUrl.clone();
       url.pathname = pathname.replace(/^\/es/, "") || "/";
@@ -27,7 +27,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Spanish lives at `/` via rewrite; English at `/en`.
   if (pathname === "/") {
     return NextResponse.rewrite(new URL(`/${defaultLocale}`, request.url));
   }

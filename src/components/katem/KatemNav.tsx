@@ -43,8 +43,6 @@ export function KatemNav({ dict, locale }: Props) {
           ))}
           <a
             href={dict.demos.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="font-body text-[11px] uppercase tracking-[0.18em] text-pink transition-colors hover:text-lavender"
             data-cursor="open"
           >
@@ -85,8 +83,6 @@ export function KatemNav({ dict, locale }: Props) {
             ))}
             <a
               href={dict.demos.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="py-1 font-body text-sm uppercase tracking-[0.18em] text-pink"
               onClick={() => setOpen(false)}
             >

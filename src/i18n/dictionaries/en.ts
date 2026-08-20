@@ -1,5 +1,5 @@
 import type { Dictionary } from "./es";
-import { bookingHref, demosHref, site } from "@/lib/site";
+import { bookingHref, site } from "@/lib/site";
 
 const en: Dictionary = {
   meta: {
@@ -19,7 +19,7 @@ const en: Dictionary = {
       { href: "#estudio", label: "STUDIO" },
       { href: "#contacto", label: "CONTACT" },
     ],
-    demos: { href: demosHref, label: "DEMOS" },
+    demos: { href: "#archivo", label: "DEMOS" },
     lang: { es: "ES", en: "EN" },
     openMenu: "Open menu",
     closeMenu: "Close menu",
@@ -67,33 +67,27 @@ const en: Dictionary = {
     projects: [
       {
         id: "001",
-        title: "UNIQ POSITIVO",
-        tags: "IDENTITY / WEB / STRATEGY",
-        href: demosHref,
+        title: "NOVA",
+        tags: "IDENTITY / STRATEGY / DIGITAL",
+        href: "/demos/nova",
+        external: false,
+        subtitle: "Creative Consultancy · Landing",
       },
       {
         id: "002",
-        title: "PARQUE PATRICIOS INFORMA",
-        tags: "WEB / COMMUNICATION",
-        href: demosHref,
+        title: "NORTE",
+        tags: "INSTITUTIONAL / ARCHITECTURE",
+        href: "/demos/norte",
+        external: false,
+        subtitle: "Architecture & Design · Institutional",
       },
       {
         id: "003",
-        title: "AVANTEM",
-        tags: "PRODUCT / SYSTEM",
-        href: demosHref,
-      },
-      {
-        id: "004",
-        title: "SANAR VALE LA PENA",
-        tags: "IDENTITY / EXPERIENCE",
-        href: demosHref,
-      },
-      {
-        id: "005",
-        title: "OTHER PROJECTS",
-        tags: "ARCHIVE / DEMOS",
-        href: demosHref,
+        title: "MORROW",
+        tags: "ECOMMERCE / DIGITAL PRODUCT",
+        href: "/demos/morrow",
+        external: false,
+        subtitle: "Objects · Ecommerce",
       },
     ],
   },
@@ -191,7 +185,7 @@ const en: Dictionary = {
       ayuda: ["available commands:", "help · studio · services · projects · contact"],
       estudio: ["boutique digital studio.", "judgment, design, systems."],
       servicios: ["experiences · strategy · products · systems"],
-      proyectos: [`archive at ${site.demos}`],
+      proyectos: ["archive: /demos/nova · /demos/norte · /demos/morrow"],
       contacto: [`whatsapp / ${site.email}`],
       unknown: ["command not recognized.", 'try typing "help".'],
     },

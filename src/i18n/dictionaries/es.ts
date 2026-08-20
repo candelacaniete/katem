@@ -1,4 +1,4 @@
-import { bookingHref, demosHref, site } from "@/lib/site";
+import { bookingHref, site } from "@/lib/site";
 
 const es = {
   meta: {
@@ -18,7 +18,7 @@ const es = {
       { href: "#estudio", label: "ESTUDIO" },
       { href: "#contacto", label: "CONTACTO" },
     ],
-    demos: { href: demosHref, label: "DEMOS" },
+    demos: { href: "#archivo", label: "DEMOS" },
     lang: { es: "ES", en: "EN" },
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
@@ -66,33 +66,27 @@ const es = {
     projects: [
       {
         id: "001",
-        title: "UNIQ POSITIVO",
-        tags: "IDENTIDAD / WEB / ESTRATEGIA",
-        href: demosHref,
+        title: "NOVA",
+        tags: "IDENTITY / STRATEGY / DIGITAL",
+        href: "/demos/nova",
+        external: false,
+        subtitle: "Creative Consultancy · Landing",
       },
       {
         id: "002",
-        title: "PARQUE PATRICIOS INFORMA",
-        tags: "WEB / COMUNICACIÓN",
-        href: demosHref,
+        title: "NORTE",
+        tags: "INSTITUTIONAL / ARCHITECTURE",
+        href: "/demos/norte",
+        external: false,
+        subtitle: "Architecture & Design · Institucional",
       },
       {
         id: "003",
-        title: "AVANTEM",
-        tags: "PRODUCTO / SISTEMA",
-        href: demosHref,
-      },
-      {
-        id: "004",
-        title: "SANAR VALE LA PENA",
-        tags: "IDENTIDAD / EXPERIENCIA",
-        href: demosHref,
-      },
-      {
-        id: "005",
-        title: "OTROS PROYECTOS",
-        tags: "ARCHIVO / DEMOS",
-        href: demosHref,
+        title: "MORROW",
+        tags: "ECOMMERCE / DIGITAL PRODUCT",
+        href: "/demos/morrow",
+        external: false,
+        subtitle: "Objects · Ecommerce",
       },
     ],
   },
@@ -192,7 +186,7 @@ const es = {
       ayuda: ["comandos disponibles:", "ayuda · estudio · servicios · proyectos · contacto"],
       estudio: ["estudio digital boutique.", "criterio, diseño y sistemas."],
       servicios: ["experiencias · estrategia · productos · sistemas"],
-      proyectos: [`archivo en ${site.demos}`],
+      proyectos: ["archivo: /demos/nova · /demos/norte · /demos/morrow"],
       contacto: [`whatsapp / ${site.email}`],
       unknown: ['comando no reconocido.', 'probá escribir "ayuda".'],
     },
