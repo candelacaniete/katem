@@ -19,7 +19,7 @@ export function HeroSection({ dict }: Props) {
     dict.line1,
     <>
       {dict.line2Before}
-      <span className="font-accent inline-block origin-bottom -rotate-6 text-[1.18em] leading-none text-rose">
+      <span className="font-bubbly inline-block text-[1.05em]">
         {dict.line2Accent}
       </span>
     </>,

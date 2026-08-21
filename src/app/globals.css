@@ -120,6 +120,11 @@
     color: #fff;
   }
 
+  .os-window__bar--rose {
+    background: #c97b8f;
+    color: #f2ebe6;
+  }
+
   .os-window--dark .os-window__bar {
     background: #2a2226;
     color: #f2ebe6;
@@ -412,6 +417,10 @@
     background: #000080;
   }
 
+  .os-progress__block--rose {
+    background: #c97b8f;
+  }
+
   .glitch-once {
     animation: none;
   }
@@ -499,6 +508,17 @@
 
   .halftone-panel {
     isolation: isolate;
+  }
+
+  .font-bubbly {
+    font-family: var(--font-accent), system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+    color: #e8b4c0;
+    text-shadow:
+      2px 2px 0 #c97b8f,
+      3px 3px 0 #8a5564;
   }
 
   @media (prefers-reduced-motion: reduce) {

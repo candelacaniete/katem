@@ -4,7 +4,7 @@ import {
   Syne,
   DM_Sans,
   JetBrains_Mono,
-  Pinyon_Script,
+  Bagel_Fat_One,
 } from "next/font/google";
 import { defaultLocale, isLocale } from "@/i18n/config";
 import { site } from "@/lib/site";
@@ -31,7 +31,7 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const accent = Pinyon_Script({
+const accent = Bagel_Fat_One({
   subsets: ["latin"],
   variable: "--font-accent",
   display: "swap",

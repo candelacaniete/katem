@@ -27,7 +27,9 @@ export function CtaSection({ dict }: Props) {
             <span
               key={line}
               className={
-                line === dict.accent ? "block text-pink" : "block text-off-white"
+                line === dict.accent
+                  ? "font-bubbly mt-2 block text-[clamp(2.2rem,7vw,4.5rem)]"
+                  : "block text-off-white"
               }
             >
               {line}

@@ -28,7 +28,7 @@ const config: Config = {
         display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
-        accent: ["var(--font-accent)", "cursive"],
+        accent: ["var(--font-accent)", "system-ui", "sans-serif"],
         "accent-pinyon": ["var(--font-accent-pinyon)", "cursive"],
         "accent-allura": ["var(--font-accent-allura)", "cursive"],
         "accent-imperial": ["var(--font-accent-imperial)", "cursive"],

@@ -76,20 +76,22 @@ export function KatemBoot({ copy, skipLabel, onDone }: Props) {
       aria-label="Introducción Katem"
     >
       <div className="os-window os-window--classic w-full max-w-sm">
-        <div className="os-window__bar os-window__bar--navy">
+        <div className="os-window__bar os-window__bar--rose">
           <span>KATEM_OS.exe</span>
           <span className="os-window__controls" aria-hidden>
             <span className="os-window__ctrl">X</span>
           </span>
         </div>
-        <div className="space-y-4 bg-ui-gray p-4 text-black">
-          <p className="text-center font-mono text-sm">{copy.lines[0] ?? "Loading..."}</p>
+        <div className="space-y-4 bg-[#E8D4DA] p-4 text-win-dark">
+          <p className="text-center font-mono text-sm text-win-dark">
+            {copy.lines[0] ?? "Loading..."}
+          </p>
           <div className="os-progress" aria-hidden>
             {Array.from({ length: blocks }).map((_, i) => (
-              <span key={i} className="os-progress__block" />
+              <span key={i} className="os-progress__block os-progress__block--rose" />
             ))}
           </div>
-          <p className="text-center font-mono text-[11px] text-win-dark">
+          <p className="text-center font-mono text-[11px] text-win-dark/80">
             {copy.brand} · {progress}%
           </p>
           <div className="flex justify-center gap-2 pt-1">
