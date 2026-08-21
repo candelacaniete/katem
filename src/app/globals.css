@@ -207,4 +207,13 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .archivo-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .archivo-track::-webkit-scrollbar {
+    display: none;
+  }
 }

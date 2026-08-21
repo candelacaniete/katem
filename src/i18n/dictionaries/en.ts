@@ -73,10 +73,14 @@ const en: Dictionary = {
     label: "ARCHIVE",
     title: "SELECTED PROJECTS",
     view: "VIEW →",
+    openBot: "TRY →",
+    kindWeb: "[WEB]",
+    kindBot: "[BOT]",
     projects: [
       {
         id: "001",
         title: "NOVA",
+        kind: "web" as const,
         tags: "IDENTITY / STRATEGY / DIGITAL",
         href: "/demos/nova",
         external: false,
@@ -87,6 +91,7 @@ const en: Dictionary = {
       {
         id: "002",
         title: "NORTE",
+        kind: "web" as const,
         tags: "INSTITUTIONAL / ARCHITECTURE",
         href: "/demos/norte",
         external: false,
@@ -97,6 +102,7 @@ const en: Dictionary = {
       {
         id: "003",
         title: "MORROW",
+        kind: "web" as const,
         tags: "ECOMMERCE / DIGITAL PRODUCT",
         href: "/demos/morrow",
         external: false,
@@ -104,7 +110,60 @@ const en: Dictionary = {
         image:
           "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
       },
+      {
+        id: "004",
+        title: "BOT",
+        kind: "bot" as const,
+        tags: "AUTOMATION / CONVERSATION",
+        href: "#archivo-bot",
+        external: false,
+        subtitle: "Conversational assistant · Demo",
+        image:
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+      },
     ],
+    bot: {
+      windowTitle: "ARCHIVE_004.EXE",
+      close: "CLOSE",
+      inputPlaceholder: "Type TURNO, INFO, or LEAD…",
+      send: "SEND",
+      typing: "typing…",
+      welcome:
+        "Hi. I'm a bot Katem can build for your business. Choose what you want to try:",
+      menu: [
+        "— Type TURNO to book an appointment",
+        "— Type INFO to ask about prices/services",
+        "— Type LEAD to leave your details for a follow-up",
+      ],
+      fallback:
+        "I didn't catch that. Try TURNO, INFO, or LEAD.",
+      fallbackFinal:
+        "No worries. Here are the options again:",
+      ctaText: "Want something like this for your business?",
+      ctaLink: "Let's talk →",
+      ctaHref: bookingHref,
+      menuAgain: "Back to menu",
+      flows: {
+        TURNO: [
+          "Perfect. Let's book an appointment (demo).",
+          "Which service would this be for? Answer freely.",
+          "Got it. What day and time work for you?",
+          "Done: simulated booking confirmed. In a real bot, this would land on your calendar.",
+        ],
+        INFO: [
+          "Sure. Here's what a bot like this can answer.",
+          "Demo services: inquiries, bookings, and lead follow-up.",
+          "Pricing is configured per business. This demo doesn't quote live rates.",
+          "If you want, type LEAD and we'll capture your details for a real conversation.",
+        ],
+        LEAD: [
+          "Great. A real bot would ask for name, contact, and need.",
+          "For this demo, imagine we already captured your details carefully.",
+          "A team could follow up in minutes — no endless forms.",
+          "Demo lead logged. Next real step: talk with Katem.",
+        ],
+      },
+    },
   },
   servicios: {
     label: "PROTOCOL",

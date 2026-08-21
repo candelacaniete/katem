@@ -72,10 +72,14 @@ const es = {
     label: "ARCHIVO",
     title: "PROYECTOS SELECCIONADOS",
     view: "VER →",
+    openBot: "PROBAR →",
+    kindWeb: "[WEB]",
+    kindBot: "[BOT]",
     projects: [
       {
         id: "001",
         title: "NOVA",
+        kind: "web" as const,
         tags: "IDENTITY / STRATEGY / DIGITAL",
         href: "/demos/nova",
         external: false,
@@ -86,6 +90,7 @@ const es = {
       {
         id: "002",
         title: "NORTE",
+        kind: "web" as const,
         tags: "INSTITUTIONAL / ARCHITECTURE",
         href: "/demos/norte",
         external: false,
@@ -96,6 +101,7 @@ const es = {
       {
         id: "003",
         title: "MORROW",
+        kind: "web" as const,
         tags: "ECOMMERCE / DIGITAL PRODUCT",
         href: "/demos/morrow",
         external: false,
@@ -103,7 +109,60 @@ const es = {
         image:
           "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
       },
+      {
+        id: "004",
+        title: "BOT",
+        kind: "bot" as const,
+        tags: "AUTOMATION / CONVERSATION",
+        href: "#archivo-bot",
+        external: false,
+        subtitle: "Asistente conversacional · Demo",
+        image:
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+      },
     ],
+    bot: {
+      windowTitle: "ARCHIVE_004.EXE",
+      close: "CERRAR",
+      inputPlaceholder: "Escribí TURNO, INFO o LEAD…",
+      send: "ENVIAR",
+      typing: "escribiendo…",
+      welcome:
+        "Hola. Soy un bot que Katem puede construir para tu negocio. Elegí qué querés probar:",
+      menu: [
+        "— Escribí TURNO para reservar un turno",
+        "— Escribí INFO para consultar precios/servicios",
+        "— Escribí LEAD para dejar tus datos y que te contacten",
+      ],
+      fallback:
+        "No te seguí del todo. Probá con TURNO, INFO o LEAD.",
+      fallbackFinal:
+        "Sin problema. Acá van de nuevo las opciones:",
+      ctaText: "¿Querés algo así para tu negocio?",
+      ctaLink: "Hablemos →",
+      ctaHref: bookingHref,
+      menuAgain: "Volver al menú",
+      flows: {
+        TURNO: [
+          "Perfecto. Vamos a reservar un turno (demo).",
+          "¿Para qué servicio sería? Podés responder libremente.",
+          "Anotado. ¿Qué día y horario te vienen bien?",
+          "Listo: turno simulado confirmado. En un bot real, esto quedaría en tu agenda.",
+        ],
+        INFO: [
+          "Claro. Te resumo lo que un bot así puede responder.",
+          "Servicios demo: consultas, reservas y seguimiento de leads.",
+          "Precios: se configuran según tu negocio. Esta demo no cotiza en vivo.",
+          "Si querés, pedí LEAD y dejamos tus datos para una conversación real.",
+        ],
+        LEAD: [
+          "Genial. En un bot real pediría nombre, contacto y necesidad.",
+          "Para esta demo, imaginemos que ya capturamos tus datos con cuidado.",
+          "Un equipo podría contactarte en minutos — sin formularios eternos.",
+          "Lead demo registrado. El siguiente paso real: hablar con Katem.",
+        ],
+      },
+    },
   },
   servicios: {
     label: "PROTOCOLO",
