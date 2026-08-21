@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Katem">
+  <rect width="32" height="32" rx="2" fill="#070609"/>
+  <rect x="1" y="1" width="30" height="30" rx="1.5" fill="none" stroke="#FF4FD8" stroke-width="1"/>
+  <path
+    fill="#F5F0F5"
+    d="M10.2 7.2c0-.7.55-1.25 1.25-1.25h1.7c.7 0 1.25.55 1.25 1.25v6.35l5.05-5.85c.35-.4.85-.65 1.4-.65h2.05c.95 0 1.5 1.1.95 1.85l-5.45 6.05 5.85 7.15c.5.75-.05 1.8-.95 1.8h-2.15c-.55 0-1.05-.25-1.4-.7l-5.35-6.85v5.75c0 .7-.55 1.25-1.25 1.25h-1.7c-.7 0-1.25-.55-1.25-1.25V7.2z"
+  />
+  <circle cx="24.8" cy="7.2" r="1.35" fill="#FF4FD8"/>
+</svg>
