@@ -16,7 +16,7 @@ export function CtaSection({ dict }: Props) {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,79,216,0.12),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(212,160,174,0.1),transparent_50%)]"
       />
       <div className="section__inner relative z-10 max-w-4xl">
         <h2

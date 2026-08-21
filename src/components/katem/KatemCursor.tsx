@@ -7,14 +7,13 @@ type Props = {
   labels: Dictionary["cursor"];
 };
 
+/** Pixel OS cursors (arrow + hand) — matte, no glow. */
 export function KatemCursor({ labels }: Props) {
-  const dotRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const labelRef = useRef<HTMLDivElement>(null);
-  const pos = useRef({ x: 0, y: 0 });
-  const target = useRef({ x: 0, y: 0 });
   const [enabled, setEnabled] = useState(false);
   const [label, setLabel] = useState("");
-  const [active, setActive] = useState(false);
+  const [pointer, setPointer] = useState(false);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
@@ -24,21 +23,13 @@ export function KatemCursor({ labels }: Props) {
     setEnabled(true);
     document.body.classList.add("has-custom-cursor");
 
-    let raf = 0;
     const onMove = (e: MouseEvent) => {
-      target.current = { x: e.clientX, y: e.clientY };
-    };
-
-    const tick = () => {
-      pos.current.x += (target.current.x - pos.current.x) * 0.22;
-      pos.current.y += (target.current.y - pos.current.y) * 0.22;
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       }
       if (labelRef.current) {
-        labelRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
+        labelRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       }
-      raf = requestAnimationFrame(tick);
     };
 
     const onOver = (e: MouseEvent) => {
@@ -46,12 +37,12 @@ export function KatemCursor({ labels }: Props) {
         "[data-cursor]"
       ) as HTMLElement | null;
       if (!el) {
-        setActive(false);
+        setPointer(false);
         setLabel("");
         return;
       }
       const kind = el.dataset.cursor;
-      setActive(true);
+      setPointer(true);
       if (kind === "enter") setLabel(labels.enter);
       else if (kind === "view") setLabel(labels.view);
       else if (kind === "explore") setLabel(labels.explore);
@@ -60,13 +51,11 @@ export function KatemCursor({ labels }: Props) {
 
     window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("mouseover", onOver);
-    raf = requestAnimationFrame(tick);
 
     return () => {
       document.body.classList.remove("has-custom-cursor");
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onOver);
-      cancelAnimationFrame(raf);
     };
   }, [labels]);
 
@@ -75,21 +64,48 @@ export function KatemCursor({ labels }: Props) {
   return (
     <>
       <div
-        ref={dotRef}
+        ref={cursorRef}
         aria-hidden
-        className={`pointer-events-none fixed left-0 top-0 z-[80] h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink mix-blend-difference transition-transform duration-200 ${
-          active ? "scale-[2.4]" : "scale-100"
-        }`}
-      />
+        className="pointer-events-none fixed left-0 top-0 z-[80]"
+      >
+        {pointer ? <PixelHand /> : <PixelArrow />}
+      </div>
       <div
         ref={labelRef}
         aria-hidden
-        className={`pointer-events-none fixed left-0 top-0 z-[80] -translate-x-1/2 -translate-y-[220%] font-mono text-[10px] tracking-[0.2em] text-pink transition-opacity duration-200 ${
-          active && label ? "opacity-100" : "opacity-0"
+        className={`pointer-events-none fixed left-0 top-0 z-[80] translate-x-5 -translate-y-6 font-mono text-[10px] tracking-[0.16em] text-rose ${
+          pointer && label ? "opacity-100" : "opacity-0"
         }`}
       >
         {label}
       </div>
     </>
+  );
+}
+
+function PixelArrow() {
+  return (
+    <svg width="18" height="22" viewBox="0 0 11 16" shapeRendering="crispEdges">
+      <path
+        fill="#F2EBE6"
+        stroke="#121212"
+        strokeWidth="1"
+        d="M1 1 V14 L4 11 H7 L1 1 Z"
+      />
+      <path fill="#C97B8F" d="M2 3 V10 L3 9 H5 L2 3 Z" opacity="0.85" />
+    </svg>
+  );
+}
+
+function PixelHand() {
+  return (
+    <svg width="20" height="22" viewBox="0 0 12 16" shapeRendering="crispEdges">
+      <path
+        fill="#F2EBE6"
+        stroke="#121212"
+        strokeWidth="1"
+        d="M4 1 V6 H3 V4 H2 V8 H1 V13 H10 V8 H9 V5 H8 V7 H7 V2 H6 V7 H5 V1 Z"
+      />
+    </svg>
   );
 }

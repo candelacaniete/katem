@@ -7,6 +7,7 @@ import { bookingHref } from "@/lib/site";
 import { KatemButton } from "@/components/katem/KatemButton";
 import { KatemGrid } from "@/components/katem/KatemGrid";
 import { KatemWindow } from "@/components/katem/KatemWindow";
+import { RetroCrt } from "@/components/katem/RetroCrt";
 
 type Props = {
   dict: Dictionary["hero"];
@@ -18,7 +19,7 @@ export function HeroSection({ dict }: Props) {
     dict.line1,
     <>
       {dict.line2Before}
-      <span className="font-accent inline-block origin-bottom -rotate-6 text-[1.18em] leading-none text-pink">
+      <span className="font-accent inline-block origin-bottom -rotate-6 text-[1.18em] leading-none text-rose">
         {dict.line2Accent}
       </span>
     </>,
@@ -34,18 +35,15 @@ export function HeroSection({ dict }: Props) {
       <KatemGrid />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_20%,rgba(255,79,216,0.12),transparent_45%),radial-gradient(ellipse_at_10%_90%,rgba(139,92,246,0.1),transparent_40%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_15%,rgba(212,160,174,0.12),transparent_50%)]"
       />
 
       <p className="tech-label absolute left-5 top-28 hidden sm:left-8 lg:left-10 lg:block">
         NODE_07 · BA 34°35&apos;S
       </p>
-      <p className="tech-label absolute right-5 top-[40%] hidden lg:block">
-        01 / X:234 Y:892
-      </p>
 
       <div className="section relative z-10 flex min-h-[100svh] flex-col justify-end pb-16 pt-28 lg:justify-center lg:pb-24 lg:pt-32">
-        <div className="section__inner grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+        <div className="section__inner grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14">
           <div>
             <h1 id="hero-heading" className="sr-only">
               {dict.line1} {dict.line2Before}
@@ -58,15 +56,11 @@ export function HeroSection({ dict }: Props) {
               {lines.map((line, i) => (
                 <motion.p
                   key={i}
-                  initial={
-                    reduce
-                      ? false
-                      : { opacity: 0, y: 28, filter: "blur(6px)" }
-                  }
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  initial={reduce ? false : { opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.7,
-                    delay: 0.15 + i * 0.12,
+                    duration: 0.55,
+                    delay: 0.12 + i * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="overflow-hidden"
@@ -78,26 +72,21 @@ export function HeroSection({ dict }: Props) {
 
             <motion.p
               className="mt-6 max-w-md whitespace-pre-line text-base leading-relaxed text-off-white/70 sm:text-lg"
-              initial={reduce ? false : { opacity: 0, y: 16 }}
+              initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.6 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
             >
               {dict.sub}
             </motion.p>
 
             <motion.div
-              className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6"
+              className="mt-8 flex flex-wrap gap-3"
               initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
             >
               <KatemButton href="#archivo">{dict.ctaPrimary}</KatemButton>
-              <KatemButton
-                href={bookingHref}
-                variant="ghost"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <KatemButton href={bookingHref} target="_blank" rel="noreferrer">
                 {dict.ctaSecondary}
               </KatemButton>
             </motion.div>
@@ -105,71 +94,54 @@ export function HeroSection({ dict }: Props) {
 
           <motion.div
             className="mx-auto w-full max-w-md lg:max-w-none"
-            initial={
-              reduce ? false : { opacity: 0, scale: 0.92, rotateY: 5 }
-            }
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ delay: 0.35, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            style={{ perspective: 1000 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <motion.div
-              animate={reduce ? undefined : { y: [-6, 6, -6] }}
-              transition={
-                reduce
-                  ? undefined
-                  : { duration: 7, repeat: Infinity, ease: "easeInOut" }
-              }
-            >
+            <RetroCrt frame="beige" label="KATEM_CRT.exe">
               <KatemWindow
                 title={dict.windowTitle}
-                className="bg-purple-black/80"
+                variant="dark"
+                className="h-full border-0 shadow-none"
                 footer={
                   <>
-                    <span className="text-pink">{dict.status}</span>
+                    <span className="text-rose">{dict.status}</span>
                     <ClockLabel />
                   </>
                 }
               >
-                <div
-                  className="relative aspect-[4/5] overflow-hidden p-5 sm:aspect-[5/4] sm:p-6 lg:aspect-[4/5]"
-                  data-cursor="explore"
-                >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,79,216,0.28),transparent_42%),linear-gradient(160deg,#100A16,#070609)]" />
-                  <div className="absolute inset-0 opacity-25 mix-blend-overlay katem-grid-bg" />
+                <div className="relative min-h-[18rem] p-4 sm:min-h-[20rem] sm:p-5">
                   <div className="halftone-layer absolute inset-0" aria-hidden />
-
                   <div className="relative z-10 flex h-full flex-col">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-pink">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-rose">
                       {dict.visualLabel}
                     </p>
-
-                    <ul className="mt-8 space-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-off-white/75 sm:text-xs">
+                    <ul className="mt-6 space-y-2 font-mono text-[11px] uppercase tracking-[0.12em] text-off-white/75">
                       {dict.systemRows.map((row) => (
                         <li
                           key={row.id}
-                          className="flex items-center justify-between gap-4 border-b border-off-white/10 pb-2"
+                          className="flex items-center justify-between gap-3 border-b border-off-white/10 pb-2"
                         >
                           <span>
-                            <span className="text-pink">{row.id}</span>{" "}
+                            <span className="text-rose">{row.id}</span>{" "}
                             {row.label}
                           </span>
-                          <span className="text-pink/80">{row.state}</span>
+                          <span className="text-rose/90">{row.state}</span>
                         </li>
                       ))}
                     </ul>
-
-                    <div className="mt-auto pt-8">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/45">
+                    <div className="mt-auto pt-6">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/40">
                         {dict.signalLabel}
                       </p>
-                      <p className="mt-2 font-mono text-xs text-pink sm:text-sm">
+                      <p className="mt-2 font-mono text-xs text-rose">
                         {dict.signalBar}
                       </p>
                     </div>
                   </div>
                 </div>
               </KatemWindow>
-            </motion.div>
+            </RetroCrt>
           </motion.div>
         </div>
       </div>

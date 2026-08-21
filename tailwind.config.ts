@@ -9,13 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black: "#070609",
-        "purple-black": "#100A16",
-        "off-white": "#F5F0F5",
-        pink: "#FF4FD8",
-        violet: "#8B5CF6",
-        lavender: "#DCC6FF",
-        "ui-gray": "#1A171D",
+        black: "#121212",
+        "purple-black": "#1A1518",
+        "off-white": "#F2EBE6",
+        pink: "#C97B8F",
+        rose: "#D4A0AE",
+        bubble: "#E8A4B8",
+        violet: "#8B7A9E",
+        lavender: "#C9BDD4",
+        "ui-gray": "#C0C0C0",
+        navy: "#000080",
+        beige: "#DED7CC",
+        screen: "#0D0D0D",
+        "win-shadow": "#808080",
+        "win-dark": "#404040",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -27,15 +34,15 @@ const config: Config = {
         "accent-imperial": ["var(--font-accent-imperial)", "cursive"],
       },
       boxShadow: {
-        "glow-pink": "0 0 24px rgba(255, 79, 216, 0.28)",
-        "glow-violet": "0 0 28px rgba(139, 92, 246, 0.22)",
-        window: "0 24px 80px rgba(0, 0, 0, 0.55)",
+        window: "2px 2px 0 rgba(0,0,0,0.45)",
+        "win-out": "inset 1px 1px 0 #fff, inset -1px -1px 0 #404040",
+        "win-in": "inset 1px 1px 0 #808080, inset -1px -1px 0 #fff",
       },
       backgroundImage: {
         "katem-grid":
-          "linear-gradient(rgba(245, 240, 245, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 240, 245, 0.04) 1px, transparent 1px)",
+          "linear-gradient(rgba(242, 235, 230, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 235, 230, 0.07) 1px, transparent 1px)",
         "katem-dots":
-          "radial-gradient(rgba(245, 240, 245, 0.12) 0.6px, transparent 0.7px)",
+          "radial-gradient(rgba(242, 235, 230, 0.14) 0.6px, transparent 0.7px)",
       },
       backgroundSize: {
         "katem-grid": "48px 48px",

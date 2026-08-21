@@ -7,7 +7,6 @@ import { HtmlLang } from "@/components/katem/HtmlLang";
 import { KatemBoot } from "@/components/katem/KatemBoot";
 import { KatemCrt } from "@/components/katem/KatemCrt";
 import { KatemCursor } from "@/components/katem/KatemCursor";
-import { KatemMouseGlow } from "@/components/katem/KatemMouseGlow";
 import { KatemNav } from "@/components/katem/KatemNav";
 import { SmoothScroll } from "@/components/katem/SmoothScroll";
 import { ArchivoSection } from "@/components/sections/ArchivoSection";
@@ -40,7 +39,6 @@ export function HomeExperience({ dict, locale }: Props) {
       />
       <KatemCrt />
       <KatemCursor labels={dict.cursor} />
-      <KatemMouseGlow />
       <SmoothScroll />
 
       <div

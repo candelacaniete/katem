@@ -16,8 +16,8 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "64px 72px",
-          background: "linear-gradient(145deg, #070609 0%, #100A16 55%, #1A0F24 100%)",
-          color: "#F5F0F5",
+          background: "linear-gradient(145deg, #121212 0%, #1A1518 60%, #2A2226 100%)",
+          color: "#F2EBE6",
           fontFamily: "sans-serif",
         }}
       >
@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
             fontSize: 22,
             letterSpacing: "0.22em",
             textTransform: "uppercase",
-            color: "#DCC6FF",
+            color: "#D4A0AE",
           }}
         >
           <span>{site.brand}</span>
@@ -51,7 +51,7 @@ export default function OpenGraphImage() {
           <div
             style={{
               fontSize: 28,
-              color: "#DCC6FF",
+              color: "#C9BDD4",
               maxWidth: 760,
               lineHeight: 1.35,
             }}
@@ -69,7 +69,7 @@ export default function OpenGraphImage() {
             fontSize: 22,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            color: "#FF4FD8",
+            color: "#C97B8F",
           }}
         >
           <span>{site.domain}</span>

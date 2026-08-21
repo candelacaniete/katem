@@ -4,12 +4,12 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 type Props = ComponentPropsWithoutRef<"a"> & {
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "os";
   children: ReactNode;
 };
 
 export function KatemButton({
-  variant = "primary",
+  variant = "os",
   className,
   children,
   ...props
@@ -17,8 +17,9 @@ export function KatemButton({
   return (
     <a
       className={cn(
-        "btn",
-        variant === "primary" ? "btn--primary" : "btn--ghost",
+        variant === "os" && "os-btn",
+        variant === "primary" && "os-btn",
+        variant === "ghost" && "btn btn--ghost",
         className
       )}
       data-cursor="enter"
