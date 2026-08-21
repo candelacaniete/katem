@@ -93,6 +93,7 @@ export function ArchivoSection({ dict }: Props) {
         className="object-cover transition-transform duration-[1200ms] ease-katem group-hover:scale-105"
         sizes="(max-width: 768px) 85vw, 50vw"
       />
+      <div className="halftone-layer absolute inset-0 opacity-70" aria-hidden />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
       <div className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-30 bg-[linear-gradient(90deg,rgba(255,79,216,0.25),transparent_45%)]" />
       <div className="absolute left-3 top-3 font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/80">

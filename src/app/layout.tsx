@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
+import {
+  Syne,
+  DM_Sans,
+  JetBrains_Mono,
+  Pinyon_Script,
+} from "next/font/google";
 import { defaultLocale, isLocale } from "@/i18n/config";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -24,6 +29,13 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
   weight: ["400", "500"],
+});
+
+const accent = Pinyon_Script({
+  subsets: ["latin"],
+  variable: "--font-accent",
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -99,7 +111,7 @@ export default function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={`${display.variable} ${body.variable} ${mono.variable} font-body bg-black text-off-white`}
+        className={`${display.variable} ${body.variable} ${mono.variable} ${accent.variable} font-body bg-black text-off-white`}
       >
         {children}
       </body>

@@ -18,7 +18,9 @@ export function HeroSection({ dict }: Props) {
     dict.line1,
     <>
       {dict.line2Before}
-      <span className="text-pink">{dict.line2Accent}</span>
+      <span className="font-accent inline-block origin-bottom -rotate-6 text-[1.18em] leading-none text-pink">
+        {dict.line2Accent}
+      </span>
     </>,
     dict.line3,
   ];
@@ -134,6 +136,7 @@ export function HeroSection({ dict }: Props) {
                 >
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,79,216,0.28),transparent_42%),linear-gradient(160deg,#100A16,#070609)]" />
                   <div className="absolute inset-0 opacity-25 mix-blend-overlay katem-grid-bg" />
+                  <div className="halftone-layer absolute inset-0" aria-hidden />
 
                   <div className="relative z-10 flex h-full flex-col">
                     <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-pink">

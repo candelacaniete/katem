@@ -31,6 +31,7 @@ export function HomeExperience({ dict, locale }: Props) {
 
   return (
     <div className="site-shell">
+      <div className="grain-overlay" aria-hidden />
       <HtmlLang locale={locale} />
       <KatemBoot
         copy={dict.boot}
