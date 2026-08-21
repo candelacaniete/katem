@@ -143,24 +143,67 @@ const en: Dictionary = {
       ctaLink: "Let's talk →",
       ctaHref: bookingHref,
       menuAgain: "Back to menu",
+      stepHint: "DEMO / PICK AN OPTION",
+      ctaHint: "DEMO / CTA",
       flows: {
         TURNO: [
-          "Perfect. Let's book an appointment (demo).",
-          "Which service would this be for? Answer freely.",
-          "Got it. What day and time work for you?",
-          "Done: simulated booking confirmed. In a real bot, this would land on your calendar.",
+          {
+            prompt:
+              "Perfect. Let's book an appointment (demo). Which service would it be for?",
+            options: [
+              { id: "corte", label: "Haircut" },
+              { id: "color", label: "Color" },
+              { id: "otro", label: "Other service" },
+            ],
+            storeAs: "servicio",
+          },
+          {
+            prompt: "Noted for {servicio}. Which day works best?",
+            options: [
+              { id: "hoy", label: "Today" },
+              { id: "semana", label: "This week" },
+              { id: "proxima", label: "Next week" },
+            ],
+            storeAs: "dia",
+          },
+          {
+            prompt:
+              "Done: simulated booking confirmed for {servicio}, {dia}. In a real bot this would land on your calendar.",
+          },
         ],
         INFO: [
-          "Sure. Here's what a bot like this can answer.",
-          "Demo services: inquiries, bookings, and lead follow-up.",
-          "Pricing is configured per business. This demo doesn't quote live rates.",
-          "If you want, type LEAD and we'll capture your details for a real conversation.",
+          {
+            prompt: "What would you like info about?",
+            options: [
+              { id: "precios", label: "Prices" },
+              { id: "servicios", label: "Services" },
+              { id: "horarios", label: "Hours" },
+            ],
+            storeAs: "tema",
+            replyByOption: {
+              precios:
+                "Demo pricing: configured per business. This demo doesn't quote live rates.",
+              servicios:
+                "Demo services: inquiries, bookings, and lead follow-up.",
+              horarios:
+                "Demo hours: a real bot would answer from your live schedule (e.g. Mon–Fri 10–18).",
+            },
+          },
         ],
         LEAD: [
-          "Great. A real bot would ask for name, contact, and need.",
-          "For this demo, imagine we already captured your details carefully.",
-          "A team could follow up in minutes — no endless forms.",
-          "Demo lead logged. Next real step: talk with Katem.",
+          {
+            prompt: "How would you prefer we contact you?",
+            options: [
+              { id: "whatsapp", label: "WhatsApp" },
+              { id: "email", label: "Email" },
+              { id: "llamada", label: "Call" },
+            ],
+            storeAs: "canal",
+          },
+          {
+            prompt:
+              "Perfect — in a real bot we'd ask for the contact detail next and log it as a lead. (demo)",
+          },
         ],
       },
     },

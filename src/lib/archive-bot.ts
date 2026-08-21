@@ -1,5 +1,18 @@
 export type BotIntent = "TURNO" | "INFO" | "LEAD";
 
+export type FlowOption = {
+  id: string;
+  label: string;
+};
+
+export type FlowStep = {
+  prompt: string;
+  options?: FlowOption[];
+  storeAs?: string;
+  /** When set, choosing an option plays this reply (by option id) then ends the flow. */
+  replyByOption?: Record<string, string>;
+};
+
 const INTENT_KEYWORDS: Record<BotIntent, string[]> = {
   TURNO: [
     "turno",
@@ -50,12 +63,21 @@ export function matchBotIntent(value: string): BotIntent | null {
   if (!normalized) return null;
 
   for (const intent of INTENT_ORDER) {
-    if (INTENT_KEYWORDS[intent].some((keyword) => normalized.includes(keyword))) {
+    if (
+      INTENT_KEYWORDS[intent].some((keyword) => normalized.includes(keyword))
+    ) {
       return intent;
     }
   }
 
   return null;
+}
+
+export function interpolateFlowText(
+  template: string,
+  vars: Record<string, string>
+) {
+  return template.replace(/\{(\w+)\}/g, (_, key: string) => vars[key] ?? "");
 }
 
 export function typingDelayMs() {
