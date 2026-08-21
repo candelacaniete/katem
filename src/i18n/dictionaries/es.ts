@@ -306,6 +306,7 @@ const es = {
   estudio: {
     label: "ESTUDIO",
     title: ["KATEM", "NACIÓ DE UNA", "INCONFORMIDAD."],
+    command: "$ cat about.txt",
     paragraphs: [
       "Creemos que internet debería sentirse menos genérico.",
       "Combinamos diseño, estrategia y tecnología para construir experiencias digitales que hacen que un negocio sea más fácil de entender, confiar y recordar.",

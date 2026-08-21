@@ -307,6 +307,7 @@ const en: Dictionary = {
   estudio: {
     label: "STUDIO",
     title: ["KATEM", "WAS BORN FROM", "RESTLESSNESS."],
+    command: "$ cat about.txt",
     paragraphs: [
       "We believe the internet should feel less generic.",
       "We combine design, strategy and technology to build digital experiences that make businesses easier to understand, trust and remember.",

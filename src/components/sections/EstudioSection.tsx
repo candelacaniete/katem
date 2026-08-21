@@ -15,7 +15,7 @@ export function EstudioSection({ dict }: Props) {
       className="section relative overflow-hidden bg-black"
       aria-labelledby="estudio-heading"
     >
-      <div className="section__inner grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
+      <div className="section__inner grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
         <div>
           <KatemLabel>{dict.label}</KatemLabel>
           <h2
@@ -24,16 +24,6 @@ export function EstudioSection({ dict }: Props) {
           >
             {dict.title.join("\n")}
           </h2>
-          <div className="mt-8 max-w-xl space-y-4 text-base leading-relaxed text-off-white/70">
-            {dict.paragraphs.map((p) => (
-              <p key={p} className="whitespace-pre-line">
-                {p}
-              </p>
-            ))}
-          </div>
-          <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-pink/80">
-            {dict.meta}
-          </p>
         </div>
 
         <KatemWindow
@@ -42,7 +32,7 @@ export function EstudioSection({ dict }: Props) {
           footer={<span className="text-pink">{dict.windowStatus}</span>}
         >
           <div
-            className="group relative aspect-[4/5] overflow-hidden p-5 sm:p-6"
+            className="group relative overflow-hidden p-5 sm:p-6"
             data-cursor="explore"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(255,79,216,0.28),transparent_40%),linear-gradient(180deg,#1A171D,#070609)]" />
@@ -56,27 +46,23 @@ export function EstudioSection({ dict }: Props) {
               }}
             />
 
-            <div className="relative z-10 flex h-full flex-col">
-              <p className="font-display text-3xl font-semibold tracking-tight text-off-white">
-                {dict.windowTitle}
-              </p>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pink">
-                {dict.windowSubtitle}
-              </p>
+            <div className="relative z-10 font-mono text-[12px] leading-relaxed text-off-white/80 sm:text-[13px]">
+              <p className="text-pink">{dict.command}</p>
 
-              <ul className="mt-8 space-y-1 font-mono text-[11px] uppercase tracking-[0.16em] text-off-white/60">
-                {dict.windowPlaces.map((place) => (
-                  <li key={place}>{place}</li>
+              <div className="mt-5 space-y-4 text-off-white/75">
+                {dict.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="flex gap-2 whitespace-pre-line">
+                    <span className="shrink-0 select-none text-pink/80" aria-hidden>
+                      &gt;
+                    </span>
+                    <span>{paragraph}</span>
+                  </p>
                 ))}
-              </ul>
+              </div>
 
-              <ul className="mt-auto grid grid-cols-2 gap-3 border-t border-off-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/70">
-                {dict.windowCapabilities.map((cap) => (
-                  <li key={cap} className="border border-off-white/10 px-2 py-2">
-                    {cap}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-8 border-t border-off-white/10 pt-5 text-[10px] uppercase tracking-[0.2em] text-off-white/55 sm:text-[11px]">
+                {dict.meta}
+              </p>
             </div>
           </div>
         </KatemWindow>
