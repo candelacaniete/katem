@@ -13,7 +13,6 @@ const STORAGE_KEY = "katem-boot-seen";
 
 export function KatemBoot({ copy, skipLabel, onDone }: Props) {
   const [visible, setVisible] = useState(false);
-  const [lineIndex, setLineIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -37,18 +36,17 @@ export function KatemBoot({ copy, skipLabel, onDone }: Props) {
       return;
     }
 
-    const total = 2000;
+    const total = 1800;
     const start = performance.now();
     let raf = 0;
 
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / total);
       setProgress(Math.round(t * 100));
-      setLineIndex(Math.min(copy.lines.length - 1, Math.floor(t * copy.lines.length)));
       if (t < 1) {
         raf = requestAnimationFrame(tick);
       } else {
-        window.setTimeout(finish, 280);
+        window.setTimeout(finish, 320);
       }
     };
 
@@ -69,50 +67,43 @@ export function KatemBoot({ copy, skipLabel, onDone }: Props) {
 
   if (!visible) return null;
 
-  const bars = Math.max(1, Math.round(progress / 5));
+  const blocks = Math.max(1, Math.round(progress / 5));
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black px-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-6"
       role="dialog"
       aria-label="Introducción Katem"
     >
-      <div className="w-full max-w-md font-mono text-sm text-off-white/85">
-        <p className="font-display text-3xl font-semibold tracking-tight text-off-white">
-          {copy.brand}
-        </p>
-        <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-pink">
-          {copy.studio}
-        </p>
-        <div className="mt-8 space-y-2 text-[12px] text-off-white/60">
-          {copy.lines.slice(0, lineIndex + 1).map((line) => (
-            <p key={line}>{line}</p>
-          ))}
+      <div className="os-window os-window--classic w-full max-w-sm">
+        <div className="os-window__bar os-window__bar--rose">
+          <span>KATEM_OS.exe</span>
+          <span className="os-window__controls" aria-hidden>
+            <span className="os-window__ctrl">X</span>
+          </span>
         </div>
-        <p className="mt-6 text-pink">
-          {"█".repeat(bars)}
-          <span className="text-off-white/25">{"░".repeat(20 - bars)}</span>{" "}
-          {progress}%
-        </p>
-        {progress >= 100 ? (
-          <p className="mt-4 text-off-white glitch-once">{copy.welcome}</p>
-        ) : null}
-        <button
-          type="button"
-          onClick={finish}
-          className="mt-10 font-mono text-[11px] uppercase tracking-[0.2em] text-off-white/45 underline-offset-4 hover:text-pink hover:underline"
-        >
-          {skipLabel}
-        </button>
+        <div className="space-y-4 bg-[#E8D4DA] p-4 text-win-dark">
+          <p className="text-center font-mono text-sm text-win-dark">
+            {copy.lines[0] ?? "Loading..."}
+          </p>
+          <div className="os-progress" aria-hidden>
+            {Array.from({ length: blocks }).map((_, i) => (
+              <span key={i} className="os-progress__block os-progress__block--rose" />
+            ))}
+          </div>
+          <p className="text-center font-mono text-[11px] text-win-dark/80">
+            {copy.brand} · {progress}%
+          </p>
+          <div className="flex justify-center gap-2 pt-1">
+            <button type="button" disabled className="os-btn opacity-50">
+              Done
+            </button>
+            <button type="button" onClick={finish} className="os-btn">
+              {skipLabel}
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          background:
-            "repeating-linear-gradient(to bottom, transparent 0, transparent 2px, #fff 2px, #fff 3px)",
-        }}
-      />
     </div>
   );
 }

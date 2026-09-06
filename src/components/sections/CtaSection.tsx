@@ -16,7 +16,7 @@ export function CtaSection({ dict }: Props) {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,79,216,0.12),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(212,160,174,0.1),transparent_50%)]"
       />
       <div className="section__inner relative z-10 max-w-4xl">
         <h2
@@ -27,7 +27,9 @@ export function CtaSection({ dict }: Props) {
             <span
               key={line}
               className={
-                line === dict.accent ? "block text-pink" : "block text-off-white"
+                line === dict.accent
+                  ? "font-bubbly mt-2 block text-[clamp(2.2rem,7vw,4.5rem)]"
+                  : "block text-off-white"
               }
             >
               {line}

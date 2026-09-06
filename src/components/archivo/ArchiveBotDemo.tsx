@@ -259,36 +259,32 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="katem-window flex max-h-[min(92vh,720px)] w-full max-w-lg flex-col overflow-hidden shadow-glow-pink"
+        className="os-window os-window--classic flex max-h-[min(92vh,720px)] w-full max-w-lg flex-col overflow-hidden"
       >
-        <div className="katem-window__bar">
+        <div className="os-window__bar os-window__bar--navy">
           <span id={titleId} className="truncate">
             {copy.windowTitle}
           </span>
-          <button
-            type="button"
-            onClick={onClose}
-            className="font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/70 transition-colors hover:text-pink"
-          >
-            {copy.close}
+          <button type="button" onClick={onClose} className="os-window__ctrl">
+            X
           </button>
         </div>
 
         <div
           ref={scrollerRef}
-          className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-purple-black/80 px-4 py-4"
+          className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto bg-ui-gray px-4 py-4 text-black"
         >
           {messages.map((message) => (
             <div
               key={message.id}
               className={cn(
-                "max-w-[92%] rounded-sm border px-3 py-2 text-sm leading-relaxed",
+                "max-w-[92%] border-2 px-3 py-2 text-sm leading-relaxed",
                 message.role === "bot"
-                  ? "self-start border-off-white/15 bg-black/50 text-off-white/90"
-                  : "self-end border-pink/35 bg-pink/10 text-off-white"
+                  ? "self-start border-win-shadow bg-white text-black"
+                  : "self-end border-navy bg-navy text-white"
               )}
             >
-              <p className="mb-1 font-mono text-[9px] uppercase tracking-[0.16em] text-off-white/40">
+              <p className="mb-1 font-mono text-[9px] uppercase tracking-[0.16em] opacity-50">
                 {message.role === "bot" ? "BOT" : "YOU"}
               </p>
               <p>{message.text}</p>
@@ -296,7 +292,7 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
           ))}
 
           {typing ? (
-            <div className="self-start border border-off-white/10 bg-black/40 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-lavender">
+            <div className="self-start border border-win-shadow bg-white px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-win-dark">
               {copy.typing}
             </div>
           ) : null}
@@ -308,9 +304,12 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
                   key={option.id}
                   type="button"
                   onClick={() => onPickOption(option)}
-                  className="border border-pink/40 bg-pink/10 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-pink transition-colors hover:bg-pink/20 hover:text-off-white"
+                  className="os-btn"
                   data-cursor="enter"
                 >
+                  <span aria-hidden className="mr-1 text-navy">
+                    ▲
+                  </span>
                   {option.label}
                 </button>
               ))}
@@ -318,23 +317,19 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
           ) : null}
 
           {phase === "cta" && !typing ? (
-            <div className="mt-1 self-start border border-pink/30 bg-black/60 px-3 py-3">
-              <p className="text-sm text-off-white/90">{copy.ctaText}</p>
+            <div className="mt-1 self-start border-2 border-win-shadow bg-white px-3 py-3">
+              <p className="text-sm text-black">{copy.ctaText}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <a
                   href={copy.ctaHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="border border-pink/40 bg-pink/10 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-pink transition-colors hover:bg-pink/20 hover:text-off-white"
+                  className="os-btn"
                   data-cursor="enter"
                 >
                   {copy.ctaLink}
                 </a>
-                <button
-                  type="button"
-                  onClick={resetToMenu}
-                  className="border border-off-white/20 bg-black/40 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-off-white/70 transition-colors hover:border-off-white/40 hover:text-off-white"
-                >
+                <button type="button" onClick={resetToMenu} className="os-btn">
                   {copy.menuAgain}
                 </button>
               </div>
@@ -345,7 +340,7 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
         {phase === "menu" ? (
           <form
             onSubmit={onSubmit}
-            className="flex items-center gap-2 border-t border-off-white/10 bg-black px-3 py-3"
+            className="flex items-center gap-2 border-t border-win-shadow bg-ui-gray px-3 py-3"
           >
             <input
               ref={inputRef}
@@ -353,19 +348,20 @@ export function ArchiveBotDemo({ open, onClose, copy }: Props) {
               onChange={(event) => setInput(event.target.value)}
               placeholder={copy.inputPlaceholder}
               disabled={!inputEnabled}
-              className="min-w-0 flex-1 border border-off-white/15 bg-purple-black px-3 py-2 font-mono text-xs text-off-white outline-none placeholder:text-off-white/30 focus:border-pink/50 disabled:opacity-50"
+              className="min-w-0 flex-1 border-2 bg-white px-3 py-2 font-mono text-xs text-black outline-none placeholder:text-win-shadow disabled:opacity-50"
+              style={{ borderColor: "#808080 #fff #fff #808080" }}
               autoComplete="off"
             />
             <button
               type="submit"
               disabled={!inputEnabled || !input.trim()}
-              className="shrink-0 border border-pink/40 bg-pink/10 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-pink transition-colors hover:bg-pink/20 disabled:opacity-40"
+              className="os-btn disabled:opacity-40"
             >
               {copy.send}
             </button>
           </form>
         ) : (
-          <div className="border-t border-off-white/10 bg-black px-3 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-off-white/35">
+          <div className="border-t border-win-shadow bg-ui-gray px-3 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-win-dark">
             {phase === "cta" ? copy.ctaHint : copy.stepHint}
           </div>
         )}

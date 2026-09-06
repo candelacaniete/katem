@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --black: #070609;
-  --purple-black: #100a16;
-  --off-white: #f5f0f5;
-  --pink: #ff4fd8;
-  --violet: #8b5cf6;
-  --lavender: #dcc6ff;
-  --ui-gray: #1a171d;
+  --black: #121212;
+  --purple-black: #1a1518;
+  --off-white: #f2ebe6;
+  --pink: #c97b8f;
+  --rose: #d4a0ae;
+  --bubble: #e8a4b8;
+  --violet: #8b7a9e;
+  --lavender: #c9bdd4;
+  --ui-gray: #c0c0c0;
+  --navy: #000080;
+  --beige: #ded7cc;
+  --screen: #0d0d0d;
+  --win-shadow: #808080;
+  --win-dark: #404040;
+  --grain-opacity: 0.055;
 }
 
 @layer base {
@@ -36,13 +44,13 @@
   }
 
   ::selection {
-    background: rgba(255, 79, 216, 0.35);
-    color: #f5f0f5;
+    background: rgba(201, 123, 143, 0.4);
+    color: #f2ebe6;
   }
 
   :focus-visible {
-    outline: 1px solid var(--pink);
-    outline-offset: 3px;
+    outline: 1px dotted #000;
+    outline-offset: 2px;
   }
 
   a:focus:not(:focus-visible),
@@ -59,6 +67,7 @@
 @layer components {
   .site-shell {
     @apply relative min-h-screen overflow-x-hidden bg-black text-off-white;
+    --grain-opacity: 0.055;
   }
 
   .section {
@@ -70,7 +79,7 @@
   }
 
   .section__label {
-    @apply mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-off-white/45;
+    @apply mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-off-white/55;
   }
 
   .section__title {
@@ -84,58 +93,133 @@
       theme("backgroundSize.katem-dots");
   }
 
+  /* --- Win95 / classic OS window --- */
+  .os-window {
+    @apply relative overflow-hidden;
+  }
+
+  .os-window--classic {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .os-window--dark {
+    background: #1a1518;
+    border: 2px solid;
+    border-color: #808080 #000 #000 #808080;
+  }
+
+  .os-window__bar {
+    @apply flex items-center justify-between gap-3 px-2 py-1 font-mono text-[11px] uppercase tracking-[0.12em];
+  }
+
+  .os-window__bar--navy {
+    background: #000080;
+    color: #fff;
+  }
+
+  .os-window__bar--rose {
+    background: #c97b8f;
+    color: #f2ebe6;
+  }
+
+  .os-window--dark .os-window__bar {
+    background: #2a2226;
+    color: #f2ebe6;
+    border-bottom: 1px solid #404040;
+  }
+
+  .os-window__controls {
+    @apply flex items-center gap-1;
+  }
+
+  .os-window__ctrl {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    align-items: center;
+    justify-content: center;
+    background: #c0c0c0;
+    color: #000;
+    border: 1px solid;
+    border-color: #fff #404040 #404040 #fff;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  .os-window--dark .os-window__ctrl {
+    background: #c0c0c0;
+    color: #000;
+  }
+
+  /* legacy class names map to OS window */
   .katem-window {
-    @apply relative overflow-hidden border border-off-white/15 bg-ui-gray/80 shadow-window backdrop-blur-sm;
+    @apply os-window os-window--classic;
   }
 
   .katem-window__bar {
-    @apply flex items-center justify-between border-b border-off-white/10 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/55;
+    @apply os-window__bar os-window__bar--navy;
   }
 
   .katem-window__controls {
-    @apply flex items-center gap-2 text-off-white/40;
+    @apply os-window__controls;
   }
 
+  /* --- OS button (matte bevel, no glow) --- */
+  .os-btn,
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-none border px-5 py-3 font-body text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 ease-katem sm:text-sm;
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] sm:text-xs;
+    background: #c0c0c0;
+    color: #000;
+    border: 2px solid;
+    border-color: #fff #404040 #404040 #fff;
+    text-decoration: none;
   }
 
-  .btn--primary {
-    @apply border-pink bg-transparent text-off-white;
+  .os-btn:hover,
+  .btn--primary:hover,
+  .btn:hover {
+    background: #d4d4d4;
   }
 
-  .btn--primary:hover {
-    @apply bg-pink text-black shadow-glow-pink;
+  .os-btn:active,
+  .btn:active {
+    border-color: #404040 #fff #fff #404040;
   }
 
   .btn--ghost {
-    @apply border-transparent bg-transparent px-0 text-off-white/80 underline-offset-4;
+    background: transparent;
+    border-color: transparent;
+    color: #f2ebe6;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   .btn--ghost:hover {
-    @apply text-pink underline;
+    color: #d4a0ae;
+    background: transparent;
   }
 
   .tech-label {
-    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/40;
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/45;
   }
 
+  /* --- Scanlines (matte CRT, no glow) --- */
   .crt-overlay {
     pointer-events: none;
     position: fixed;
     inset: 0;
     z-index: 60;
-    opacity: 0.035;
-    background:
-      repeating-linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 2px,
-        rgba(255, 255, 255, 0.04) 2px,
-        rgba(255, 255, 255, 0.04) 3px
-      ),
-      radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
-    mix-blend-mode: soft-light;
+    opacity: 0.06;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.35) 2px,
+      rgba(0, 0, 0, 0.35) 3px
+    );
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -144,27 +228,205 @@
     }
   }
 
-  .glitch-once {
-    animation: katem-glitch 220ms steps(2, end);
+  /* --- Retro CRT TV --- */
+  .retro-crt {
+    @apply relative w-full;
   }
 
-  @keyframes katem-glitch {
-    0% {
-      transform: translate(0);
-      filter: none;
-    }
-    20% {
-      transform: translate(-1px, 0.5px);
-      filter: hue-rotate(15deg);
-    }
-    40% {
-      transform: translate(1px, -0.5px);
-      filter: none;
-    }
-    100% {
-      transform: translate(0);
-      filter: none;
-    }
+  .retro-crt__shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 52px;
+    gap: 0;
+    border-radius: 1.25rem;
+    padding: 0.85rem 0.65rem 0.85rem 0.85rem;
+    border: 3px solid #2a2426;
+  }
+
+  .retro-crt--beige .retro-crt__shell {
+    background: #ded7cc;
+  }
+
+  .retro-crt--rose .retro-crt__shell {
+    background: #d4a0ae;
+  }
+
+  .retro-crt__screen-wrap {
+    border-radius: 0.85rem;
+    padding: 0.55rem;
+    background: #b8b0a6;
+    border: 2px solid;
+    border-color: #8a8278 #f0eae2 #f0eae2 #8a8278;
+  }
+
+  .retro-crt--rose .retro-crt__screen-wrap {
+    background: #c48b9a;
+    border-color: #9a6876 #efd0d8 #efd0d8 #9a6876;
+  }
+
+  .retro-crt__screen {
+    @apply relative overflow-hidden;
+    border-radius: 0.55rem;
+    background: #0d0d0d;
+    min-height: 16rem;
+    border: 2px solid #1a1a1a;
+  }
+
+  .retro-crt__panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .retro-crt__grille {
+    width: 28px;
+    height: 36px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #2a2426 0 1px,
+      transparent 1px 3px
+    );
+    opacity: 0.55;
+  }
+
+  .retro-crt__knob {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #cfc7bb;
+    border: 2px solid #2a2426;
+    box-shadow: inset 1px 1px 0 #fff;
+  }
+
+  .retro-crt--rose .retro-crt__knob {
+    background: #e8b8c4;
+  }
+
+  .retro-crt__ridges {
+    width: 22px;
+    height: 18px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #2a2426 0 2px,
+      transparent 2px 4px
+    );
+    opacity: 0.4;
+  }
+
+  .retro-crt__tag {
+    @apply mt-2 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-off-white/45;
+  }
+
+  /* --- Arcade cabinet --- */
+  .arcade {
+    @apply relative mx-auto w-full max-w-3xl;
+    background: #e8a4b8;
+    border: 3px solid #2a2426;
+    border-radius: 1rem 1rem 0.5rem 0.5rem;
+    padding: 0.75rem 0.75rem 0.5rem;
+  }
+
+  .arcade__marquee {
+    @apply mb-3 flex items-center justify-between gap-3 rounded-md px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em];
+    background: #2a2426;
+    color: #f2ebe6;
+  }
+
+  .arcade__star {
+    color: #e8a4b8;
+  }
+
+  .arcade__title {
+    @apply font-display text-sm font-semibold tracking-tight;
+  }
+
+  .arcade__sub {
+    color: #c9bdd4;
+  }
+
+  .arcade__bezel {
+    background: #2a2426;
+    padding: 0.65rem;
+    border-radius: 0.35rem;
+  }
+
+  .arcade__screen {
+    @apply relative overflow-hidden bg-screen;
+    min-height: 18rem;
+    border: 2px solid #121212;
+  }
+
+  .arcade__controls {
+    @apply mt-3 flex items-center justify-between gap-4 rounded-md px-4 py-3;
+    background: #c9bdd4;
+    border: 2px solid #2a2426;
+  }
+
+  .arcade__stick {
+    width: 18px;
+    height: 28px;
+    border-radius: 999px;
+    background: #2a2426;
+    position: relative;
+  }
+
+  .arcade__stick::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #f2ebe6;
+    border: 2px solid #2a2426;
+  }
+
+  .arcade__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.45rem;
+  }
+
+  .arcade__buttons span {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #c97b8f;
+    border: 2px solid #2a2426;
+  }
+
+  .arcade__grille {
+    @apply mx-auto mt-2 h-3 w-2/3;
+    background: radial-gradient(#2a2426 1px, transparent 1.2px);
+    background-size: 6px 6px;
+    opacity: 0.35;
+  }
+
+  /* Progress blocks (Win95) */
+  .os-progress {
+    @apply flex h-5 gap-[2px] overflow-hidden border-2 bg-white p-[2px];
+    border-color: #808080 #fff #fff #808080;
+  }
+
+  .os-progress__block {
+    width: 10px;
+    background: #000080;
+  }
+
+  .os-progress__block--rose {
+    background: #c97b8f;
+  }
+
+  .glitch-once {
+    animation: none;
+  }
+
+  .terminal-caret {
+    animation: blink-caret 1s step-end infinite;
   }
 
   @keyframes blink-caret {
@@ -178,28 +440,23 @@
     }
   }
 
-  .terminal-caret {
-    animation: blink-caret 1s step-end infinite;
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .terminal-caret,
-    .glitch-once {
+    .terminal-caret {
       animation: none;
     }
   }
 
   .step-item.is-active .step-num {
-    color: #ff4fd8;
+    color: #c97b8f;
   }
 
   .step-item.is-active .step-title {
-    color: #f5f0f5;
+    color: #f2ebe6;
   }
 
   .step-item.is-active .step-line {
     width: 4rem;
-    background: #ff4fd8;
+    background: #c97b8f;
   }
 }
 
@@ -215,5 +472,59 @@
 
   .archivo-track::-webkit-scrollbar {
     display: none;
+  }
+
+  .grain-overlay {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    opacity: var(--grain-opacity, 0.055);
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.65'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+  }
+
+  .grain-swatch {
+    pointer-events: none;
+    opacity: var(--grain-opacity, 0.055);
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.65'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  .halftone-layer {
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle,
+      rgba(242, 235, 230, 0.28) 0.85px,
+      transparent 1.05px
+    );
+    background-size: 5px 5px;
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+  }
+
+  .halftone-panel {
+    isolation: isolate;
+  }
+
+  .font-bubbly {
+    font-family: var(--font-accent), system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+    color: #e8b4c0;
+    text-shadow:
+      2px 2px 0 #c97b8f,
+      3px 3px 0 #8a5564;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grain-overlay,
+    .grain-swatch {
+      opacity: 0;
+    }
   }
 }
