@@ -6,6 +6,7 @@ import {
   JetBrains_Mono,
   Bagel_Fat_One,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { defaultLocale, isLocale } from "@/i18n/config";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -114,6 +115,7 @@ export default function RootLayout({
         className={`${display.variable} ${body.variable} ${mono.variable} ${accent.variable} font-body bg-black text-off-white`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
