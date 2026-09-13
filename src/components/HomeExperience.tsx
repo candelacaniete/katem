@@ -15,6 +15,7 @@ import { EstudioSection } from "@/components/sections/EstudioSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MetodoSection } from "@/components/sections/MetodoSection";
+import { PipelineSection } from "@/components/sections/PipelineSection";
 import { ServiciosSection } from "@/components/sections/ServiciosSection";
 import { StatementSection } from "@/components/sections/StatementSection";
 import { WhyKatemSection } from "@/components/sections/WhyKatemSection";
@@ -52,6 +53,7 @@ export function HomeExperience({ dict, locale }: Props) {
           <StatementSection dict={dict.statement} />
           <ArchivoSection dict={dict.archivo} />
           <ServiciosSection dict={dict.servicios} />
+          <PipelineSection dict={dict.pipeline} />
           <WhyKatemSection dict={dict.why} />
           <MetodoSection dict={dict.metodo} />
           <EstudioSection dict={dict.estudio} />

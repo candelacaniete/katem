@@ -104,6 +104,15 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
               .join(" "),
           },
           {
+            question: "¿Qué es el pipeline digital de Katem?",
+            answer: [
+              dict.pipeline.lead,
+              ...dict.pipeline.steps.map(
+                (step) => `${step.id}. ${step.title}: ${step.description}`
+              ),
+            ].join(" "),
+          },
+          {
             question: "¿Por qué elegir Katem?",
             answer: [
               flattenNewlines(dict.why.lead),
@@ -140,6 +149,15 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
                   `${flattenNewlines(item.title)}: ${item.description}`
               )
               .join(" "),
+          },
+          {
+            question: "What is Katem's digital pipeline?",
+            answer: [
+              dict.pipeline.lead,
+              ...dict.pipeline.steps.map(
+                (step) => `${step.id}. ${step.title}: ${step.description}`
+              ),
+            ].join(" "),
           },
           {
             question: "Why choose Katem?",

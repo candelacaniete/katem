@@ -217,26 +217,64 @@ const en: Dictionary = {
         title: "DIGITAL\nEXPERIENCES",
         description:
           "Sites and landings built to communicate clearly, convey professionalism, and turn visits into conversations.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "02",
-        title: "DIGITAL\nSTRATEGY",
+        title: "B2B\nACQUISITION",
         description:
-          "We define your online presence: message, structure, and automations that simplify daily work.",
+          "We design prospecting systems to connect your business with the right companies: account research, personalized outreach, and opportunity follow-up.",
+        signal: "SIGNAL ACTIVE",
       },
       {
         id: "03",
         title: "DIGITAL\nPRODUCTS",
         description:
           "Stores, courses, and digital resources on your own platform — ready to sell without relying on third parties.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "04",
-        title: "SYSTEMS",
+        title: "SYSTEMS &\nAUTOMATION",
         description:
-          "Integrations and flows that keep your business working even when you're not at the screen.",
+          "Bots, integrations, and flows that automate tasks, conversations, and processes so your business keeps running when you're not at the screen.",
+        signal: "SIGNAL STABLE",
       },
     ],
+  },
+  pipeline: {
+    label: "KATEM_PIPELINE.exe",
+    title: "A WEBSITE IS THE STARTING POINT.",
+    lead: "We build digital systems that connect presence, acquisition, and follow-up to generate commercial opportunities more consistently.",
+    flow: ["ATTRACT", "CONVERT", "CONNECT", "FOLLOW UP"],
+    steps: [
+      {
+        id: "01",
+        title: "PRESENCE",
+        description:
+          "We build a website or landing ready to turn interest into inquiries.",
+      },
+      {
+        id: "02",
+        title: "ACQUISITION",
+        description:
+          "We identify companies and decision-makers that match your ideal customer.",
+      },
+      {
+        id: "03",
+        title: "OUTREACH",
+        description:
+          "We start conversations with personalized messages via email and LinkedIn.",
+      },
+      {
+        id: "04",
+        title: "SYSTEM",
+        description:
+          "We organize replies, follow-up, and opportunities so you know what is happening at every stage.",
+      },
+    ],
+    cta: "I WANT TO BUILD MY PIPELINE →",
+    href: bookingHref,
   },
   why: {
     label: "CRITERIA",

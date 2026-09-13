@@ -216,26 +216,64 @@ const es = {
         title: "EXPERIENCIAS\nDIGITALES",
         description:
           "Sitios y landings pensados para comunicar con claridad, transmitir profesionalismo y convertir visitas en consultas.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "02",
-        title: "ESTRATEGIA\nDIGITAL",
+        title: "ADQUISICIÓN\nB2B",
         description:
-          "Definimos el camino de tu presencia online: mensaje, estructura y automatizaciones que simplifican tu trabajo diario.",
+          "Diseñamos sistemas de prospección para acercar tu negocio a las empresas correctas: investigación de cuentas, contacto personalizado y seguimiento de oportunidades.",
+        signal: "SIGNAL ACTIVE",
       },
       {
         id: "03",
         title: "PRODUCTOS\nDIGITALES",
         description:
           "Tiendas, cursos y recursos digitales desde una plataforma propia, lista para vender sin depender de terceros.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "04",
-        title: "SISTEMAS",
+        title: "SISTEMAS &\nAUTOMATIZACIÓN",
         description:
-          "Integraciones y flujos que hacen que tu negocio siga trabajando incluso cuando vos no estás frente a la pantalla.",
+          "Bots, integraciones y flujos que automatizan tareas, conversaciones y procesos para que tu negocio siga funcionando cuando vos no estás frente a la pantalla.",
+        signal: "SIGNAL STABLE",
       },
     ],
+  },
+  pipeline: {
+    label: "KATEM_PIPELINE.exe",
+    title: "UNA WEB ES EL PUNTO DE PARTIDA.",
+    lead: "Construimos sistemas digitales que conectan presencia, adquisición y seguimiento para generar oportunidades comerciales de forma más constante.",
+    flow: ["ATTRACT", "CONVERT", "CONNECT", "FOLLOW UP"],
+    steps: [
+      {
+        id: "01",
+        title: "PRESENCIA",
+        description:
+          "Construimos una web o landing preparada para convertir interés en consultas.",
+      },
+      {
+        id: "02",
+        title: "ADQUISICIÓN",
+        description:
+          "Identificamos empresas y decisores que encajan con tu cliente ideal.",
+      },
+      {
+        id: "03",
+        title: "OUTREACH",
+        description:
+          "Activamos conversaciones con mensajes personalizados por email y LinkedIn.",
+      },
+      {
+        id: "04",
+        title: "SISTEMA",
+        description:
+          "Organizamos respuestas, seguimiento y oportunidades para que sepas qué está pasando en cada etapa.",
+      },
+    ],
+    cta: "QUIERO CONSTRUIR MI PIPELINE →",
+    href: bookingHref,
   },
   why: {
     label: "CRITERIOS",
