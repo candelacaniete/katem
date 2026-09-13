@@ -384,6 +384,42 @@ const es = {
     copy: `© ${site.year} KATEM`,
     location: "BUENOS AIRES, ARGENTINA",
     mantra: "HECHO PARA INTERNET.\nNO PARA PLANTILLAS.",
+    privacy: { href: "/privacidad", label: "PRIVACIDAD" },
+  },
+  privacy: {
+    meta: {
+      title: "Política de Privacidad",
+      description:
+        "Política de privacidad de Katem: cómo recopilamos, usamos y protegemos datos personales.",
+    },
+    label: "LEGAL",
+    title: "Política de Privacidad",
+    updated: "Última actualización: 13 de septiembre de 2026",
+    intro:
+      "En Katem respetamos la privacidad de las personas que se contactan con nosotros.",
+    sections: [
+      {
+        title: "Datos que recopilamos",
+        body: "Podemos recopilar nombre, correo electrónico, teléfono, nombre de empresa, sitio web y la información que la persona decida compartir mediante formularios, redes sociales, correo electrónico o reuniones.",
+      },
+      {
+        title: "Para qué usamos los datos",
+        body: "Usamos estos datos para responder consultas, evaluar si nuestros servicios pueden ser relevantes, enviar información solicitada y, cuando corresponda, coordinar una llamada comercial.\n\nNo vendemos, alquilamos ni cedemos datos personales a terceros para fines comerciales.",
+      },
+      {
+        title: "Conservación y seguridad",
+        body: "Conservamos los datos únicamente durante el tiempo necesario para las finalidades indicadas y aplicamos medidas razonables para protegerlos contra accesos no autorizados.",
+      },
+      {
+        title: "Derechos",
+        body: `La persona titular de los datos puede solicitar acceso, actualización, rectificación o eliminación de su información escribiendo a ${site.email}.`,
+      },
+      {
+        title: "Contacto",
+        body: `Para cualquier consulta sobre esta política o el uso de datos personales, escribinos a ${site.email}.`,
+      },
+    ],
+    back: "← Volver a Katem",
   },
 };
 

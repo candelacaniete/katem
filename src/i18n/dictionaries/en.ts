@@ -385,6 +385,42 @@ const en: Dictionary = {
     copy: `© ${site.year} KATEM`,
     location: "BUENOS AIRES, ARGENTINA",
     mantra: "MADE FOR THE INTERNET.\nNOT FOR TEMPLATES.",
+    privacy: { href: "/privacidad", label: "PRIVACY" },
+  },
+  privacy: {
+    meta: {
+      title: "Privacy Policy",
+      description:
+        "Katem privacy policy: how we collect, use, and protect personal data.",
+    },
+    label: "LEGAL",
+    title: "Privacy Policy",
+    updated: "Last updated: September 13, 2026",
+    intro:
+      "At Katem we respect the privacy of people who get in touch with us.",
+    sections: [
+      {
+        title: "Data we collect",
+        body: "We may collect name, email, phone number, company name, website, and information people choose to share through forms, social media, email, or meetings.",
+      },
+      {
+        title: "How we use the data",
+        body: "We use this data to answer inquiries, assess whether our services may be relevant, send requested information, and, when appropriate, coordinate a commercial call.\n\nWe do not sell, rent, or share personal data with third parties for commercial purposes.",
+      },
+      {
+        title: "Retention and security",
+        body: "We keep data only for as long as needed for the purposes stated above and apply reasonable measures to protect it against unauthorized access.",
+      },
+      {
+        title: "Rights",
+        body: `Data subjects may request access, updates, correction, or deletion of their information by writing to ${site.email}.`,
+      },
+      {
+        title: "Contact",
+        body: `For any questions about this policy or the use of personal data, email us at ${site.email}.`,
+      },
+    ],
+    back: "← Back to Katem",
   },
 };
 

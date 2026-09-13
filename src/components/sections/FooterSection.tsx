@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 import type { Locale } from "@/i18n/config";
+import { localePath } from "@/lib/seo";
 
 type Props = {
   dict: Dictionary["footer"];
@@ -9,6 +10,8 @@ type Props = {
 };
 
 export function FooterSection({ dict, lang, locale }: Props) {
+  const privacyHref = localePath(locale, dict.privacy.href);
+
   return (
     <footer className="border-t border-off-white/10 bg-black px-5 py-12 sm:px-8 lg:px-10">
       <div className="section__inner grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
@@ -33,6 +36,13 @@ export function FooterSection({ dict, lang, locale }: Props) {
               {link.label}
             </a>
           ))}
+          <Link
+            href={privacyHref}
+            className="font-body text-[11px] uppercase tracking-[0.18em] text-off-white/60 transition-colors hover:text-pink"
+            data-cursor="open"
+          >
+            {dict.privacy.label}
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
