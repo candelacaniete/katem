@@ -48,7 +48,7 @@ export function ServiciosSection({ dict }: Props) {
                   {item.description}
                 </p>
                 <p className="mt-8 font-mono text-[10px] tracking-[0.18em] text-off-white/30 group-hover:text-pink/70">
-                  SIGNAL STABLE
+                  {item.signal}
                 </p>
               </article>
             </li>

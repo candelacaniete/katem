@@ -29,5 +29,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: absoluteUrl("es", "/privacidad"),
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: absoluteUrl("es", "/privacidad"),
+          en: absoluteUrl("en", "/privacidad"),
+        },
+      },
+    },
+    {
+      url: absoluteUrl("en", "/privacidad"),
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: absoluteUrl("es", "/privacidad"),
+          en: absoluteUrl("en", "/privacidad"),
+        },
+      },
+    },
   ];
 }

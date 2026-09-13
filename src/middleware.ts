@@ -35,10 +35,10 @@ export function middleware(request: NextRequest) {
     return withLocaleHeader(NextResponse.next(), locale);
   }
 
-  if (pathname === "/") {
-    const rewrite = NextResponse.rewrite(
-      new URL(`/${defaultLocale}`, request.url)
-    );
+  if (pathname === "/" || pathname === "/privacidad") {
+    const target =
+      pathname === "/" ? `/${defaultLocale}` : `/${defaultLocale}${pathname}`;
+    const rewrite = NextResponse.rewrite(new URL(target, request.url));
     return withLocaleHeader(rewrite, defaultLocale);
   }
 

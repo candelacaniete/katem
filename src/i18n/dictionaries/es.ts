@@ -216,26 +216,64 @@ const es = {
         title: "EXPERIENCIAS\nDIGITALES",
         description:
           "Sitios y landings pensados para comunicar con claridad, transmitir profesionalismo y convertir visitas en consultas.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "02",
-        title: "ESTRATEGIA\nDIGITAL",
+        title: "ADQUISICIÓN\nB2B",
         description:
-          "Definimos el camino de tu presencia online: mensaje, estructura y automatizaciones que simplifican tu trabajo diario.",
+          "Diseñamos sistemas de prospección para acercar tu negocio a las empresas correctas: investigación de cuentas, contacto personalizado y seguimiento de oportunidades.",
+        signal: "SIGNAL ACTIVE",
       },
       {
         id: "03",
         title: "PRODUCTOS\nDIGITALES",
         description:
           "Tiendas, cursos y recursos digitales desde una plataforma propia, lista para vender sin depender de terceros.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "04",
-        title: "SISTEMAS",
+        title: "SISTEMAS &\nAUTOMATIZACIÓN",
         description:
-          "Integraciones y flujos que hacen que tu negocio siga trabajando incluso cuando vos no estás frente a la pantalla.",
+          "Bots, integraciones y flujos que automatizan tareas, conversaciones y procesos para que tu negocio siga funcionando cuando vos no estás frente a la pantalla.",
+        signal: "SIGNAL STABLE",
       },
     ],
+  },
+  pipeline: {
+    label: "KATEM_PIPELINE.exe",
+    title: "UNA WEB ES EL PUNTO DE PARTIDA.",
+    lead: "Construimos sistemas digitales que conectan presencia, adquisición y seguimiento para generar oportunidades comerciales de forma más constante.",
+    flow: ["ATTRACT", "CONVERT", "CONNECT", "FOLLOW UP"],
+    steps: [
+      {
+        id: "01",
+        title: "PRESENCIA",
+        description:
+          "Construimos una web o landing preparada para convertir interés en consultas.",
+      },
+      {
+        id: "02",
+        title: "ADQUISICIÓN",
+        description:
+          "Identificamos empresas y decisores que encajan con tu cliente ideal.",
+      },
+      {
+        id: "03",
+        title: "OUTREACH",
+        description:
+          "Activamos conversaciones con mensajes personalizados por email y LinkedIn.",
+      },
+      {
+        id: "04",
+        title: "SISTEMA",
+        description:
+          "Organizamos respuestas, seguimiento y oportunidades para que sepas qué está pasando en cada etapa.",
+      },
+    ],
+    cta: "QUIERO CONSTRUIR MI PIPELINE →",
+    href: bookingHref,
   },
   why: {
     label: "CRITERIOS",
@@ -346,6 +384,42 @@ const es = {
     copy: `© ${site.year} KATEM`,
     location: "BUENOS AIRES, ARGENTINA",
     mantra: "HECHO PARA INTERNET.\nNO PARA PLANTILLAS.",
+    privacy: { href: "/privacidad", label: "PRIVACIDAD" },
+  },
+  privacy: {
+    meta: {
+      title: "Política de Privacidad",
+      description:
+        "Política de privacidad de Katem: cómo recopilamos, usamos y protegemos datos personales.",
+    },
+    label: "LEGAL",
+    title: "Política de Privacidad",
+    updated: "Última actualización: 13 de septiembre de 2026",
+    intro:
+      "En Katem respetamos la privacidad de las personas que se contactan con nosotros.",
+    sections: [
+      {
+        title: "Datos que recopilamos",
+        body: "Podemos recopilar nombre, correo electrónico, teléfono, nombre de empresa, sitio web y la información que la persona decida compartir mediante formularios, redes sociales, correo electrónico o reuniones.",
+      },
+      {
+        title: "Para qué usamos los datos",
+        body: "Usamos estos datos para responder consultas, evaluar si nuestros servicios pueden ser relevantes, enviar información solicitada y, cuando corresponda, coordinar una llamada comercial.\n\nNo vendemos, alquilamos ni cedemos datos personales a terceros para fines comerciales.",
+      },
+      {
+        title: "Conservación y seguridad",
+        body: "Conservamos los datos únicamente durante el tiempo necesario para las finalidades indicadas y aplicamos medidas razonables para protegerlos contra accesos no autorizados.",
+      },
+      {
+        title: "Derechos",
+        body: `La persona titular de los datos puede solicitar acceso, actualización, rectificación o eliminación de su información escribiendo a ${site.email}.`,
+      },
+      {
+        title: "Contacto",
+        body: `Para cualquier consulta sobre esta política o el uso de datos personales, escribinos a ${site.email}.`,
+      },
+    ],
+    back: "← Volver a Katem",
   },
 };
 

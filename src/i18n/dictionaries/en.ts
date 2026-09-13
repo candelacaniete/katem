@@ -217,26 +217,64 @@ const en: Dictionary = {
         title: "DIGITAL\nEXPERIENCES",
         description:
           "Sites and landings built to communicate clearly, convey professionalism, and turn visits into conversations.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "02",
-        title: "DIGITAL\nSTRATEGY",
+        title: "B2B\nACQUISITION",
         description:
-          "We define your online presence: message, structure, and automations that simplify daily work.",
+          "We design prospecting systems to connect your business with the right companies: account research, personalized outreach, and opportunity follow-up.",
+        signal: "SIGNAL ACTIVE",
       },
       {
         id: "03",
         title: "DIGITAL\nPRODUCTS",
         description:
           "Stores, courses, and digital resources on your own platform — ready to sell without relying on third parties.",
+        signal: "SIGNAL STABLE",
       },
       {
         id: "04",
-        title: "SYSTEMS",
+        title: "SYSTEMS &\nAUTOMATION",
         description:
-          "Integrations and flows that keep your business working even when you're not at the screen.",
+          "Bots, integrations, and flows that automate tasks, conversations, and processes so your business keeps running when you're not at the screen.",
+        signal: "SIGNAL STABLE",
       },
     ],
+  },
+  pipeline: {
+    label: "KATEM_PIPELINE.exe",
+    title: "A WEBSITE IS THE STARTING POINT.",
+    lead: "We build digital systems that connect presence, acquisition, and follow-up to generate commercial opportunities more consistently.",
+    flow: ["ATTRACT", "CONVERT", "CONNECT", "FOLLOW UP"],
+    steps: [
+      {
+        id: "01",
+        title: "PRESENCE",
+        description:
+          "We build a website or landing ready to turn interest into inquiries.",
+      },
+      {
+        id: "02",
+        title: "ACQUISITION",
+        description:
+          "We identify companies and decision-makers that match your ideal customer.",
+      },
+      {
+        id: "03",
+        title: "OUTREACH",
+        description:
+          "We start conversations with personalized messages via email and LinkedIn.",
+      },
+      {
+        id: "04",
+        title: "SYSTEM",
+        description:
+          "We organize replies, follow-up, and opportunities so you know what is happening at every stage.",
+      },
+    ],
+    cta: "I WANT TO BUILD MY PIPELINE →",
+    href: bookingHref,
   },
   why: {
     label: "CRITERIA",
@@ -347,6 +385,42 @@ const en: Dictionary = {
     copy: `© ${site.year} KATEM`,
     location: "BUENOS AIRES, ARGENTINA",
     mantra: "MADE FOR THE INTERNET.\nNOT FOR TEMPLATES.",
+    privacy: { href: "/privacidad", label: "PRIVACY" },
+  },
+  privacy: {
+    meta: {
+      title: "Privacy Policy",
+      description:
+        "Katem privacy policy: how we collect, use, and protect personal data.",
+    },
+    label: "LEGAL",
+    title: "Privacy Policy",
+    updated: "Last updated: September 13, 2026",
+    intro:
+      "At Katem we respect the privacy of people who get in touch with us.",
+    sections: [
+      {
+        title: "Data we collect",
+        body: "We may collect name, email, phone number, company name, website, and information people choose to share through forms, social media, email, or meetings.",
+      },
+      {
+        title: "How we use the data",
+        body: "We use this data to answer inquiries, assess whether our services may be relevant, send requested information, and, when appropriate, coordinate a commercial call.\n\nWe do not sell, rent, or share personal data with third parties for commercial purposes.",
+      },
+      {
+        title: "Retention and security",
+        body: "We keep data only for as long as needed for the purposes stated above and apply reasonable measures to protect it against unauthorized access.",
+      },
+      {
+        title: "Rights",
+        body: `Data subjects may request access, updates, correction, or deletion of their information by writing to ${site.email}.`,
+      },
+      {
+        title: "Contact",
+        body: `For any questions about this policy or the use of personal data, email us at ${site.email}.`,
+      },
+    ],
+    back: "← Back to Katem",
   },
 };
 
