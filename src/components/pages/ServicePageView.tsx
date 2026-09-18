@@ -141,6 +141,27 @@ export function ServicePageView({ copy, visualId }: Props) {
             ))}
           </ul>
         </div>
+
+        {"faq" in copy && copy.faq ? (
+          <div
+            data-service-reveal
+            className="mt-12 border-t border-off-white/10 pt-8 sm:mt-14"
+          >
+            <p className="tech-label">{copy.faq.label}</p>
+            <div className="mt-5 space-y-5">
+              {copy.faq.items.map((item) => (
+                <div key={item.question}>
+                  <h3 className="font-display text-base font-semibold tracking-tight text-off-white sm:text-lg">
+                    {item.question}
+                  </h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-relaxed text-off-white/65 sm:text-base">
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

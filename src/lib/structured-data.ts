@@ -62,9 +62,22 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
       addressCountry: "AR",
     },
     areaServed: ["Buenos Aires", "Argentina", "Worldwide"],
-    knowsAbout: dict.servicios.items.map((item) =>
-      flattenNewlines(item.title)
-    ),
+    knowsAbout: [
+      ...dict.servicios.items.map((item) => flattenNewlines(item.title)),
+      ...(locale === "es"
+        ? [
+            "conseguir más clientes",
+            "prospección B2B",
+            "conseguir clientes B2B",
+            "adquisición de clientes",
+          ]
+        : [
+            "get more clients",
+            "B2B prospecting",
+            "get B2B clients",
+            "customer acquisition",
+          ]),
+    ],
     makesOffer: dict.servicios.items.map((item) => ({
       "@type": "Offer",
       itemOffered: {
@@ -90,9 +103,14 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
     locale === "es"
       ? [
           {
-            question: "¿Qué es Katem?",
+            question: "¿Cómo conseguir más clientes con Katem?",
             answer:
-              "Katem es un estudio digital boutique e independiente en Buenos Aires. Diseña experiencias digitales, estrategia, productos digitales y sistemas para marcas que quieren ser recordadas.",
+              "Katem ayuda a conseguir más clientes con sitios pensados para convertir, prospección B2B, publicidad digital y automatizaciones. El foco es generar oportunidades comerciales reales, no solo presencia online.",
+          },
+          {
+            question: "¿Qué es la prospección B2B de Katem?",
+            answer:
+              "Es un sistema para conseguir clientes B2B: investigamos cuentas, armamos mensajes, activamos outreach y hacemos seguimiento hasta agendar reuniones.",
           },
           {
             question: "¿Qué servicios ofrece Katem?",
@@ -122,24 +140,20 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
             ].join(" "),
           },
           {
-            question: "¿Cómo trabaja Katem?",
-            answer: dict.metodo.steps
-              .map(
-                (step) =>
-                  `${step.id}. ${step.title}: ${step.description}`
-              )
-              .join(" "),
-          },
-          {
             question: "¿Dónde está Katem y cómo contactar?",
-            answer: `Katem está en ${site.location} y trabaja con clientes en Argentina y el mundo. Podés escribir a ${site.email} o agendar una llamada de descubrimiento en ${bookingHref}.`,
+            answer: `Katem está en ${site.location} y trabaja con clientes en Argentina y Latam. Podés pedir un análisis de tu web, escribir a ${site.email} o agendar una llamada en ${bookingHref}.`,
           },
         ]
       : [
           {
-            question: "What is Katem?",
+            question: "How can Katem help me get more clients?",
             answer:
-              "Katem is an independent boutique digital studio based in Buenos Aires. It designs digital experiences, strategy, digital products, and systems for brands that want to be remembered.",
+              "Katem helps brands get more clients with conversion-focused websites, B2B prospecting, digital ads, and automation. The goal is real commercial opportunities, not just online presence.",
+          },
+          {
+            question: "What is Katem's B2B prospecting?",
+            answer:
+              "It's a system to get B2B clients: we research accounts, craft messaging, run outreach, and follow up until meetings are booked.",
           },
           {
             question: "What services does Katem offer?",
@@ -169,17 +183,8 @@ export function buildStructuredData(locale: Locale, dict: Dictionary) {
             ].join(" "),
           },
           {
-            question: "How does Katem work?",
-            answer: dict.metodo.steps
-              .map(
-                (step) =>
-                  `${step.id}. ${step.title}: ${step.description}`
-              )
-              .join(" "),
-          },
-          {
             question: "Where is Katem and how can I get in touch?",
-            answer: `Katem is based in ${site.location} and works with clients in Argentina and worldwide. Email ${site.email} or book a discovery call at ${bookingHref}.`,
+            answer: `Katem is based in ${site.location} and works with clients across Argentina and Latam. You can request a website analysis, email ${site.email}, or book a call at ${bookingHref}.`,
           },
         ];
 

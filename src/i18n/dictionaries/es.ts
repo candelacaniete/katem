@@ -4,7 +4,7 @@ const es = {
   meta: {
     title: "KATEM® · Estudio digital boutique",
     description:
-      "Diseñamos experiencias digitales para marcas que quieren ser recordadas. Estudio independiente en Buenos Aires.",
+      "Ayudamos a marcas a conseguir más clientes con sitios, prospección B2B, publicidad y automatizaciones. Estudio independiente en Buenos Aires.",
   },
   skip: "Saltar al contenido",
   skipBoot: "Saltar intro",
@@ -444,13 +444,13 @@ const es = {
     },
     prospectionB2b: {
       meta: {
-        title: "Prospección B2B · KATEM®",
+        title: "Conseguir más clientes B2B · Prospección · KATEM®",
         description:
-          "Sistemas de prospección B2B: investigación de cuentas, outreach personalizado y seguimiento de oportunidades.",
+          "Conseguimos clientes para empresas B2B con prospección comercial: investigación de cuentas, outreach y seguimiento de oportunidades en Buenos Aires y Latam.",
       },
       label: "SERVICIO / 02",
-      title: "PROSPECCIÓN\nB2B",
-      lead: "Un sistema para llegar a las empresas correctas con un mensaje claro, y saber qué hacer con cada respuesta.",
+      title: "Conseguimos clientes\npara tu empresa B2B.",
+      lead: "Prospección comercial para llegar a las empresas correctas, abrir conversaciones reales y llenar tu pipeline con oportunidades calificadas.",
       visual: {
         windowTitle: "OUTBOUND_SYS.exe",
         status: "PIPELINE · LIVE",
@@ -465,11 +465,11 @@ const es = {
       sections: [
         {
           title: "Para qué sirve",
-          body: "Cuando el inbound no alcanza, armamos adquisición B2B para generar oportunidades de forma más constante.",
+          body: "Si necesitás conseguir más clientes B2B y el inbound no alcanza, armamos adquisición outbound para generar oportunidades de forma más constante.",
         },
         {
           title: "Cómo lo encaramos",
-          body: "Definimos el cliente ideal, armamos listas de cuentas, activamos outreach por email o LinkedIn, y organizamos el seguimiento.",
+          body: "Definimos el cliente ideal, armamos listas de cuentas, activamos outreach por email o LinkedIn, y organizamos el seguimiento hasta la reunión.",
         },
       ],
       deliverables: {
@@ -484,13 +484,38 @@ const es = {
       benefits: {
         label: "BENEFICIOS",
         items: [
-          "Pipeline más predecible",
+          "Más oportunidades comerciales",
           "Conversaciones con cuentas reales",
           "Menos dependencia del inbound",
           "Seguimiento ordenado de respuestas",
         ],
       },
-      cta: "ARMAR MI PIPELINE →",
+      faq: {
+        label: "PREGUNTAS FRECUENTES",
+        items: [
+          {
+            question: "¿Cómo me ayudan a conseguir más clientes?",
+            answer:
+              "Armamos un sistema de prospección B2B: definimos a quién contactar, con qué mensaje, y hacemos seguimiento hasta agendar reuniones.",
+          },
+          {
+            question: "¿Para qué tipo de empresas funciona?",
+            answer:
+              "Para negocios B2B que venden a otras empresas y necesitan un flujo más constante de oportunidades, no solo inbound.",
+          },
+          {
+            question: "¿Cuánto tarda en verse resultado?",
+            answer:
+              "Depende del mercado y la oferta. En general, las primeras conversaciones aparecen en las primeras semanas de outreach activo.",
+          },
+          {
+            question: "¿Trabajan desde Buenos Aires con clientes de Latam?",
+            answer:
+              "Sí. Estamos en Buenos Aires y trabajamos con empresas de Argentina y Latam de forma remota.",
+          },
+        ],
+      },
+      cta: "QUIERO CONSEGUIR CLIENTES →",
       ctaHref: bookingHref,
     },
     publicidadDigital: {
@@ -598,7 +623,7 @@ const es = {
       meta: {
         title: "Contacto · KATEM®",
         description:
-          "Agendá una llamada de descubrimiento o escribinos para iniciar un proyecto con Katem.",
+          "Pedí un análisis gratuito de tu web o agendá una llamada para conseguir más clientes con Katem.",
       },
       label: "CONTACTO",
       title: "EMPECEMOS.",
@@ -608,6 +633,22 @@ const es = {
       note: "Buenos Aires / Argentina / Mundo.",
       primaryHref: bookingHref,
       secondaryHref: emailHref,
+      form: {
+        eyebrow: "· ANÁLISIS GRATUITO",
+        title: "Ingresá tu web y te hacemos un breve análisis",
+        subtitle:
+          "Revisamos tu sitio y te damos recomendaciones concretas para mejorar tu presencia digital y conseguir más clientes.",
+        firstName: "Nombre",
+        lastName: "Apellido",
+        email: "Email",
+        phone: "Teléfono (opcional)",
+        website: "URL de tu web",
+        submit: "Analizar ahora",
+        sending: "Enviando…",
+        success: "STATUS · SENT — Te escribimos pronto.",
+        error: "No se pudo enviar. Probá de nuevo o escribinos por email.",
+        subject: "Nuevo análisis web — Katem",
+      },
     },
   },
 

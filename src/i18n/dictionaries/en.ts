@@ -5,7 +5,7 @@ const en: Dictionary = {
   meta: {
     title: "KATEM® · Boutique digital studio",
     description:
-      "We design digital experiences for brands that want to be remembered. Independent studio based in Buenos Aires.",
+      "We help brands get more clients with websites, B2B prospecting, ads, and automation. Independent studio based in Buenos Aires.",
   },
   skip: "Skip to content",
   skipBoot: "Skip intro",
@@ -445,13 +445,13 @@ const en: Dictionary = {
     },
     prospectionB2b: {
       meta: {
-        title: "B2B prospecting · KATEM®",
+        title: "Get more B2B clients · Prospecting · KATEM®",
         description:
-          "B2B prospecting systems: account research, personalized outreach, and opportunity follow-up.",
+          "We get clients for B2B companies through commercial prospecting: account research, outreach, and opportunity follow-up in Buenos Aires and Latam.",
       },
       label: "SERVICE / 02",
-      title: "B2B\nPROSPECTING",
-      lead: "A system to reach the right companies with a clear message, and know what to do with every reply.",
+      title: "We get clients\nfor your B2B company.",
+      lead: "Commercial prospecting to reach the right companies, open real conversations, and fill your pipeline with qualified opportunities.",
       visual: {
         windowTitle: "OUTBOUND_SYS.exe",
         status: "PIPELINE · LIVE",
@@ -466,11 +466,11 @@ const en: Dictionary = {
       sections: [
         {
           title: "What it's for",
-          body: "When inbound isn't enough, we build B2B acquisition so opportunities show up more consistently.",
+          body: "If you need more B2B clients and inbound isn't enough, we build outbound acquisition so opportunities show up more consistently.",
         },
         {
           title: "How we approach it",
-          body: "We define the ideal customer, build account lists, activate email or LinkedIn outreach, and organize follow-up.",
+          body: "We define the ideal customer, build account lists, activate email or LinkedIn outreach, and organize follow-up through to the meeting.",
         },
       ],
       deliverables: {
@@ -485,13 +485,38 @@ const en: Dictionary = {
       benefits: {
         label: "BENEFITS",
         items: [
-          "More predictable pipeline",
+          "More commercial opportunities",
           "Conversations with real accounts",
           "Less dependence on inbound",
           "Organized reply follow-up",
         ],
       },
-      cta: "BUILD MY PIPELINE →",
+      faq: {
+        label: "FAQ",
+        items: [
+          {
+            question: "How do you help me get more clients?",
+            answer:
+              "We build a B2B prospecting system: who to contact, what to say, and follow-up until meetings are booked.",
+          },
+          {
+            question: "What kind of companies is this for?",
+            answer:
+              "B2B businesses that sell to other companies and need a more consistent flow of opportunities, not just inbound.",
+          },
+          {
+            question: "How long until we see results?",
+            answer:
+              "It depends on the market and offer. First conversations usually appear within the first weeks of active outreach.",
+          },
+          {
+            question: "Do you work from Buenos Aires with Latam clients?",
+            answer:
+              "Yes. We're based in Buenos Aires and work remotely with companies across Argentina and Latam.",
+          },
+        ],
+      },
+      cta: "I WANT MORE CLIENTS →",
       ctaHref: bookingHref,
     },
     publicidadDigital: {
@@ -595,11 +620,11 @@ const en: Dictionary = {
       cta: "CHAT ON WHATSAPP →",
       ctaHref: whatsappHref,
     },
-    contacto: {
+        contacto: {
       meta: {
         title: "Contact · KATEM®",
         description:
-          "Book a discovery call or email us to start a project with Katem.",
+          "Request a free website analysis or book a call to get more clients with Katem.",
       },
       label: "CONTACT",
       title: "LET'S START.",
@@ -609,6 +634,22 @@ const en: Dictionary = {
       note: "Buenos Aires / Argentina / World.",
       primaryHref: bookingHref,
       secondaryHref: emailHref,
+      form: {
+        eyebrow: "· FREE ANALYSIS",
+        title: "Enter your website and we'll run a short analysis",
+        subtitle:
+          "We review your site and give concrete recommendations to improve your digital presence and get more clients.",
+        firstName: "First name",
+        lastName: "Last name",
+        email: "Email",
+        phone: "Phone (optional)",
+        website: "Website URL",
+        submit: "Analyze now",
+        sending: "Sending…",
+        success: "STATUS · SENT — We'll be in touch soon.",
+        error: "Couldn't send. Try again or email us.",
+        subject: "New website analysis — Katem",
+      },
     },
   },
 

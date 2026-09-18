@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/i18n/dictionaries/es";
+import { AnalysisForm } from "@/components/pages/AnalysisForm";
 import { KatemButton } from "@/components/katem/KatemButton";
 import { KatemLabel } from "@/components/katem/KatemLabel";
 import { site } from "@/lib/site";
@@ -14,7 +15,7 @@ export function ContactPageView({ copy }: Props) {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(212,160,174,0.1),transparent_50%)]"
       />
-      <div className="section__inner relative z-10 max-w-3xl">
+      <div className="section__inner relative z-10 max-w-4xl">
         <KatemLabel>{copy.label}</KatemLabel>
         <h1 className="section__title">{copy.title}</h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-off-white/75 sm:text-lg">
@@ -46,6 +47,8 @@ export function ContactPageView({ copy }: Props) {
         <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-off-white/40">
           {copy.note}
         </p>
+
+        <AnalysisForm copy={copy.form} className="mt-14" />
       </div>
     </div>
   );
