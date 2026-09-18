@@ -39,7 +39,10 @@ export default async function Page({
 
   return (
     <SiteShell dict={dict} locale={locale}>
-      <ServicePageView copy={dict.pages.desarrolloWeb} />
+      <ServicePageView
+        copy={dict.pages.desarrolloWeb}
+        visualId="desarrolloWeb"
+      />
     </SiteShell>
   );
 }

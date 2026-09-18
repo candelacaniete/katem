@@ -71,7 +71,12 @@
   }
 
   .section {
-    @apply relative px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
+    @apply relative px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
+  }
+
+  /* Inner pages: tighter top gap under fixed/absolute nav */
+  .section--page {
+    @apply pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28;
   }
 
   .section__inner {
@@ -79,11 +84,44 @@
   }
 
   .section__label {
-    @apply mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-off-white/55;
+    @apply mb-4 font-mono text-[10px] uppercase tracking-[0.14em] text-off-white/55 sm:text-[11px] sm:tracking-[0.22em];
   }
 
   .section__title {
-    @apply font-display text-4xl font-semibold leading-[0.95] tracking-tight text-off-white sm:text-5xl lg:text-6xl;
+    font-family: theme("fontFamily.display");
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: theme("colors.off-white");
+    font-size: clamp(1.75rem, 7.2vw + 0.35rem, 3.75rem);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .tech-label {
+    @apply font-mono text-[10px] uppercase text-off-white/45;
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 640px) {
+    .tech-label {
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .deliverable-item {
+    @apply border-l border-pink/50 pl-4 font-mono text-[10px] uppercase leading-relaxed text-off-white/70 sm:text-[11px];
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .deliverable-item {
+      letter-spacing: 0.14em;
+    }
   }
 
   .katem-grid-bg {
@@ -202,10 +240,6 @@
     background: transparent;
   }
 
-  .tech-label {
-    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/45;
-  }
-
   /* --- Scanlines (matte CRT, no glow) --- */
   .crt-overlay {
     pointer-events: none;
@@ -235,11 +269,18 @@
 
   .retro-crt__shell {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 52px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0;
     border-radius: 1.25rem;
-    padding: 0.85rem 0.65rem 0.85rem 0.85rem;
+    padding: 0.75rem;
     border: 3px solid #2a2426;
+  }
+
+  @media (min-width: 640px) {
+    .retro-crt__shell {
+      grid-template-columns: minmax(0, 1fr) 52px;
+      padding: 0.85rem 0.65rem 0.85rem 0.85rem;
+    }
   }
 
   .retro-crt--beige .retro-crt__shell {
@@ -272,12 +313,18 @@
   }
 
   .retro-crt__panel {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.85rem;
     padding: 0.5rem 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .retro-crt__panel {
+      display: flex;
+    }
   }
 
   .retro-crt__grille {

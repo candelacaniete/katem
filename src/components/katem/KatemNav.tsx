@@ -51,15 +51,15 @@ export function KatemNav({ dict, locale }: Props) {
               <ChevronDown size={14} strokeWidth={1.5} aria-hidden />
             </button>
             {servicesOpen ? (
-              <div className="absolute left-0 top-full z-50 min-w-[14rem] border border-off-white/15 bg-black/95 py-2 shadow-window backdrop-blur-md">
+              <div className="absolute left-0 top-full z-50 w-max min-w-[12rem] max-w-[min(18rem,calc(100vw-2.5rem))] border border-off-white/15 bg-black/95 py-2 shadow-window backdrop-blur-md">
                 {dict.services.map((item) => (
                   <Link
                     key={item.href}
                     href={href(locale, item.href)}
-                    className="block px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-off-white/70 transition-colors hover:bg-purple-black hover:text-pink"
+                    className="block px-4 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-off-white/70 transition-colors hover:bg-purple-black hover:text-pink sm:tracking-[0.16em]"
                     data-cursor="open"
                   >
-                    {item.label}
+                    <span className="block break-words">{item.label}</span>
                   </Link>
                 ))}
               </div>

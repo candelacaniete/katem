@@ -26,7 +26,7 @@ export function ContactPageView({ copy }: Props) {
             href={copy.primaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[220px]"
+            className="w-full sm:w-auto sm:min-w-[220px]"
           >
             {copy.primary}
           </KatemButton>

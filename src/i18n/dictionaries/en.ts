@@ -405,15 +405,21 @@ const en: Dictionary = {
       },
       label: "SERVICE / 01",
       title: "WEB DEVELOPMENT",
-      lead: "A digital presence that communicates clearly, feels professional, and turns visits into conversations.",
+      lead: "Your site should explain who you are, what you offer, and why to reach out — in seconds, not paragraphs.",
+      visual: {
+        windowTitle: "SITE_LAYOUT.exe",
+        status: "BUILD · READY",
+        browserLabel: "VIEWPORT",
+        files: ["index.html", "styles.css", "components/"],
+      },
       sections: [
         {
           title: "What it's for",
-          body: "We build institutional sites, landings, and digital experiences so your brand is understood quickly and generates real commercial conversations.",
+          body: "We build institutional sites and landings so your brand is understood instantly and generates real inquiries — not just visits.",
         },
         {
           title: "How we approach it",
-          body: "We start with message and structure. Then design, development, and launch — no generic templates or unnecessary layers.",
+          body: "Message and structure first. Then design, development, and launch. No generic templates or extra layers.",
         },
       ],
       deliverables: {
@@ -436,15 +442,26 @@ const en: Dictionary = {
       },
       label: "SERVICE / 02",
       title: "B2B PROSPECTING",
-      lead: "A system to connect your business with the right companies — through research, personalized contact, and follow-up.",
+      lead: "A system to reach the right companies with a clear message — and know what to do with every reply.",
+      visual: {
+        windowTitle: "OUTBOUND_SYS.exe",
+        status: "PIPELINE · LIVE",
+        rows: [
+          { key: "ICP", value: "LOCKED", bar: 10 },
+          { key: "ACCOUNTS", value: "MAPPED", bar: 8 },
+          { key: "OUTREACH", value: "ACTIVE", bar: 7 },
+          { key: "FOLLOW-UP", value: "QUEUED", bar: 6 },
+        ],
+        flow: ["RESEARCH", "CONTACT", "REPLY", "MEETING"],
+      },
       sections: [
         {
           title: "What it's for",
-          body: "We design B2B acquisition when you need more consistent opportunities without relying only on inbound.",
+          body: "When inbound isn't enough, we build B2B acquisition so opportunities show up more consistently.",
         },
         {
           title: "How we approach it",
-          body: "We define the ideal customer, build account lists, activate email/LinkedIn outreach, and organize follow-up so you know what is happening.",
+          body: "We define the ideal customer, build account lists, activate email or LinkedIn outreach, and organize follow-up.",
         },
       ],
       deliverables: {
@@ -467,15 +484,20 @@ const en: Dictionary = {
       },
       label: "SERVICE / 03",
       title: "DIGITAL ADS",
-      lead: "Campaigns designed to capture qualified demand and feed your commercial system — not to burn budget.",
+      lead: "Campaigns that attract people who can buy — not noise that fills the funnel.",
+      visual: {
+        windowTitle: "CAMPAIGN_RUN.exe",
+        status: "SIGNAL · ON",
+        flow: ["OFFER", "CREATIVE", "AUDIENCE", "LEAD", "HANDOFF"],
+      },
       sections: [
         {
           title: "What it's for",
-          body: "We activate advertising when the offer is clear and the presence is ready to convert. The goal is the right people, not empty traffic.",
+          body: "We activate ads when the offer is clear and the site can convert. The goal is qualified demand, not empty traffic.",
         },
         {
           title: "How we approach it",
-          body: "We align message, creatives, and audiences with your offer. We measure useful signals (inquiries, leads, quality) and adjust with judgment.",
+          body: "We align message, creatives, and audiences. We measure inquiries and lead quality, then adjust with judgment — not vanity metrics.",
         },
       ],
       deliverables: {
@@ -498,15 +520,20 @@ const en: Dictionary = {
       },
       label: "SERVICE / 04",
       title: "AUTOMATION",
-      lead: "Systems that keep running when you're not at the screen: bots, integrations, and workflows.",
+      lead: "Flows that reply, book, and follow up when you're not at the screen.",
+      visual: {
+        windowTitle: "FLOW_RUNTIME.exe",
+        status: "WATCHING",
+        flow: ["TRIGGER", "ROUTE", "ACTION", "HANDOFF"],
+      },
       sections: [
         {
           title: "What it's for",
-          body: "We automate replies, bookings, lead capture, and follow-up to reduce operational friction and stop losing opportunities.",
+          body: "We automate replies, bookings, lead capture, and follow-up to cut operational friction and stop losing opportunities.",
         },
         {
           title: "How we approach it",
-          body: "We map the real process, define what should stay human vs automated, and implement clear, maintainable flows.",
+          body: "We map the real process, decide what stays human vs automated, and implement clear, maintainable flows.",
         },
       ],
       deliverables: {

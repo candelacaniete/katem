@@ -52,7 +52,7 @@ export function CtaSection({ dict, locale }: Props) {
             href={dict.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[220px] transition-transform duration-300 hover:scale-[1.03]"
+            className="w-full transition-transform duration-300 hover:scale-[1.03] sm:w-auto sm:min-w-[220px]"
           >
             {dict.button}
           </KatemButton>

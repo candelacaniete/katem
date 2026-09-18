@@ -27,7 +27,7 @@ export function SiteShell({ dict, locale, children, minimal = false }: Props) {
       {!minimal ? <KatemCursor labels={dict.cursor} /> : null}
       {!minimal ? <SmoothScroll /> : null}
       <KatemNav dict={dict.nav} locale={locale} />
-      <main className="pt-24">{children}</main>
+      <main className="pt-20 sm:pt-24">{children}</main>
       <FooterSection
         dict={dict.footer}
         lang={dict.nav.lang}

@@ -404,15 +404,21 @@ const es = {
       },
       label: "SERVICIO / 01",
       title: "DESARROLLO WEB",
-      lead: "Una presencia digital que comunica con claridad, se siente profesional y convierte visitas en consultas.",
+      lead: "Tu sitio tiene que explicar quién sos, qué ofrecés y por qué escribirte — en segundos, no en párrafos.",
+      visual: {
+        windowTitle: "SITE_LAYOUT.exe",
+        status: "BUILD · READY",
+        browserLabel: "VIEWPORT",
+        files: ["index.html", "styles.css", "components/"],
+      },
       sections: [
         {
           title: "Para qué sirve",
-          body: "Construimos sitios institucionales, landings y experiencias digitales orientadas a que tu marca se entienda rápido y genere conversaciones comerciales reales.",
+          body: "Armamos sitios institucionales y landings para que tu marca se entienda al instante y genere consultas reales — no solo visitas.",
         },
         {
           title: "Cómo lo encaramos",
-          body: "Empezamos por el mensaje y la estructura. Después diseño, desarrollo y publicación — sin plantillas genéricas ni capas innecesarias.",
+          body: "Primero mensaje y estructura. Después diseño, desarrollo y publicación. Sin plantillas genéricas ni capas de más.",
         },
       ],
       deliverables: {
@@ -435,15 +441,26 @@ const es = {
       },
       label: "SERVICIO / 02",
       title: "PROSPECCIÓN B2B",
-      lead: "Un sistema para acercar tu negocio a las empresas correctas — con investigación, contacto personalizado y seguimiento.",
+      lead: "Un sistema para llegar a las empresas correctas con un mensaje claro — y saber qué hacer con cada respuesta.",
+      visual: {
+        windowTitle: "OUTBOUND_SYS.exe",
+        status: "PIPELINE · LIVE",
+        rows: [
+          { key: "ICP", value: "LOCKED", bar: 10 },
+          { key: "ACCOUNTS", value: "MAPPED", bar: 8 },
+          { key: "OUTREACH", value: "ACTIVE", bar: 7 },
+          { key: "FOLLOW-UP", value: "QUEUED", bar: 6 },
+        ],
+        flow: ["RESEARCH", "CONTACT", "REPLY", "MEETING"],
+      },
       sections: [
         {
           title: "Para qué sirve",
-          body: "Diseñamos adquisición B2B cuando necesitás generar oportunidades de forma más constante, sin depender solo del inbound.",
+          body: "Cuando el inbound no alcanza, armamos adquisición B2B para generar oportunidades de forma más constante.",
         },
         {
           title: "Cómo lo encaramos",
-          body: "Definimos el cliente ideal, armamos listas de cuentas, activamos outreach por email/LinkedIn y organizamos el seguimiento para que sepas qué está pasando.",
+          body: "Definimos el cliente ideal, armamos listas de cuentas, activamos outreach por email o LinkedIn, y organizamos el seguimiento.",
         },
       ],
       deliverables: {
@@ -466,15 +483,20 @@ const es = {
       },
       label: "SERVICIO / 03",
       title: "PUBLICIDAD DIGITAL",
-      lead: "Campañas pensadas para captar demanda cualificada y alimentar tu sistema comercial — no para quemar presupuesto.",
+      lead: "Campañas para atraer gente que puede comprar — no para llenar el embudo de ruido.",
+      visual: {
+        windowTitle: "CAMPAIGN_RUN.exe",
+        status: "SIGNAL · ON",
+        flow: ["OFFER", "CREATIVE", "AUDIENCE", "LEAD", "HANDOFF"],
+      },
       sections: [
         {
           title: "Para qué sirve",
-          body: "Activamos publicidad cuando ya hay una oferta clara y una presencia lista para convertir. El objetivo es atraer a las personas correctas, no tráfico vacío.",
+          body: "Activamos publicidad cuando la oferta está clara y el sitio puede convertir. El objetivo es demanda cualificada, no tráfico vacío.",
         },
         {
           title: "Cómo lo encaramos",
-          body: "Alineamos mensaje, creatividades y audiencias con tu oferta. Medimos señales útiles (consultas, leads, calidad) y ajustamos con criterio.",
+          body: "Alineamos mensaje, creatividades y audiencias. Medimos consultas y calidad de leads, y ajustamos con criterio — no con vanidad.",
         },
       ],
       deliverables: {
@@ -497,15 +519,20 @@ const es = {
       },
       label: "SERVICIO / 04",
       title: "AUTOMATIZACIONES",
-      lead: "Sistemas que siguen operando cuando vos no estás frente a la pantalla: bots, integraciones y flujos de trabajo.",
+      lead: "Flujos que responden, agendan y hacen seguimiento cuando vos no estás frente a la pantalla.",
+      visual: {
+        windowTitle: "FLOW_RUNTIME.exe",
+        status: "WATCHING",
+        flow: ["TRIGGER", "ROUTE", "ACTION", "HANDOFF"],
+      },
       sections: [
         {
           title: "Para qué sirve",
-          body: "Automatizamos respuestas, reservas, captura de leads y seguimiento para reducir fricción operativa y no perder oportunidades.",
+          body: "Automatizamos respuestas, reservas, captura de leads y seguimiento para bajar fricción operativa y no perder oportunidades.",
         },
         {
           title: "Cómo lo encaramos",
-          body: "Mapeamos el proceso real, definimos qué debe ser humano y qué puede ser automático, e implementamos flujos claros y mantenibles.",
+          body: "Mapeamos el proceso real, decidimos qué queda humano y qué puede ser automático, e implementamos flujos claros y mantenibles.",
         },
       ],
       deliverables: {
