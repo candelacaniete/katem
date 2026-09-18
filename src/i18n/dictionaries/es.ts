@@ -2,7 +2,7 @@ import { bookingHref, emailHref, site } from "@/lib/site";
 
 const es = {
   meta: {
-    title: "KATEM® — Estudio digital boutique",
+    title: "KATEM® · Estudio digital boutique",
     description:
       "Diseñamos experiencias digitales para marcas que quieren ser recordadas. Estudio independiente en Buenos Aires.",
   },
@@ -134,9 +134,9 @@ const es = {
       welcome:
         "Hola. Soy un bot que Katem puede construir para tu negocio. Elegí qué querés probar:",
       menu: [
-        "— Escribí TURNO para reservar un turno",
-        "— Escribí INFO para consultar precios/servicios",
-        "— Escribí LEAD para dejar tus datos y que te contacten",
+        "· Escribí TURNO para reservar un turno",
+        "· Escribí INFO para consultar precios/servicios",
+        "· Escribí LEAD para dejar tus datos y que te contacten",
       ],
       fallback:
         "No te seguí del todo. Probá con TURNO, INFO o LEAD.",
@@ -242,7 +242,7 @@ const es = {
       },
       {
         id: "04",
-        title: "AUTOMATI-\nZACIONES",
+        title: "AUTOMATIZACIONES",
         description:
           "Bots, integraciones y flujos que automatizan tareas, conversaciones y procesos cuando no estás frente a la pantalla.",
         signal: "SIGNAL STABLE",
@@ -398,13 +398,13 @@ const es = {
   pages: {
     desarrolloWeb: {
       meta: {
-        title: "Desarrollo web — KATEM®",
+        title: "Desarrollo web · KATEM®",
         description:
           "Sitios y landings con identidad, claridad y conversión. Desarrollo web a medida desde Buenos Aires.",
       },
       label: "SERVICIO / 01",
-      title: "DESARROLLO WEB",
-      lead: "Tu sitio tiene que explicar quién sos, qué ofrecés y por qué escribirte — en segundos, no en párrafos.",
+      title: "DESARROLLO\nWEB",
+      lead: "Tu sitio tiene que explicar quién sos, qué ofrecés y por qué escribirte. En segundos, no en párrafos.",
       visual: {
         windowTitle: "SITE_LAYOUT.exe",
         status: "BUILD · READY",
@@ -414,7 +414,7 @@ const es = {
       sections: [
         {
           title: "Para qué sirve",
-          body: "Armamos sitios institucionales y landings para que tu marca se entienda al instante y genere consultas reales — no solo visitas.",
+          body: "Armamos sitios institucionales y landings para que tu marca se entienda al instante y genere consultas reales, no solo visitas.",
         },
         {
           title: "Cómo lo encaramos",
@@ -435,13 +435,13 @@ const es = {
     },
     prospectionB2b: {
       meta: {
-        title: "Prospección B2B — KATEM®",
+        title: "Prospección B2B · KATEM®",
         description:
           "Sistemas de prospección B2B: investigación de cuentas, outreach personalizado y seguimiento de oportunidades.",
       },
       label: "SERVICIO / 02",
-      title: "PROSPECCIÓN B2B",
-      lead: "Un sistema para llegar a las empresas correctas con un mensaje claro — y saber qué hacer con cada respuesta.",
+      title: "PROSPECCIÓN\nB2B",
+      lead: "Un sistema para llegar a las empresas correctas con un mensaje claro, y saber qué hacer con cada respuesta.",
       visual: {
         windowTitle: "OUTBOUND_SYS.exe",
         status: "PIPELINE · LIVE",
@@ -477,13 +477,13 @@ const es = {
     },
     publicidadDigital: {
       meta: {
-        title: "Publicidad digital — KATEM®",
+        title: "Publicidad digital · KATEM®",
         description:
           "Publicidad digital orientada a demanda cualificada: creatividades, campañas y medición al servicio del pipeline.",
       },
       label: "SERVICIO / 03",
-      title: "PUBLICIDAD DIGITAL",
-      lead: "Campañas para atraer gente que puede comprar — no para llenar el embudo de ruido.",
+      title: "PUBLICIDAD\nDIGITAL",
+      lead: "Campañas para atraer gente que puede comprar, no para llenar el embudo de ruido.",
       visual: {
         windowTitle: "CAMPAIGN_RUN.exe",
         status: "SIGNAL · ON",
@@ -496,7 +496,7 @@ const es = {
         },
         {
           title: "Cómo lo encaramos",
-          body: "Alineamos mensaje, creatividades y audiencias. Medimos consultas y calidad de leads, y ajustamos con criterio — no con vanidad.",
+          body: "Alineamos mensaje, creatividades y audiencias. Medimos consultas y calidad de leads, y ajustamos con criterio, no con vanidad.",
         },
       ],
       deliverables: {
@@ -513,7 +513,7 @@ const es = {
     },
     automatizaciones: {
       meta: {
-        title: "Automatizaciones — KATEM®",
+        title: "Automatizaciones · KATEM®",
         description:
           "Bots, integraciones y flujos que automatizan conversaciones, tareas y seguimiento comercial.",
       },
@@ -549,7 +549,7 @@ const es = {
     },
     proyectos: {
       meta: {
-        title: "Proyectos — KATEM®",
+        title: "Proyectos · KATEM®",
         description:
           "Proyectos seleccionados de Katem: demos, experiencias digitales y sistemas construidos para marcas.",
       },
@@ -559,7 +559,7 @@ const es = {
     },
     contacto: {
       meta: {
-        title: "Contacto — KATEM®",
+        title: "Contacto · KATEM®",
         description:
           "Agendá una llamada de descubrimiento o escribinos para iniciar un proyecto con Katem.",
       },

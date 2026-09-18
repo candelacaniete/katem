@@ -26,7 +26,7 @@ export function ServicePageView({ copy, visualId }: Props) {
           <span className="tech-label text-pink/70">STATUS · ONLINE</span>
         </div>
 
-        <h1 className="section__title mt-4">{copy.title}</h1>
+        <h1 className="section__title mt-4 whitespace-pre-line">{copy.title}</h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-off-white/75 sm:mt-6 sm:text-lg">
           {copy.lead}
         </p>

@@ -95,9 +95,10 @@
     color: theme("colors.off-white");
     font-size: clamp(1.75rem, 7.2vw + 0.35rem, 3.75rem);
     max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    hyphens: auto;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    white-space: pre-line;
   }
 
   .tech-label {

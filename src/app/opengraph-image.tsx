@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
-export const alt = `${site.brand} — Estudio digital boutique`;
+export const alt = `${site.brand} · Estudio digital boutique`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

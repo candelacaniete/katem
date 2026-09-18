@@ -3,7 +3,7 @@ import { bookingHref, emailHref, site } from "@/lib/site";
 
 const en: Dictionary = {
   meta: {
-    title: "KATEM® — Boutique digital studio",
+    title: "KATEM® · Boutique digital studio",
     description:
       "We design digital experiences for brands that want to be remembered. Independent studio based in Buenos Aires.",
   },
@@ -135,9 +135,9 @@ const en: Dictionary = {
       welcome:
         "Hi. I'm a bot Katem can build for your business. Choose what you want to try:",
       menu: [
-        "— Type TURNO to book an appointment",
-        "— Type INFO to ask about prices/services",
-        "— Type LEAD to leave your details for a follow-up",
+        "· Type TURNO to book an appointment",
+        "· Type INFO to ask about prices/services",
+        "· Type LEAD to leave your details for a follow-up",
       ],
       fallback:
         "I didn't catch that. Try TURNO, INFO, or LEAD.",
@@ -206,7 +206,7 @@ const en: Dictionary = {
           },
           {
             prompt:
-              "Perfect — in a real bot we'd ask for the contact detail next and log it as a lead. (demo)",
+              "Perfect. In a real bot we'd ask for the contact detail next and log it as a lead. (demo)",
           },
         ],
       },
@@ -243,7 +243,7 @@ const en: Dictionary = {
       },
       {
         id: "04",
-        title: "AUTOMA-\nTION",
+        title: "AUTOMATION",
         description:
           "Bots, integrations, and flows that automate tasks, conversations, and processes when you're not at the screen.",
         signal: "SIGNAL STABLE",
@@ -399,13 +399,13 @@ const en: Dictionary = {
   pages: {
     desarrolloWeb: {
       meta: {
-        title: "Web development — KATEM®",
+        title: "Web development · KATEM®",
         description:
           "Custom sites and landings with identity, clarity, and conversion. Web development from Buenos Aires.",
       },
       label: "SERVICE / 01",
-      title: "WEB DEVELOPMENT",
-      lead: "Your site should explain who you are, what you offer, and why to reach out — in seconds, not paragraphs.",
+      title: "WEB\nDEVELOPMENT",
+      lead: "Your site should explain who you are, what you offer, and why to reach out. In seconds, not paragraphs.",
       visual: {
         windowTitle: "SITE_LAYOUT.exe",
         status: "BUILD · READY",
@@ -415,7 +415,7 @@ const en: Dictionary = {
       sections: [
         {
           title: "What it's for",
-          body: "We build institutional sites and landings so your brand is understood instantly and generates real inquiries — not just visits.",
+          body: "We build institutional sites and landings so your brand is understood instantly and generates real inquiries, not just visits.",
         },
         {
           title: "How we approach it",
@@ -436,13 +436,13 @@ const en: Dictionary = {
     },
     prospectionB2b: {
       meta: {
-        title: "B2B prospecting — KATEM®",
+        title: "B2B prospecting · KATEM®",
         description:
           "B2B prospecting systems: account research, personalized outreach, and opportunity follow-up.",
       },
       label: "SERVICE / 02",
-      title: "B2B PROSPECTING",
-      lead: "A system to reach the right companies with a clear message — and know what to do with every reply.",
+      title: "B2B\nPROSPECTING",
+      lead: "A system to reach the right companies with a clear message, and know what to do with every reply.",
       visual: {
         windowTitle: "OUTBOUND_SYS.exe",
         status: "PIPELINE · LIVE",
@@ -478,13 +478,13 @@ const en: Dictionary = {
     },
     publicidadDigital: {
       meta: {
-        title: "Digital advertising — KATEM®",
+        title: "Digital advertising · KATEM®",
         description:
           "Digital advertising aimed at qualified demand: creatives, campaigns, and measurement in service of the pipeline.",
       },
       label: "SERVICE / 03",
-      title: "DIGITAL ADS",
-      lead: "Campaigns that attract people who can buy — not noise that fills the funnel.",
+      title: "DIGITAL\nADS",
+      lead: "Campaigns that attract people who can buy, not noise that fills the funnel.",
       visual: {
         windowTitle: "CAMPAIGN_RUN.exe",
         status: "SIGNAL · ON",
@@ -497,7 +497,7 @@ const en: Dictionary = {
         },
         {
           title: "How we approach it",
-          body: "We align message, creatives, and audiences. We measure inquiries and lead quality, then adjust with judgment — not vanity metrics.",
+          body: "We align message, creatives, and audiences. We measure inquiries and lead quality, then adjust with judgment, not vanity metrics.",
         },
       ],
       deliverables: {
@@ -514,7 +514,7 @@ const en: Dictionary = {
     },
     automatizaciones: {
       meta: {
-        title: "Automation — KATEM®",
+        title: "Automation · KATEM®",
         description:
           "Bots, integrations, and flows that automate conversations, tasks, and commercial follow-up.",
       },
@@ -550,7 +550,7 @@ const en: Dictionary = {
     },
     proyectos: {
       meta: {
-        title: "Projects — KATEM®",
+        title: "Projects · KATEM®",
         description:
           "Selected Katem projects: demos, digital experiences, and systems built for brands.",
       },
@@ -560,7 +560,7 @@ const en: Dictionary = {
     },
     contacto: {
       meta: {
-        title: "Contact — KATEM®",
+        title: "Contact · KATEM®",
         description:
           "Book a discovery call or email us to start a project with Katem.",
       },
