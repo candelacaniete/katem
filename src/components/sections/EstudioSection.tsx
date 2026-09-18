@@ -13,10 +13,10 @@ export function EstudioSection({ dict }: Props) {
   return (
     <section
       id="estudio"
-      className="section relative overflow-hidden bg-black"
+      className="section relative overflow-hidden bg-black !pt-12 !pb-16 sm:!pt-14 sm:!pb-20 lg:!pt-16 lg:!pb-24"
       aria-labelledby="estudio-heading"
     >
-      <div className="section__inner grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-14">
+      <div className="section__inner grid items-start gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12">
         <div>
           <KatemLabel>{dict.label}</KatemLabel>
           <h2

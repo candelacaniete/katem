@@ -139,7 +139,7 @@ function WebVisual({ copy }: { copy: ServiceVisualCopy }) {
           title={copy.windowTitle}
           variant="dark"
           className="h-full border-0 shadow-none"
-          bodyClassName="min-h-[18rem] sm:min-h-[20rem] lg:min-h-[22rem]"
+          bodyClassName="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[24rem]"
           footer={
             <>
               <span className="text-rose">{copy.status}</span>
@@ -147,7 +147,7 @@ function WebVisual({ copy }: { copy: ServiceVisualCopy }) {
             </>
           }
         >
-          <div className="grid gap-3 p-3 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-4 sm:p-5">
+          <div className="grid h-full gap-3 p-4 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-4 sm:p-5 lg:p-6">
             <aside className="border border-off-white/10 bg-black/40 p-3">
               <p className="tech-label text-pink/80">FILES</p>
               <ul className="mt-3 space-y-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-off-white/55 sm:text-[11px]">
@@ -249,7 +249,7 @@ function B2bVisual({ copy }: { copy: ServiceVisualCopy }) {
         title={copy.windowTitle}
         variant="dark"
         className="w-full"
-        bodyClassName="min-h-[18rem] sm:min-h-[20rem]"
+        bodyClassName="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[24rem]"
         footer={
           <>
             <span className="text-rose">{copy.status}</span>
@@ -257,7 +257,7 @@ function B2bVisual({ copy }: { copy: ServiceVisualCopy }) {
           </>
         }
       >
-        <div className="katem-grid-bg flex h-full flex-col justify-center p-5 sm:p-6 lg:p-7">
+        <div className="katem-grid-bg flex h-full min-h-[inherit] flex-col justify-center p-5 sm:p-6 lg:p-8">
           <p className="tech-label text-pink">MODULE / ACCOUNTS</p>
           <div className="mt-4">
             {(copy.rows ?? []).map((row) => (
@@ -312,7 +312,7 @@ function AdsVisual({ copy }: { copy: ServiceVisualCopy }) {
         title={copy.windowTitle}
         variant="dark"
         className="w-full"
-        bodyClassName="min-h-[18rem] sm:min-h-[20rem]"
+        bodyClassName="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[24rem]"
         footer={
           <>
             <span className="text-rose">{copy.status}</span>
@@ -320,7 +320,7 @@ function AdsVisual({ copy }: { copy: ServiceVisualCopy }) {
           </>
         }
       >
-        <div className="flex h-full flex-col justify-center p-5 sm:p-6 lg:p-7">
+        <div className="flex h-full min-h-[inherit] flex-col justify-center p-5 sm:p-6 lg:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p data-signal className="tech-label text-pink">
               SIGNAL · ON
@@ -373,7 +373,7 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
         title={copy.windowTitle}
         variant="dark"
         className="w-full"
-        bodyClassName="min-h-[18rem] sm:min-h-[20rem] lg:min-h-[22rem]"
+        bodyClassName="min-h-[20rem] sm:min-h-[22rem] lg:min-h-[26rem]"
         footer={
           <>
             <span className="text-rose">{copy.status}</span>
@@ -381,7 +381,7 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
           </>
         }
       >
-        <div className="flex h-full min-h-[inherit] flex-col justify-center overflow-hidden bg-black p-5 font-mono text-xs uppercase leading-relaxed tracking-[0.1em] text-off-white/65 sm:p-6 sm:text-[13px] sm:tracking-[0.12em] lg:p-7">
+        <div className="flex h-full min-h-[inherit] flex-col justify-center gap-1 overflow-hidden bg-black p-5 font-mono text-xs uppercase leading-relaxed tracking-[0.1em] text-off-white/65 sm:p-7 sm:text-sm sm:tracking-[0.12em] lg:p-8 lg:text-[15px]">
           <p data-term-line className="break-all text-pink">
             $ flow --watch
             <span data-caret className="ml-1 text-pink">
@@ -391,7 +391,7 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
           <p data-term-line className="mt-3 break-all text-off-white/35">
             # automation runtime
           </p>
-          <div data-term-line className="min-w-0">
+          <div data-term-line className="min-w-0 py-1">
             <VerticalFlow steps={copy.flow ?? []} />
           </div>
           <p data-term-line className="mt-5 break-all text-off-white/40">

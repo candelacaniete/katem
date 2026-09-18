@@ -59,7 +59,7 @@ export function ServicePageView({ copy, visualId }: Props) {
 
       <div className="section__inner relative z-10">
         {/* title + terminal — terminal owns the visual weight */}
-        <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-10 xl:gap-14">
+        <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] lg:gap-10 xl:gap-12">
           <div className="flex min-w-0 flex-col justify-center">
             <div className="flex flex-wrap items-center gap-3">
               <KatemLabel>{copy.label}</KatemLabel>
