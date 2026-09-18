@@ -43,9 +43,12 @@ export function middleware(request: NextRequest) {
     return withLocaleHeader(rewrite, defaultLocale);
   }
 
-  const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url);
+  // Unknown bare paths: rewrite into the default locale so missing
+  // routes 404 instead of bouncing /path ↔ /es/path.
+  const rewrite = NextResponse.rewrite(
+    new URL(`/${defaultLocale}${pathname}`, request.url)
+  );
+  return withLocaleHeader(rewrite, defaultLocale);
 }
 
 export const config = {
