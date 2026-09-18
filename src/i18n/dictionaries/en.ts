@@ -1,5 +1,5 @@
 import type { Dictionary } from "./es";
-import { bookingHref, emailHref, site } from "@/lib/site";
+import { bookingHref, emailHref, site, whatsappHref } from "@/lib/site";
 
 const en: Dictionary = {
   meta: {
@@ -431,6 +431,15 @@ const en: Dictionary = {
           "Launch and post-launch adjustments",
         ],
       },
+      benefits: {
+        label: "BENEFITS",
+        items: [
+          "Clear message from the first scroll",
+          "Presence aligned with the brand",
+          "Built to convert inquiries",
+          "Clean, easy-to-maintain code",
+        ],
+      },
       cta: "TALK ABOUT A SITE →",
       ctaHref: bookingHref,
     },
@@ -473,6 +482,15 @@ const en: Dictionary = {
           "Opportunity follow-up system",
         ],
       },
+      benefits: {
+        label: "BENEFITS",
+        items: [
+          "More predictable pipeline",
+          "Conversations with real accounts",
+          "Less dependence on inbound",
+          "Organized reply follow-up",
+        ],
+      },
       cta: "BUILD MY PIPELINE →",
       ctaHref: bookingHref,
     },
@@ -507,6 +525,15 @@ const en: Dictionary = {
           "Creatives and copy",
           "Campaign setup",
           "Results reading and adjustments",
+        ],
+      },
+      benefits: {
+        label: "BENEFITS",
+        items: [
+          "More qualified demand",
+          "Budget with clear direction",
+          "Creatives tied to the offer",
+          "Adjustments based on lead quality",
         ],
       },
       cta: "REVIEW ADS →",
@@ -545,6 +572,15 @@ const en: Dictionary = {
           "Human handoff and follow-up",
         ],
       },
+      benefits: {
+        label: "BENEFITS",
+        items: [
+          "Response even when you're offline",
+          "Fewer repetitive tasks",
+          "Leads captured on time",
+          "Clear handoff to your team",
+        ],
+      },
       cta: "AUTOMATE A FLOW →",
       ctaHref: bookingHref,
     },
@@ -554,9 +590,10 @@ const en: Dictionary = {
         description:
           "Selected Katem projects: demos, digital experiences, and systems built for brands.",
       },
-      label: "ARCHIVE",
-      title: "PROJECTS",
+      title: "SELECTED PROJECTS",
       lead: "A selection of demos and digital experiences built with the same judgment we bring to every client.",
+      cta: "CHAT ON WHATSAPP →",
+      ctaHref: whatsappHref,
     },
     contacto: {
       meta: {

@@ -17,11 +17,13 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 type Props = {
   dict: Dictionary["archivo"];
+  /** Hide label + title when the parent page already provides the intro. */
+  hideIntro?: boolean;
 };
 
 type Project = Dictionary["archivo"]["projects"][number];
 
-export function ArchivoSection({ dict }: Props) {
+export function ArchivoSection({ dict, hideIntro = false }: Props) {
   const root = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<string | null>(null);
@@ -118,13 +120,21 @@ export function ArchivoSection({ dict }: Props) {
       aria-labelledby="archivo-heading"
     >
       <div className="section__inner">
-        <KatemLabel>{dict.label}</KatemLabel>
-        <h2 id="archivo-heading" className="section__title">
-          {dict.title}
-        </h2>
+        {hideIntro ? (
+          <h2 id="archivo-heading" className="sr-only">
+            {dict.title}
+          </h2>
+        ) : (
+          <>
+            <KatemLabel>{dict.label}</KatemLabel>
+            <h2 id="archivo-heading" className="section__title">
+              {dict.title}
+            </h2>
+          </>
+        )}
 
         <ArcadeCabinet
-          className="mt-10"
+          className={hideIntro ? "mt-0" : "mt-10"}
           title="KATEM ARCADE"
           subtitle="SELECT GAME"
         >

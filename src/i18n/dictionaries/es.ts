@@ -1,4 +1,4 @@
-import { bookingHref, emailHref, site } from "@/lib/site";
+import { bookingHref, emailHref, site, whatsappHref } from "@/lib/site";
 
 const es = {
   meta: {
@@ -430,6 +430,15 @@ const es = {
           "Publicación y ajustes de lanzamiento",
         ],
       },
+      benefits: {
+        label: "BENEFICIOS",
+        items: [
+          "Mensaje claro desde el primer scroll",
+          "Presencia alineada a la marca",
+          "Base lista para convertir consultas",
+          "Código limpio y fácil de mantener",
+        ],
+      },
       cta: "HABLAR DE UN SITIO →",
       ctaHref: bookingHref,
     },
@@ -472,6 +481,15 @@ const es = {
           "Sistema de seguimiento de oportunidades",
         ],
       },
+      benefits: {
+        label: "BENEFICIOS",
+        items: [
+          "Pipeline más predecible",
+          "Conversaciones con cuentas reales",
+          "Menos dependencia del inbound",
+          "Seguimiento ordenado de respuestas",
+        ],
+      },
       cta: "ARMAR MI PIPELINE →",
       ctaHref: bookingHref,
     },
@@ -506,6 +524,15 @@ const es = {
           "Creatividades y copy",
           "Configuración de campañas",
           "Lectura de resultados y ajustes",
+        ],
+      },
+      benefits: {
+        label: "BENEFICIOS",
+        items: [
+          "Demanda más calificada",
+          "Presupuesto con dirección clara",
+          "Creatividades atadas a la oferta",
+          "Ajustes según calidad de leads",
         ],
       },
       cta: "REVISAR PUBLICIDAD →",
@@ -544,6 +571,15 @@ const es = {
           "Handoff humano y seguimiento",
         ],
       },
+      benefits: {
+        label: "BENEFICIOS",
+        items: [
+          "Respuesta aunque no estés online",
+          "Menos tareas repetitivas",
+          "Leads capturados a tiempo",
+          "Handoff claro al equipo humano",
+        ],
+      },
       cta: "AUTOMATIZAR UN FLUJO →",
       ctaHref: bookingHref,
     },
@@ -553,9 +589,10 @@ const es = {
         description:
           "Proyectos seleccionados de Katem: demos, experiencias digitales y sistemas construidos para marcas.",
       },
-      label: "ARCHIVO",
-      title: "PROYECTOS",
+      title: "PROYECTOS SELECCIONADOS",
       lead: "Una selección de demos y experiencias digitales construidas con el mismo criterio que llevamos a cada cliente.",
+      cta: "HABLAR POR WHATSAPP →",
+      ctaHref: whatsappHref,
     },
     contacto: {
       meta: {

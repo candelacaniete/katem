@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteShell } from "@/components/SiteShell";
 import { ArchivoSection } from "@/components/sections/ArchivoSection";
-import { KatemLabel } from "@/components/katem/KatemLabel";
+import { KatemButton } from "@/components/katem/KatemButton";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { buildPageMetadata } from "@/lib/page-meta";
@@ -43,14 +43,23 @@ export default async function ProyectosPage({
     <SiteShell dict={dict} locale={locale}>
       <div className="section pb-0">
         <div className="section__inner max-w-3xl">
-          <KatemLabel>{copy.label}</KatemLabel>
           <h1 className="section__title">{copy.title}</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-off-white/75">
             {copy.lead}
           </p>
+          <div className="mt-8">
+            <KatemButton
+              href={copy.ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              {copy.cta}
+            </KatemButton>
+          </div>
         </div>
       </div>
-      <ArchivoSection dict={dict.archivo} />
+      <ArchivoSection dict={dict.archivo} hideIntro />
     </SiteShell>
   );
 }
