@@ -437,6 +437,7 @@ const es = {
       ],
       deliverables: {
         label: "ENTREGABLES",
+        faqQuestion: "¿Qué me entregan?",
         items: [
           "Sitio o landing a medida",
           "Dirección visual y tipografía",
@@ -446,6 +447,7 @@ const es = {
       },
       benefits: {
         label: "BENEFICIOS",
+        faqQuestion: "¿Cuáles son los beneficios?",
         items: [
           "Mensaje claro desde el primer scroll",
           "Presencia alineada a la marca",
@@ -517,6 +519,7 @@ const es = {
       ],
       deliverables: {
         label: "ENTREGABLES",
+        faqQuestion: "¿Qué me entregan?",
         items: [
           "Definición de ICP y mensajes",
           "Investigación de cuentas y decisores",
@@ -526,6 +529,7 @@ const es = {
       },
       benefits: {
         label: "BENEFICIOS",
+        faqQuestion: "¿Cuáles son los beneficios?",
         items: [
           "Más oportunidades comerciales",
           "Conversaciones con cuentas reales",
@@ -591,6 +595,7 @@ const es = {
       ],
       deliverables: {
         label: "ENTREGABLES",
+        faqQuestion: "¿Qué me entregan?",
         items: [
           "Estrategia de captación",
           "Creatividades y copy",
@@ -600,6 +605,7 @@ const es = {
       },
       benefits: {
         label: "BENEFICIOS",
+        faqQuestion: "¿Cuáles son los beneficios?",
         items: [
           "Demanda más calificada",
           "Presupuesto con dirección clara",
@@ -665,6 +671,7 @@ const es = {
       ],
       deliverables: {
         label: "ENTREGABLES",
+        faqQuestion: "¿Qué me entregan?",
         items: [
           "Mapa del proceso a automatizar",
           "Bot o flujo conversacional",
@@ -674,6 +681,7 @@ const es = {
       },
       benefits: {
         label: "BENEFICIOS",
+        faqQuestion: "¿Cuáles son los beneficios?",
         items: [
           "Respuesta aunque no estés online",
           "Menos tareas repetitivas",

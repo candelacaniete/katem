@@ -14,10 +14,14 @@ export function AnalysisSection({ dict }: Props) {
       className="section relative overflow-hidden border-y border-off-white/10 bg-black !py-12 sm:!py-14 lg:!py-16"
       aria-labelledby="analysis-heading"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(139,122,158,0.08),transparent_55%)]"
-      />
+      {/* Animated atmosphere — grid drift + soft signal pulse */}
+      <div aria-hidden className="analysis-field pointer-events-none absolute inset-0">
+        <div className="analysis-field__glow" />
+        <div className="analysis-field__grid" />
+        <div className="analysis-field__scan" />
+        <div className="analysis-field__vignette" />
+      </div>
+
       <div className="section__inner relative z-10 max-w-5xl">
         <h2 id="analysis-heading" className="sr-only">
           {dict.title}

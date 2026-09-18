@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,9 +26,28 @@ type Props = {
   visualId: ServiceVisualId;
 };
 
+function formatListAnswer(items: string[]) {
+  return items.map((item) => `▸ ${item}`).join("\n");
+}
+
 export function ServicePageView({ copy, visualId }: Props) {
   const root = useRef<HTMLDivElement>(null);
   const [paraQue, como] = copy.sections;
+
+  const faqItems = useMemo(
+    () => [
+      {
+        question: copy.benefits.faqQuestion,
+        answer: formatListAnswer(copy.benefits.items),
+      },
+      {
+        question: copy.deliverables.faqQuestion,
+        answer: formatListAnswer(copy.deliverables.items),
+      },
+      ...copy.faq.items,
+    ],
+    [copy.benefits, copy.deliverables, copy.faq.items]
+  );
 
   useGSAP(
     () => {
@@ -58,8 +77,8 @@ export function ServicePageView({ copy, visualId }: Props) {
       />
 
       <div className="section__inner relative z-10">
-        {/* title + terminal — terminal owns the visual weight */}
-        <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] lg:gap-10 xl:gap-12">
+        {/* title | terminal — 50 / 50 */}
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
           <div className="flex min-w-0 flex-col justify-center">
             <div className="flex flex-wrap items-center gap-3">
               <KatemLabel>{copy.label}</KatemLabel>
@@ -69,7 +88,7 @@ export function ServicePageView({ copy, visualId }: Props) {
             <h1 className="section__title mt-4 whitespace-pre-line">
               {copy.title}
             </h1>
-            <p className="mt-4 max-w-sm text-base leading-relaxed text-off-white/75 sm:mt-5 sm:text-lg">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-off-white/75 sm:mt-5 sm:text-lg">
               {copy.lead}
             </p>
           </div>
@@ -83,7 +102,7 @@ export function ServicePageView({ copy, visualId }: Props) {
           </div>
         </div>
 
-        {/* para qué | cómo + mid cta */}
+        {/* para qué | cómo */}
         <div
           data-service-reveal
           className="mt-10 border-t border-off-white/10 pt-8 sm:mt-12 sm:pt-9"
@@ -104,51 +123,6 @@ export function ServicePageView({ copy, visualId }: Props) {
                 </p>
               </section>
             ))}
-          </div>
-
-          <div className="mt-7">
-            <KatemButton
-              href={copy.ctaHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto"
-            >
-              {copy.cta}
-            </KatemButton>
-          </div>
-        </div>
-
-        {/* benefits + deliverables */}
-        <div
-          data-service-reveal
-          className="mt-9 grid gap-7 border-t border-off-white/10 pt-8 sm:mt-11 lg:grid-cols-2 lg:gap-10"
-        >
-          <div>
-            <p className="tech-label">{copy.benefits.label}</p>
-            <ul className="mt-3.5 space-y-2.5">
-              {copy.benefits.items.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 border-l border-pink/40 pl-4 font-mono text-[11px] uppercase leading-relaxed tracking-[0.1em] text-off-white/70"
-                >
-                  <span className="text-pink" aria-hidden>
-                    ▸
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="tech-label">{copy.deliverables.label}</p>
-            <ul className="mt-3.5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              {copy.deliverables.items.map((item) => (
-                <li key={item} className="deliverable-item">
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
@@ -173,12 +147,12 @@ export function ServicePageView({ copy, visualId }: Props) {
           </KatemButton>
         </div>
 
-        {/* faq */}
+        {/* faq — includes benefits + deliverables */}
         <div
           data-service-reveal
           className="mt-9 border-t border-off-white/10 pt-8 sm:mt-11"
         >
-          <ServiceFaq label={copy.faq.label} items={copy.faq.items} />
+          <ServiceFaq label={copy.faq.label} items={faqItems} />
         </div>
       </div>
     </div>

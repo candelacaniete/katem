@@ -438,6 +438,7 @@ const en: Dictionary = {
       ],
       deliverables: {
         label: "DELIVERABLES",
+        faqQuestion: "What do you deliver?",
         items: [
           "Custom site or landing",
           "Visual direction and typography",
@@ -447,6 +448,7 @@ const en: Dictionary = {
       },
       benefits: {
         label: "BENEFITS",
+        faqQuestion: "What are the benefits?",
         items: [
           "Clear message from the first scroll",
           "Presence aligned with the brand",
@@ -518,6 +520,7 @@ const en: Dictionary = {
       ],
       deliverables: {
         label: "DELIVERABLES",
+        faqQuestion: "What do you deliver?",
         items: [
           "ICP and messaging definition",
           "Account and decision-maker research",
@@ -527,6 +530,7 @@ const en: Dictionary = {
       },
       benefits: {
         label: "BENEFITS",
+        faqQuestion: "What are the benefits?",
         items: [
           "More commercial opportunities",
           "Conversations with real accounts",
@@ -592,6 +596,7 @@ const en: Dictionary = {
       ],
       deliverables: {
         label: "DELIVERABLES",
+        faqQuestion: "What do you deliver?",
         items: [
           "Acquisition strategy",
           "Creatives and copy",
@@ -601,6 +606,7 @@ const en: Dictionary = {
       },
       benefits: {
         label: "BENEFITS",
+        faqQuestion: "What are the benefits?",
         items: [
           "More qualified demand",
           "Budget with clear direction",
@@ -666,6 +672,7 @@ const en: Dictionary = {
       ],
       deliverables: {
         label: "DELIVERABLES",
+        faqQuestion: "What do you deliver?",
         items: [
           "Process map to automate",
           "Bot or conversational flow",
@@ -675,6 +682,7 @@ const en: Dictionary = {
       },
       benefits: {
         label: "BENEFITS",
+        faqQuestion: "What are the benefits?",
         items: [
           "Response even when you're offline",
           "Fewer repetitive tasks",

@@ -53,7 +53,7 @@ export function ServiceFaq({ label, items }: Props) {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="max-w-3xl pb-4 text-sm leading-relaxed text-off-white/65 sm:text-base">
+                  <p className="max-w-3xl whitespace-pre-line pb-4 text-sm leading-relaxed text-off-white/65 sm:text-base">
                     {item.answer}
                   </p>
                 </div>
