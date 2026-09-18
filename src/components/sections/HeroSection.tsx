@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/es";
+import type { Locale } from "@/i18n/config";
+import { localePath } from "@/lib/seo";
 import { bookingHref } from "@/lib/site";
 import { KatemButton } from "@/components/katem/KatemButton";
 import { KatemGrid } from "@/components/katem/KatemGrid";
@@ -11,9 +13,11 @@ import { RetroCrt } from "@/components/katem/RetroCrt";
 
 type Props = {
   dict: Dictionary["hero"];
+  locale: Locale;
 };
 
-export function HeroSection({ dict }: Props) {
+export function HeroSection({ dict, locale }: Props) {
+  const projectsHref = localePath(locale, dict.ctaPrimaryHref);
   const reduce = useReducedMotion();
   const lines = [
     dict.line1,
@@ -85,7 +89,7 @@ export function HeroSection({ dict }: Props) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
-              <KatemButton href="#archivo">{dict.ctaPrimary}</KatemButton>
+              <KatemButton href={projectsHref}>{dict.ctaPrimary}</KatemButton>
               <KatemButton href={bookingHref} target="_blank" rel="noreferrer">
                 {dict.ctaSecondary}
               </KatemButton>

@@ -42,7 +42,7 @@ const accent = Bagel_Fat_One({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "KATEM® — Estudio digital boutique",
+    default: "KATEM® · Estudio digital boutique",
     template: "%s · KATEM®",
   },
   description:
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     "ecommerce",
   ],
   openGraph: {
-    title: "KATEM® — Estudio digital boutique",
+    title: "KATEM® · Estudio digital boutique",
     description:
       "Experiencias digitales con criterio, identidad y tecnología. Buenos Aires / Mundo.",
     url: site.url,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KATEM® — Estudio digital boutique",
+    title: "KATEM® · Estudio digital boutique",
     description:
       "Experiencias digitales con criterio, identidad y tecnología. Buenos Aires / Mundo.",
   },

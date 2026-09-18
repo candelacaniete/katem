@@ -71,7 +71,23 @@
   }
 
   .section {
-    @apply relative px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
+    @apply relative px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
+  }
+
+  /* Inner pages: tighter under nav, less dead air below */
+  .section--page {
+    @apply pt-9 pb-12 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20;
+  }
+
+  .service-hero-texture {
+    background-image:
+      radial-gradient(ellipse 80% 60% at 15% 10%, rgba(212, 160, 174, 0.14), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 85% 20%, rgba(139, 122, 158, 0.1), transparent 50%),
+      linear-gradient(180deg, rgba(26, 21, 24, 0.65) 0%, transparent 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+    background-size: auto, auto, auto, 180px 180px;
+    opacity: 0.9;
+    mask-image: linear-gradient(180deg, #000 35%, transparent 100%);
   }
 
   .section__inner {
@@ -79,11 +95,45 @@
   }
 
   .section__label {
-    @apply mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-off-white/55;
+    @apply mb-4 font-mono text-[10px] uppercase tracking-[0.14em] text-off-white/55 sm:text-[11px] sm:tracking-[0.22em];
   }
 
   .section__title {
-    @apply font-display text-4xl font-semibold leading-[0.95] tracking-tight text-off-white sm:text-5xl lg:text-6xl;
+    font-family: theme("fontFamily.display");
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: theme("colors.off-white");
+    font-size: clamp(1.75rem, 7.2vw + 0.35rem, 3.75rem);
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+    white-space: pre-line;
+  }
+
+  .tech-label {
+    @apply font-mono text-[10px] uppercase text-off-white/45;
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 640px) {
+    .tech-label {
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .deliverable-item {
+    @apply border-l border-pink/50 pl-4 font-mono text-[10px] uppercase leading-relaxed text-off-white/70 sm:text-[11px];
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .deliverable-item {
+      letter-spacing: 0.14em;
+    }
   }
 
   .katem-grid-bg {
@@ -202,10 +252,6 @@
     background: transparent;
   }
 
-  .tech-label {
-    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-off-white/45;
-  }
-
   /* --- Scanlines (matte CRT, no glow) --- */
   .crt-overlay {
     pointer-events: none;
@@ -235,11 +281,18 @@
 
   .retro-crt__shell {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 52px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0;
     border-radius: 1.25rem;
-    padding: 0.85rem 0.65rem 0.85rem 0.85rem;
+    padding: 0.75rem;
     border: 3px solid #2a2426;
+  }
+
+  @media (min-width: 640px) {
+    .retro-crt__shell {
+      grid-template-columns: minmax(0, 1fr) 52px;
+      padding: 0.85rem 0.65rem 0.85rem 0.85rem;
+    }
   }
 
   .retro-crt--beige .retro-crt__shell {
@@ -272,12 +325,18 @@
   }
 
   .retro-crt__panel {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.85rem;
     padding: 0.5rem 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .retro-crt__panel {
+      display: flex;
+    }
   }
 
   .retro-crt__grille {
@@ -440,8 +499,113 @@
     }
   }
 
+  /* Analysis form section — quiet CRT / grid atmosphere */
+  .analysis-field {
+    isolation: isolate;
+  }
+
+  .analysis-field__glow {
+    position: absolute;
+    inset: -20% -10%;
+    background:
+      radial-gradient(ellipse 55% 45% at 18% 30%, rgba(212, 160, 174, 0.14), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 82% 70%, rgba(139, 122, 158, 0.1), transparent 55%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, rgba(212, 160, 174, 0.05), transparent 70%);
+    animation: analysis-glow-drift 14s ease-in-out infinite alternate;
+  }
+
+  .analysis-field__grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(rgba(242, 235, 230, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 235, 230, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 20%, transparent 75%);
+    animation: analysis-grid-pan 28s linear infinite;
+  }
+
+  .analysis-field__scan {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 3px,
+      rgba(0, 0, 0, 0.12) 3px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+  }
+
+  .analysis-field__scan::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 28%;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(212, 160, 174, 0.06),
+      transparent
+    );
+    animation: analysis-scan-sweep 7.5s ease-in-out infinite;
+  }
+
+  .analysis-field__vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.55) 100%);
+  }
+
+  @keyframes analysis-glow-drift {
+    0% {
+      transform: translate3d(-2%, -1%, 0) scale(1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: translate3d(2%, 2%, 0) scale(1.06);
+      opacity: 1;
+    }
+  }
+
+  @keyframes analysis-grid-pan {
+    0% {
+      background-position: 0 0, 0 0;
+    }
+    100% {
+      background-position: 48px 48px, 48px 48px;
+    }
+  }
+
+  @keyframes analysis-scan-sweep {
+    0% {
+      transform: translateY(-120%);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(320%);
+      opacity: 0;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .terminal-caret {
+      animation: none;
+    }
+
+    .analysis-field__glow,
+    .analysis-field__grid,
+    .analysis-field__scan::after {
       animation: none;
     }
   }

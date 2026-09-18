@@ -1,14 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/dictionaries/es";
+import type { Locale } from "@/i18n/config";
 import { KatemLabel } from "@/components/katem/KatemLabel";
 import { cn } from "@/lib/cn";
+import { localePath } from "@/lib/seo";
 
 type Props = {
   dict: Dictionary["servicios"];
+  locale: Locale;
 };
 
-export function ServiciosSection({ dict }: Props) {
+export function ServiciosSection({ dict, locale }: Props) {
   return (
     <section
       id="servicios"
@@ -27,9 +31,10 @@ export function ServiciosSection({ dict }: Props) {
         <ul className="mt-14 grid gap-0 md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-off-white/10">
           {dict.items.map((item) => (
             <li key={item.id} className="group relative">
-              <article
+              <Link
+                href={localePath(locale, item.href)}
                 className={cn(
-                  "h-full border-t border-off-white/10 px-0 py-8 transition-colors duration-300 md:px-5",
+                  "block h-full border-t border-off-white/10 px-0 py-8 transition-colors duration-300 md:px-5",
                   "hover:bg-purple-black"
                 )}
                 data-cursor="open"
@@ -47,10 +52,10 @@ export function ServiciosSection({ dict }: Props) {
                 <p className="mt-5 text-sm leading-relaxed text-off-white/60">
                   {item.description}
                 </p>
-                <p className="mt-8 font-mono text-[10px] tracking-[0.18em] text-off-white/30 group-hover:text-pink/70">
-                  {item.signal}
+                <p className="mt-8 font-mono text-[10px] tracking-[0.18em] text-off-white/30 transition-colors group-hover:text-pink/70">
+                  {dict.enter}
                 </p>
-              </article>
+              </Link>
             </li>
           ))}
         </ul>

@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 import type { Locale } from "@/i18n/config";
+import { barePathFromPathname, href } from "@/lib/routes";
 import { localePath } from "@/lib/seo";
+import { cn } from "@/lib/cn";
 
 type Props = {
   dict: Dictionary["footer"];
@@ -10,6 +15,10 @@ type Props = {
 };
 
 export function FooterSection({ dict, lang, locale }: Props) {
+  const pathname = usePathname() || "/";
+  const bare = barePathFromPathname(pathname);
+  const esHref = href("es", bare === "/" ? "home" : bare);
+  const enHref = href("en", bare === "/" ? "home" : bare);
   const privacyHref = localePath(locale, dict.privacy.href);
 
   return (
@@ -27,14 +36,14 @@ export function FooterSection({ dict, lang, locale }: Props) {
 
         <div className="flex flex-col gap-3">
           {dict.links.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              href={localePath(locale, link.href)}
               className="font-body text-[11px] uppercase tracking-[0.18em] text-off-white/60 transition-colors hover:text-pink"
               data-cursor="open"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <Link
             href={privacyHref}
@@ -61,16 +70,24 @@ export function FooterSection({ dict, lang, locale }: Props) {
           ))}
           <div className="mt-2 flex items-center gap-2 font-mono text-[11px] tracking-[0.18em]">
             <Link
-              href="/"
-              className={locale === "es" ? "text-pink" : "text-off-white/40"}
+              href={esHref}
+              className={cn(
+                locale === "es"
+                  ? "text-pink"
+                  : "text-off-white/40 hover:text-off-white"
+              )}
               hrefLang="es"
             >
               {lang.es}
             </Link>
             <span className="text-off-white/25">/</span>
             <Link
-              href="/en"
-              className={locale === "en" ? "text-pink" : "text-off-white/40"}
+              href={enHref}
+              className={cn(
+                locale === "en"
+                  ? "text-pink"
+                  : "text-off-white/40 hover:text-off-white"
+              )}
               hrefLang="en"
             >
               {lang.en}

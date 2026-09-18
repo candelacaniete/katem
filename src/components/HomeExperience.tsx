@@ -9,7 +9,6 @@ import { KatemCrt } from "@/components/katem/KatemCrt";
 import { KatemCursor } from "@/components/katem/KatemCursor";
 import { KatemNav } from "@/components/katem/KatemNav";
 import { SmoothScroll } from "@/components/katem/SmoothScroll";
-import { ArchivoSection } from "@/components/sections/ArchivoSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { EstudioSection } from "@/components/sections/EstudioSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -18,7 +17,6 @@ import { MetodoSection } from "@/components/sections/MetodoSection";
 import { PipelineSection } from "@/components/sections/PipelineSection";
 import { ServiciosSection } from "@/components/sections/ServiciosSection";
 import { StatementSection } from "@/components/sections/StatementSection";
-import { WhyKatemSection } from "@/components/sections/WhyKatemSection";
 
 type Props = {
   dict: Dictionary;
@@ -49,15 +47,13 @@ export function HomeExperience({ dict, locale }: Props) {
       >
         <KatemNav dict={dict.nav} locale={locale} />
         <main>
-          <HeroSection dict={dict.hero} />
+          <HeroSection dict={dict.hero} locale={locale} />
           <StatementSection dict={dict.statement} />
-          <ArchivoSection dict={dict.archivo} />
-          <ServiciosSection dict={dict.servicios} />
+          <ServiciosSection dict={dict.servicios} locale={locale} />
           <PipelineSection dict={dict.pipeline} />
-          <WhyKatemSection dict={dict.why} />
           <MetodoSection dict={dict.metodo} />
           <EstudioSection dict={dict.estudio} />
-          <CtaSection dict={dict.cta} />
+          <CtaSection dict={dict.cta} form={dict.analysisForm} />
         </main>
         <FooterSection
           dict={dict.footer}

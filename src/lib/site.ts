@@ -5,7 +5,7 @@ export const site = {
   domain: "katem.com.ar",
   url: "https://katem.com.ar",
   email: "candelacanete@katem.com.ar",
-  whatsapp: "541131121463",
+  whatsapp: "541173739450",
   instagram: "https://www.instagram.com/katembsas",
   demos: "https://www.katem.store",
   year: 2026,
@@ -17,5 +17,11 @@ export const bookingHref = "https://calendar.app.google/bL7uXed3AjdYejF96";
 export const emailHref = `mailto:${site.email}?subject=${encodeURIComponent(
   "Quiero iniciar un proyecto con Katem"
 )}`;
+
+export const whatsappHref = `https://wa.me/${site.whatsapp}`;
+
+export function whatsappHrefWithText(text: string) {
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+}
 
 export const demosHref = site.demos;
