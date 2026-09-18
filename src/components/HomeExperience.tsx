@@ -9,7 +9,6 @@ import { KatemCrt } from "@/components/katem/KatemCrt";
 import { KatemCursor } from "@/components/katem/KatemCursor";
 import { KatemNav } from "@/components/katem/KatemNav";
 import { SmoothScroll } from "@/components/katem/SmoothScroll";
-import { AnalysisSection } from "@/components/sections/AnalysisSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { EstudioSection } from "@/components/sections/EstudioSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -53,9 +52,8 @@ export function HomeExperience({ dict, locale }: Props) {
           <ServiciosSection dict={dict.servicios} locale={locale} />
           <PipelineSection dict={dict.pipeline} />
           <MetodoSection dict={dict.metodo} />
-          <AnalysisSection dict={dict.analysisForm} />
           <EstudioSection dict={dict.estudio} />
-          <CtaSection dict={dict.cta} locale={locale} />
+          <CtaSection dict={dict.cta} form={dict.analysisForm} />
         </main>
         <FooterSection
           dict={dict.footer}
