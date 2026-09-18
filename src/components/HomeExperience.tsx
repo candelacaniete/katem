@@ -53,9 +53,9 @@ export function HomeExperience({ dict, locale }: Props) {
           <ServiciosSection dict={dict.servicios} locale={locale} />
           <PipelineSection dict={dict.pipeline} />
           <MetodoSection dict={dict.metodo} />
+          <AnalysisSection dict={dict.analysisForm} />
           <EstudioSection dict={dict.estudio} />
           <CtaSection dict={dict.cta} locale={locale} />
-          <AnalysisSection dict={dict.analysisForm} />
         </main>
         <FooterSection
           dict={dict.footer}

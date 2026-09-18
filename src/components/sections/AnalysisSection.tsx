@@ -11,7 +11,7 @@ export function AnalysisSection({ dict }: Props) {
   return (
     <section
       id="analisis"
-      className="section relative overflow-hidden border-t border-off-white/10 bg-black"
+      className="section relative overflow-hidden border-y border-off-white/10 bg-black py-12 sm:py-14 lg:py-16"
       aria-labelledby="analysis-heading"
     >
       <div

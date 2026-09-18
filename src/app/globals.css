@@ -74,9 +74,9 @@
     @apply relative px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-28;
   }
 
-  /* Inner pages: tighter top gap under fixed/absolute nav */
+  /* Inner pages: tighter under nav, less dead air below */
   .section--page {
-    @apply pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28;
+    @apply pt-9 pb-12 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20;
   }
 
   .service-hero-texture {
