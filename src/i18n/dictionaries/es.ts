@@ -11,15 +11,18 @@ const es = {
   nav: {
     brand: site.brand,
     studio: site.tagline,
-    links: [
-      { href: "#archivo", label: "TRABAJO" },
-      { href: "#servicios", label: "SERVICIOS" },
-      { href: "#why", label: "POR QUÉ" },
-      { href: "#metodo", label: "MÉTODO" },
-      { href: "#estudio", label: "ESTUDIO" },
-      { href: "#contacto", label: "CONTACTO" },
+    servicesLabel: "SERVICIOS",
+    services: [
+      { href: "/desarrollo-web", label: "DESARROLLO WEB" },
+      { href: "/prospeccion-b2b", label: "PROSPECCIÓN B2B" },
+      { href: "/publicidad-digital", label: "PUBLICIDAD DIGITAL" },
+      { href: "/automatizaciones", label: "AUTOMATIZACIONES" },
     ],
-    demos: { href: "#archivo", label: "DEMOS" },
+    links: [
+      { href: "/proyectos", label: "PROYECTOS" },
+      { href: "/contacto", label: "CONTACTO" },
+    ],
+    demos: { href: "/proyectos", label: "DEMOS" },
     lang: { es: "ES", en: "EN" },
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
@@ -48,6 +51,7 @@ const es = {
     line3: "QUE UNA WEB.",
     sub: "Diseñamos experiencias digitales\npara marcas que quieren ser recordadas.",
     ctaPrimary: "VER PROYECTOS →",
+    ctaPrimaryHref: "/proyectos",
     ctaSecondary: "AGENDAR LLAMADA DE DESCUBRIMIENTO →",
     windowTitle: "KATEM_SYSTEM.exe",
     status: "STATUS: ACCEPTING PROJECTS",
@@ -208,36 +212,41 @@ const es = {
     },
   },
   servicios: {
-    label: "PROTOCOLO",
+    label: "ECOSISTEMA",
     title: ["LO QUE", "PODEMOS", "CONSTRUIR."],
+    enter: "ENTRAR →",
     items: [
       {
         id: "01",
-        title: "EXPERIENCIAS\nDIGITALES",
+        title: "DESARROLLO\nWEB",
         description:
           "Sitios y landings pensados para comunicar con claridad, transmitir profesionalismo y convertir visitas en consultas.",
         signal: "SIGNAL STABLE",
+        href: "/desarrollo-web",
       },
       {
         id: "02",
-        title: "ADQUISICIÓN\nB2B",
+        title: "PROSPECCIÓN\nB2B",
         description:
-          "Diseñamos sistemas de prospección para acercar tu negocio a las empresas correctas: investigación de cuentas, contacto personalizado y seguimiento de oportunidades.",
+          "Sistemas de prospección para acercar tu negocio a las empresas correctas: investigación, outreach y seguimiento.",
         signal: "SIGNAL ACTIVE",
+        href: "/prospeccion-b2b",
       },
       {
         id: "03",
-        title: "PRODUCTOS\nDIGITALES",
+        title: "PUBLICIDAD\nDIGITAL",
         description:
-          "Tiendas, cursos y recursos digitales desde una plataforma propia, lista para vender sin depender de terceros.",
+          "Campañas y creatividades orientadas a captar demanda cualificada y alimentar tu pipeline comercial.",
         signal: "SIGNAL STABLE",
+        href: "/publicidad-digital",
       },
       {
         id: "04",
-        title: "SISTEMAS &\nAUTOMATIZACIÓN",
+        title: "AUTOMATI-\nZACIONES",
         description:
-          "Bots, integraciones y flujos que automatizan tareas, conversaciones y procesos para que tu negocio siga funcionando cuando vos no estás frente a la pantalla.",
+          "Bots, integraciones y flujos que automatizan tareas, conversaciones y procesos cuando no estás frente a la pantalla.",
         signal: "SIGNAL STABLE",
+        href: "/automatizaciones",
       },
     ],
   },
@@ -313,31 +322,31 @@ const es = {
         id: "01",
         title: "ENTENDER",
         description:
-          "Escuchamos tu negocio, tus objetivos y qué tiene que lograr el sitio. Una conversación clara por WhatsApp.",
+          "Escuchamos tu negocio, tus objetivos y qué tiene que lograr el sistema digital. Una conversación clara.",
       },
       {
         id: "02",
-        title: "IDEAR",
+        title: "DEFINIR",
         description:
-          "Definimos dirección creativa y estructura. Criterio antes que plantillas.",
+          "Priorizamos alcance, mensaje y arquitectura. Criterio antes que plantillas.",
       },
       {
         id: "03",
-        title: "DISEÑAR",
+        title: "CONSTRUIR",
         description:
-          "Composición, tipografía e identidad visual alineadas a la personalidad de tu marca.",
+          "Diseño y desarrollo limpio, rápido y mantenible. Tecnología al servicio del resultado.",
       },
       {
         id: "04",
-        title: "CONSTRUIR",
+        title: "ACTIVAR",
         description:
-          "Desarrollo limpio, rápido y mantenible. Tecnología al servicio del resultado.",
+          "Publicamos, conectamos adquisición y dejamos los flujos listos para operar.",
       },
       {
         id: "05",
-        title: "LANZAR",
+        title: "MEDIR",
         description:
-          "Publicamos, ajustamos y te dejamos lista una presencia online profesional.",
+          "Revisamos señales, conversiones y oportunidades para iterar con evidencia.",
       },
     ],
   },
@@ -362,20 +371,20 @@ const es = {
     lines: ["TU PRÓXIMO MOVIMIENTO DIGITAL", "EMPIEZA ACÁ."],
     accent: "EMPIEZA ACÁ.",
     button: "AGENDAR LLAMADA →",
-    secondary: "INICIAR UN PROYECTO →",
+    secondary: "IR A CONTACTO →",
     email: site.email,
     note: "Buenos Aires / Argentina / Mundo.",
     href: bookingHref,
-    secondaryHref: emailHref,
+    secondaryHref: "/contacto",
   },
   footer: {
     brand: site.brand,
     studio: site.tagline,
     links: [
-      { href: "#archivo", label: "TRABAJOS" },
-      { href: "#servicios", label: "SERVICIOS" },
-      { href: "#estudio", label: "ESTUDIO" },
-      { href: "#contacto", label: "CONTACTO" },
+      { href: "/proyectos", label: "PROYECTOS" },
+      { href: "/desarrollo-web", label: "DESARROLLO WEB" },
+      { href: "/prospeccion-b2b", label: "PROSPECCIÓN B2B" },
+      { href: "/contacto", label: "CONTACTO" },
     ],
     social: [
       { href: site.instagram, label: "INSTAGRAM", external: true },
@@ -386,6 +395,158 @@ const es = {
     mantra: "HECHO PARA INTERNET.\nNO PARA PLANTILLAS.",
     privacy: { href: "/privacidad", label: "PRIVACIDAD" },
   },
+  pages: {
+    desarrolloWeb: {
+      meta: {
+        title: "Desarrollo web — KATEM®",
+        description:
+          "Sitios y landings con identidad, claridad y conversión. Desarrollo web a medida desde Buenos Aires.",
+      },
+      label: "SERVICIO / 01",
+      title: "DESARROLLO WEB",
+      lead: "Una presencia digital que comunica con claridad, se siente profesional y convierte visitas en consultas.",
+      sections: [
+        {
+          title: "Para qué sirve",
+          body: "Construimos sitios institucionales, landings y experiencias digitales orientadas a que tu marca se entienda rápido y genere conversaciones comerciales reales.",
+        },
+        {
+          title: "Cómo lo encaramos",
+          body: "Empezamos por el mensaje y la estructura. Después diseño, desarrollo y publicación — sin plantillas genéricas ni capas innecesarias.",
+        },
+      ],
+      deliverables: {
+        label: "ENTREGABLES",
+        items: [
+          "Sitio o landing a medida",
+          "Dirección visual y tipografía",
+          "Desarrollo limpio y mantenible",
+          "Publicación y ajustes de lanzamiento",
+        ],
+      },
+      cta: "HABLAR DE UN SITIO →",
+      ctaHref: bookingHref,
+    },
+    prospectionB2b: {
+      meta: {
+        title: "Prospección B2B — KATEM®",
+        description:
+          "Sistemas de prospección B2B: investigación de cuentas, outreach personalizado y seguimiento de oportunidades.",
+      },
+      label: "SERVICIO / 02",
+      title: "PROSPECCIÓN B2B",
+      lead: "Un sistema para acercar tu negocio a las empresas correctas — con investigación, contacto personalizado y seguimiento.",
+      sections: [
+        {
+          title: "Para qué sirve",
+          body: "Diseñamos adquisición B2B cuando necesitás generar oportunidades de forma más constante, sin depender solo del inbound.",
+        },
+        {
+          title: "Cómo lo encaramos",
+          body: "Definimos el cliente ideal, armamos listas de cuentas, activamos outreach por email/LinkedIn y organizamos el seguimiento para que sepas qué está pasando.",
+        },
+      ],
+      deliverables: {
+        label: "ENTREGABLES",
+        items: [
+          "Definición de ICP y mensajes",
+          "Investigación de cuentas y decisores",
+          "Secuencias de outreach",
+          "Sistema de seguimiento de oportunidades",
+        ],
+      },
+      cta: "ARMAR MI PIPELINE →",
+      ctaHref: bookingHref,
+    },
+    publicidadDigital: {
+      meta: {
+        title: "Publicidad digital — KATEM®",
+        description:
+          "Publicidad digital orientada a demanda cualificada: creatividades, campañas y medición al servicio del pipeline.",
+      },
+      label: "SERVICIO / 03",
+      title: "PUBLICIDAD DIGITAL",
+      lead: "Campañas pensadas para captar demanda cualificada y alimentar tu sistema comercial — no para quemar presupuesto.",
+      sections: [
+        {
+          title: "Para qué sirve",
+          body: "Activamos publicidad cuando ya hay una oferta clara y una presencia lista para convertir. El objetivo es atraer a las personas correctas, no tráfico vacío.",
+        },
+        {
+          title: "Cómo lo encaramos",
+          body: "Alineamos mensaje, creatividades y audiencias con tu oferta. Medimos señales útiles (consultas, leads, calidad) y ajustamos con criterio.",
+        },
+      ],
+      deliverables: {
+        label: "ENTREGABLES",
+        items: [
+          "Estrategia de captación",
+          "Creatividades y copy",
+          "Configuración de campañas",
+          "Lectura de resultados y ajustes",
+        ],
+      },
+      cta: "REVISAR PUBLICIDAD →",
+      ctaHref: bookingHref,
+    },
+    automatizaciones: {
+      meta: {
+        title: "Automatizaciones — KATEM®",
+        description:
+          "Bots, integraciones y flujos que automatizan conversaciones, tareas y seguimiento comercial.",
+      },
+      label: "SERVICIO / 04",
+      title: "AUTOMATIZACIONES",
+      lead: "Sistemas que siguen operando cuando vos no estás frente a la pantalla: bots, integraciones y flujos de trabajo.",
+      sections: [
+        {
+          title: "Para qué sirve",
+          body: "Automatizamos respuestas, reservas, captura de leads y seguimiento para reducir fricción operativa y no perder oportunidades.",
+        },
+        {
+          title: "Cómo lo encaramos",
+          body: "Mapeamos el proceso real, definimos qué debe ser humano y qué puede ser automático, e implementamos flujos claros y mantenibles.",
+        },
+      ],
+      deliverables: {
+        label: "ENTREGABLES",
+        items: [
+          "Mapa del proceso a automatizar",
+          "Bot o flujo conversacional",
+          "Integraciones con herramientas clave",
+          "Handoff humano y seguimiento",
+        ],
+      },
+      cta: "AUTOMATIZAR UN FLUJO →",
+      ctaHref: bookingHref,
+    },
+    proyectos: {
+      meta: {
+        title: "Proyectos — KATEM®",
+        description:
+          "Proyectos seleccionados de Katem: demos, experiencias digitales y sistemas construidos para marcas.",
+      },
+      label: "ARCHIVO",
+      title: "PROYECTOS",
+      lead: "Una selección de demos y experiencias digitales construidas con el mismo criterio que llevamos a cada cliente.",
+    },
+    contacto: {
+      meta: {
+        title: "Contacto — KATEM®",
+        description:
+          "Agendá una llamada de descubrimiento o escribinos para iniciar un proyecto con Katem.",
+      },
+      label: "CONTACTO",
+      title: "EMPECEMOS.",
+      lead: "Contanos qué estás construyendo. Si hay fit, agendamos una llamada de descubrimiento.",
+      primary: "AGENDAR LLAMADA →",
+      secondary: "ESCRIBIR POR EMAIL →",
+      note: "Buenos Aires / Argentina / Mundo.",
+      primaryHref: bookingHref,
+      secondaryHref: emailHref,
+    },
+  },
+
   privacy: {
     meta: {
       title: "Política de Privacidad",

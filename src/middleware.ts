@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { defaultLocale, locales, type Locale } from "./i18n/config";
+import { esRewritePaths } from "./lib/routes";
 
 function withLocaleHeader(response: NextResponse, locale: Locale) {
   response.headers.set("x-locale", locale);
@@ -35,7 +36,7 @@ export function middleware(request: NextRequest) {
     return withLocaleHeader(NextResponse.next(), locale);
   }
 
-  if (pathname === "/" || pathname === "/privacidad") {
+  if (esRewritePaths.includes(pathname)) {
     const target =
       pathname === "/" ? `/${defaultLocale}` : `/${defaultLocale}${pathname}`;
     const rewrite = NextResponse.rewrite(new URL(target, request.url));
@@ -48,5 +49,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.svg|robots.txt|sitemap.xml|opengraph-image|twitter-image|stage).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|icon.svg|robots.txt|sitemap.xml|opengraph-image|twitter-image|stage).*)",
+  ],
 };

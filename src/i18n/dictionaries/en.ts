@@ -12,15 +12,18 @@ const en: Dictionary = {
   nav: {
     brand: site.brand,
     studio: site.tagline,
-    links: [
-      { href: "#archivo", label: "WORK" },
-      { href: "#servicios", label: "SERVICES" },
-      { href: "#why", label: "WHY" },
-      { href: "#metodo", label: "METHOD" },
-      { href: "#estudio", label: "STUDIO" },
-      { href: "#contacto", label: "CONTACT" },
+    servicesLabel: "SERVICES",
+    services: [
+      { href: "/desarrollo-web", label: "WEB DEVELOPMENT" },
+      { href: "/prospeccion-b2b", label: "B2B PROSPECTING" },
+      { href: "/publicidad-digital", label: "DIGITAL ADS" },
+      { href: "/automatizaciones", label: "AUTOMATION" },
     ],
-    demos: { href: "#archivo", label: "DEMOS" },
+    links: [
+      { href: "/proyectos", label: "PROJECTS" },
+      { href: "/contacto", label: "CONTACT" },
+    ],
+    demos: { href: "/proyectos", label: "DEMOS" },
     lang: { es: "ES", en: "EN" },
     openMenu: "Open menu",
     closeMenu: "Close menu",
@@ -49,6 +52,7 @@ const en: Dictionary = {
     line3: "THAN A WEBSITE.",
     sub: "We design digital experiences\nfor brands that want to be remembered.",
     ctaPrimary: "VIEW PROJECTS →",
+    ctaPrimaryHref: "/proyectos",
     ctaSecondary: "BOOK A DISCOVERY CALL →",
     windowTitle: "KATEM_SYSTEM.exe",
     status: "STATUS: ACCEPTING PROJECTS",
@@ -209,36 +213,41 @@ const en: Dictionary = {
     },
   },
   servicios: {
-    label: "PROTOCOL",
+    label: "ECOSYSTEM",
     title: ["WHAT WE", "CAN", "BUILD."],
+    enter: "ENTER →",
     items: [
       {
         id: "01",
-        title: "DIGITAL\nEXPERIENCES",
+        title: "WEB\nDEVELOPMENT",
         description:
           "Sites and landings built to communicate clearly, convey professionalism, and turn visits into conversations.",
         signal: "SIGNAL STABLE",
+        href: "/desarrollo-web",
       },
       {
         id: "02",
-        title: "B2B\nACQUISITION",
+        title: "B2B\nPROSPECTING",
         description:
-          "We design prospecting systems to connect your business with the right companies: account research, personalized outreach, and opportunity follow-up.",
+          "Prospecting systems to connect your business with the right companies: research, outreach, and follow-up.",
         signal: "SIGNAL ACTIVE",
+        href: "/prospeccion-b2b",
       },
       {
         id: "03",
-        title: "DIGITAL\nPRODUCTS",
+        title: "DIGITAL\nADS",
         description:
-          "Stores, courses, and digital resources on your own platform — ready to sell without relying on third parties.",
+          "Campaigns and creatives aimed at capturing qualified demand and feeding your commercial pipeline.",
         signal: "SIGNAL STABLE",
+        href: "/publicidad-digital",
       },
       {
         id: "04",
-        title: "SYSTEMS &\nAUTOMATION",
+        title: "AUTOMA-\nTION",
         description:
-          "Bots, integrations, and flows that automate tasks, conversations, and processes so your business keeps running when you're not at the screen.",
+          "Bots, integrations, and flows that automate tasks, conversations, and processes when you're not at the screen.",
         signal: "SIGNAL STABLE",
+        href: "/automatizaciones",
       },
     ],
   },
@@ -314,31 +323,31 @@ const en: Dictionary = {
         id: "01",
         title: "UNDERSTAND",
         description:
-          "We listen to your business, goals, and what the site needs to achieve. A clear conversation.",
+          "We listen to your business, goals, and what the digital system needs to achieve. A clear conversation.",
       },
       {
         id: "02",
-        title: "IDEATE",
+        title: "DEFINE",
         description:
-          "We define creative direction and structure. Judgment before templates.",
+          "We prioritize scope, message, and architecture. Judgment before templates.",
       },
       {
         id: "03",
-        title: "DESIGN",
+        title: "BUILD",
         description:
-          "Composition, typography, and visual identity aligned with your brand.",
+          "Clean, fast, maintainable design and development. Technology in service of outcomes.",
       },
       {
         id: "04",
-        title: "BUILD",
+        title: "ACTIVATE",
         description:
-          "Clean, fast, maintainable development. Technology in service of outcomes.",
+          "We publish, connect acquisition, and leave the flows ready to operate.",
       },
       {
         id: "05",
-        title: "LAUNCH",
+        title: "MEASURE",
         description:
-          "We publish, refine, and leave you with a professional online presence.",
+          "We review signals, conversions, and opportunities to iterate with evidence.",
       },
     ],
   },
@@ -363,20 +372,20 @@ const en: Dictionary = {
     lines: ["YOUR NEXT DIGITAL MOVE", "STARTS HERE."],
     accent: "STARTS HERE.",
     button: "BOOK A DISCOVERY CALL →",
-    secondary: "START A PROJECT →",
+    secondary: "GO TO CONTACT →",
     email: site.email,
     note: "Buenos Aires / Argentina / World.",
     href: bookingHref,
-    secondaryHref: emailHref,
+    secondaryHref: "/contacto",
   },
   footer: {
     brand: site.brand,
     studio: site.tagline,
     links: [
-      { href: "#archivo", label: "WORK" },
-      { href: "#servicios", label: "SERVICES" },
-      { href: "#estudio", label: "STUDIO" },
-      { href: "#contacto", label: "CONTACT" },
+      { href: "/proyectos", label: "PROJECTS" },
+      { href: "/desarrollo-web", label: "WEB DEVELOPMENT" },
+      { href: "/prospeccion-b2b", label: "B2B PROSPECTING" },
+      { href: "/contacto", label: "CONTACT" },
     ],
     social: [
       { href: site.instagram, label: "INSTAGRAM", external: true },
@@ -387,6 +396,158 @@ const en: Dictionary = {
     mantra: "MADE FOR THE INTERNET.\nNOT FOR TEMPLATES.",
     privacy: { href: "/privacidad", label: "PRIVACY" },
   },
+  pages: {
+    desarrolloWeb: {
+      meta: {
+        title: "Web development — KATEM®",
+        description:
+          "Custom sites and landings with identity, clarity, and conversion. Web development from Buenos Aires.",
+      },
+      label: "SERVICE / 01",
+      title: "WEB DEVELOPMENT",
+      lead: "A digital presence that communicates clearly, feels professional, and turns visits into conversations.",
+      sections: [
+        {
+          title: "What it's for",
+          body: "We build institutional sites, landings, and digital experiences so your brand is understood quickly and generates real commercial conversations.",
+        },
+        {
+          title: "How we approach it",
+          body: "We start with message and structure. Then design, development, and launch — no generic templates or unnecessary layers.",
+        },
+      ],
+      deliverables: {
+        label: "DELIVERABLES",
+        items: [
+          "Custom site or landing",
+          "Visual direction and typography",
+          "Clean, maintainable development",
+          "Launch and post-launch adjustments",
+        ],
+      },
+      cta: "TALK ABOUT A SITE →",
+      ctaHref: bookingHref,
+    },
+    prospectionB2b: {
+      meta: {
+        title: "B2B prospecting — KATEM®",
+        description:
+          "B2B prospecting systems: account research, personalized outreach, and opportunity follow-up.",
+      },
+      label: "SERVICE / 02",
+      title: "B2B PROSPECTING",
+      lead: "A system to connect your business with the right companies — through research, personalized contact, and follow-up.",
+      sections: [
+        {
+          title: "What it's for",
+          body: "We design B2B acquisition when you need more consistent opportunities without relying only on inbound.",
+        },
+        {
+          title: "How we approach it",
+          body: "We define the ideal customer, build account lists, activate email/LinkedIn outreach, and organize follow-up so you know what is happening.",
+        },
+      ],
+      deliverables: {
+        label: "DELIVERABLES",
+        items: [
+          "ICP and messaging definition",
+          "Account and decision-maker research",
+          "Outreach sequences",
+          "Opportunity follow-up system",
+        ],
+      },
+      cta: "BUILD MY PIPELINE →",
+      ctaHref: bookingHref,
+    },
+    publicidadDigital: {
+      meta: {
+        title: "Digital advertising — KATEM®",
+        description:
+          "Digital advertising aimed at qualified demand: creatives, campaigns, and measurement in service of the pipeline.",
+      },
+      label: "SERVICE / 03",
+      title: "DIGITAL ADS",
+      lead: "Campaigns designed to capture qualified demand and feed your commercial system — not to burn budget.",
+      sections: [
+        {
+          title: "What it's for",
+          body: "We activate advertising when the offer is clear and the presence is ready to convert. The goal is the right people, not empty traffic.",
+        },
+        {
+          title: "How we approach it",
+          body: "We align message, creatives, and audiences with your offer. We measure useful signals (inquiries, leads, quality) and adjust with judgment.",
+        },
+      ],
+      deliverables: {
+        label: "DELIVERABLES",
+        items: [
+          "Acquisition strategy",
+          "Creatives and copy",
+          "Campaign setup",
+          "Results reading and adjustments",
+        ],
+      },
+      cta: "REVIEW ADS →",
+      ctaHref: bookingHref,
+    },
+    automatizaciones: {
+      meta: {
+        title: "Automation — KATEM®",
+        description:
+          "Bots, integrations, and flows that automate conversations, tasks, and commercial follow-up.",
+      },
+      label: "SERVICE / 04",
+      title: "AUTOMATION",
+      lead: "Systems that keep running when you're not at the screen: bots, integrations, and workflows.",
+      sections: [
+        {
+          title: "What it's for",
+          body: "We automate replies, bookings, lead capture, and follow-up to reduce operational friction and stop losing opportunities.",
+        },
+        {
+          title: "How we approach it",
+          body: "We map the real process, define what should stay human vs automated, and implement clear, maintainable flows.",
+        },
+      ],
+      deliverables: {
+        label: "DELIVERABLES",
+        items: [
+          "Process map to automate",
+          "Bot or conversational flow",
+          "Integrations with key tools",
+          "Human handoff and follow-up",
+        ],
+      },
+      cta: "AUTOMATE A FLOW →",
+      ctaHref: bookingHref,
+    },
+    proyectos: {
+      meta: {
+        title: "Projects — KATEM®",
+        description:
+          "Selected Katem projects: demos, digital experiences, and systems built for brands.",
+      },
+      label: "ARCHIVE",
+      title: "PROJECTS",
+      lead: "A selection of demos and digital experiences built with the same judgment we bring to every client.",
+    },
+    contacto: {
+      meta: {
+        title: "Contact — KATEM®",
+        description:
+          "Book a discovery call or email us to start a project with Katem.",
+      },
+      label: "CONTACT",
+      title: "LET'S START.",
+      lead: "Tell us what you're building. If there's a fit, we book a discovery call.",
+      primary: "BOOK A CALL →",
+      secondary: "WRITE AN EMAIL →",
+      note: "Buenos Aires / Argentina / World.",
+      primaryHref: bookingHref,
+      secondaryHref: emailHref,
+    },
+  },
+
   privacy: {
     meta: {
       title: "Privacy Policy",
