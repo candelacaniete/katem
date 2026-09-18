@@ -76,6 +76,15 @@ export function KatemNav({ dict, locale }: Props) {
               {link.label}
             </Link>
           ))}
+          <a
+            href={dict.talkCta.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-pink/50 px-3 py-1.5 font-body text-[10px] uppercase tracking-[0.16em] text-pink transition-colors hover:bg-pink hover:text-black"
+            data-cursor="open"
+          >
+            {dict.talkCta.label}
+          </a>
           <LangSwitch locale={locale} labels={dict.lang} />
         </nav>
 
@@ -126,6 +135,16 @@ export function KatemNav({ dict, locale }: Props) {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={dict.talkCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex w-fit border border-pink/50 px-3 py-2 font-body text-[11px] uppercase tracking-[0.16em] text-pink"
+              onClick={() => setOpen(false)}
+              data-cursor="open"
+            >
+              {dict.talkCta.label}
+            </a>
             <LangSwitch locale={locale} labels={dict.lang} />
           </nav>
         </div>

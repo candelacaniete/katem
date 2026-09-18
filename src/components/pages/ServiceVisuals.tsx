@@ -364,10 +364,11 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
   );
 
   return (
-    <div ref={root}>
+    <div ref={root} className="w-full min-w-0">
       <KatemWindow
         title={copy.windowTitle}
         variant="dark"
+        className="w-full max-w-full"
         footer={
           <>
             <span className="text-rose">{copy.status}</span>
@@ -375,20 +376,20 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
           </>
         }
       >
-        <div className="bg-black p-4 font-mono text-[10px] uppercase leading-relaxed tracking-[0.12em] text-off-white/65 sm:p-5">
-          <p data-term-line className="text-pink">
+        <div className="overflow-hidden bg-black p-3 font-mono text-[10px] uppercase leading-relaxed tracking-[0.1em] text-off-white/65 sm:p-4 sm:tracking-[0.12em]">
+          <p data-term-line className="break-all text-pink">
             $ flow --watch
             <span data-caret className="ml-1 text-pink">
               ▍
             </span>
           </p>
-          <p data-term-line className="mt-2 text-off-white/35">
+          <p data-term-line className="mt-2 break-all text-off-white/35">
             # automation runtime
           </p>
-          <div data-term-line>
+          <div data-term-line className="min-w-0">
             <VerticalFlow steps={copy.flow ?? []} />
           </div>
-          <p data-term-line className="mt-4 text-off-white/40">
+          <p data-term-line className="mt-4 break-all text-off-white/40">
             status: <span className="text-pink">{copy.status}</span>
           </p>
         </div>
@@ -399,7 +400,7 @@ function AutoVisual({ copy }: { copy: ServiceVisualCopy }) {
 
 export function ServiceVisual({ id, copy, className }: Props) {
   return (
-    <div className={cn("mt-10 max-w-xl", className)}>
+    <div className={cn("mt-10 w-full max-w-xl overflow-hidden", className)}>
       {id === "desarrolloWeb" ? <WebVisual copy={copy} /> : null}
       {id === "prospectionB2b" ? <B2bVisual copy={copy} /> : null}
       {id === "publicidadDigital" ? <AdsVisual copy={copy} /> : null}

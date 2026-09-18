@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = indexedPaths.flatMap((path) => {
     const priority =
-      path === siteRoutes.contacto || path === siteRoutes.proyectos
+      path === siteRoutes.proyectos
         ? 0.8
         : path === siteRoutes.privacidad
           ? 0.3

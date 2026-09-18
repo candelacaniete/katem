@@ -8,7 +8,6 @@ export const siteRoutes = {
   publicidadDigital: "/publicidad-digital",
   automatizaciones: "/automatizaciones",
   proyectos: "/proyectos",
-  contacto: "/contacto",
   privacidad: "/privacidad",
 } as const;
 
@@ -23,7 +22,6 @@ export const esRewritePaths: string[] = [
   siteRoutes.publicidadDigital,
   siteRoutes.automatizaciones,
   siteRoutes.proyectos,
-  siteRoutes.contacto,
 ];
 
 export function href(locale: Locale, route: SiteRouteKey | string) {

@@ -20,4 +20,8 @@ export const emailHref = `mailto:${site.email}?subject=${encodeURIComponent(
 
 export const whatsappHref = `https://wa.me/${site.whatsapp}`;
 
+export function whatsappHrefWithText(text: string) {
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
 export const demosHref = site.demos;

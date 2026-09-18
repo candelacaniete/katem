@@ -1,4 +1,4 @@
-import { bookingHref, emailHref, site, whatsappHref } from "@/lib/site";
+import { bookingHref, site, whatsappHref, whatsappHrefWithText } from "@/lib/site";
 
 const es = {
   meta: {
@@ -20,8 +20,13 @@ const es = {
     ],
     links: [
       { href: "/proyectos", label: "PROYECTOS" },
-      { href: "/contacto", label: "CONTACTO" },
     ],
+    talkCta: {
+      label: "HABLAR CON KATEM",
+      href: whatsappHrefWithText(
+        "Hola Cande! Vengo de la web de Katem, quiero agendar una llamada"
+      ),
+    },
     demos: { href: "/proyectos", label: "DEMOS" },
     lang: { es: "ES", en: "EN" },
     openMenu: "Abrir menú",
@@ -371,11 +376,13 @@ const es = {
     lines: ["TU PRÓXIMO MOVIMIENTO DIGITAL", "EMPIEZA ACÁ."],
     accent: "EMPIEZA ACÁ.",
     button: "AGENDAR LLAMADA →",
-    secondary: "IR A CONTACTO →",
+    secondary: "HABLAR CON KATEM →",
     email: site.email,
     note: "Buenos Aires / Argentina / Mundo.",
     href: bookingHref,
-    secondaryHref: "/contacto",
+    secondaryHref: whatsappHrefWithText(
+        "Hola Cande! Vengo de la web de Katem, quiero agendar una llamada"
+      ),
   },
   footer: {
     brand: site.brand,
@@ -384,10 +391,17 @@ const es = {
       { href: "/proyectos", label: "PROYECTOS" },
       { href: "/desarrollo-web", label: "DESARROLLO WEB" },
       { href: "/prospeccion-b2b", label: "PROSPECCIÓN B2B" },
-      { href: "/contacto", label: "CONTACTO" },
+      { href: "/publicidad-digital", label: "PUBLICIDAD DIGITAL" },
     ],
     social: [
       { href: site.instagram, label: "INSTAGRAM", external: true },
+      {
+        href: whatsappHrefWithText(
+        "Hola Cande! Vengo de la web de Katem, quiero agendar una llamada"
+      ),
+        label: "WHATSAPP",
+        external: true,
+      },
       { href: `mailto:${site.email}`, label: "EMAIL", external: false },
     ],
     copy: `© ${site.year} KATEM`,
@@ -398,12 +412,12 @@ const es = {
   pages: {
     desarrolloWeb: {
       meta: {
-        title: "Desarrollo web · KATEM®",
+        title: "Construimos tu web · Desarrollo · KATEM®",
         description:
-          "Sitios y landings con identidad, claridad y conversión. Desarrollo web a medida desde Buenos Aires.",
+          "Construimos sitios y landings con identidad, claridad y conversión. Desarrollo web a medida desde Buenos Aires.",
       },
       label: "SERVICIO / 01",
-      title: "DESARROLLO\nWEB",
+      title: "Construimos\ntu web.",
       lead: "Tu sitio tiene que explicar quién sos, qué ofrecés y por qué escribirte. En segundos, no en párrafos.",
       visual: {
         windowTitle: "SITE_LAYOUT.exe",
@@ -439,8 +453,37 @@ const es = {
           "Código limpio y fácil de mantener",
         ],
       },
+      faq: {
+        label: "PREGUNTAS FRECUENTES",
+        items: [
+          {
+            question: "¿Qué tipo de sitios construyen?",
+            answer:
+              "Sitios institucionales, landings y experiencias a medida. Siempre con identidad propia, no plantillas genéricas.",
+          },
+          {
+            question: "¿Cuánto tarda un proyecto web?",
+            answer:
+              "Depende del alcance. Una landing clara puede salir en pocas semanas; un sitio más completo lleva más iteraciones de mensaje, diseño y desarrollo.",
+          },
+          {
+            question: "¿Incluyen publicación y ajustes?",
+            answer:
+              "Sí. Entregamos desarrollo limpio, publicación y ajustes de lanzamiento para que el sitio quede listo para convertir.",
+          },
+          {
+            question: "¿Puedo sumar ads o automatizaciones después?",
+            answer:
+              "Sí. Construimos la web como base del pipeline: después se puede activar publicidad, prospección o automatizaciones.",
+          },
+        ],
+      },
       cta: "HABLAR DE UN SITIO →",
       ctaHref: bookingHref,
+      whatsappCta: "HABLEMOS POR WHATSAPP →",
+      whatsappHref: whatsappHrefWithText(
+        "Hola! Vengo de la web de Katem, me interesa el servicio de desarrollo web"
+      ),
     },
     prospectionB2b: {
       meta: {
@@ -517,15 +560,19 @@ const es = {
       },
       cta: "QUIERO CONSEGUIR CLIENTES →",
       ctaHref: bookingHref,
+      whatsappCta: "HABLEMOS POR WHATSAPP →",
+      whatsappHref: whatsappHrefWithText(
+        "Hola! Vengo de la web de Katem, me interesa la prospección B2B"
+      ),
     },
     publicidadDigital: {
       meta: {
-        title: "Publicidad digital · KATEM®",
+        title: "Activamos tu publicidad · Ads · KATEM®",
         description:
-          "Publicidad digital orientada a demanda cualificada: creatividades, campañas y medición al servicio del pipeline.",
+          "Activamos publicidad digital orientada a demanda cualificada: creatividades, campañas y medición al servicio del pipeline.",
       },
       label: "SERVICIO / 03",
-      title: "PUBLICIDAD\nDIGITAL",
+      title: "Activamos\ntu publicidad.",
       lead: "Campañas para atraer gente que puede comprar, no para llenar el embudo de ruido.",
       visual: {
         windowTitle: "CAMPAIGN_RUN.exe",
@@ -560,17 +607,46 @@ const es = {
           "Ajustes según calidad de leads",
         ],
       },
+      faq: {
+        label: "PREGUNTAS FRECUENTES",
+        items: [
+          {
+            question: "¿Cuándo tiene sentido invertir en ads?",
+            answer:
+              "Cuando la oferta está clara y el sitio puede convertir. Sin eso, la publicidad suele traer tráfico vacío.",
+          },
+          {
+            question: "¿Qué plataformas manejan?",
+            answer:
+              "Definimos canales según el negocio y el cliente ideal. El foco es calidad de leads, no volumen vanidoso.",
+          },
+          {
+            question: "¿Cómo miden resultados?",
+            answer:
+              "Medimos consultas y calidad de leads, y ajustamos creatividades, audiencias y mensajes con ese criterio.",
+          },
+          {
+            question: "¿Pueden trabajar sobre una web existente?",
+            answer:
+              "Sí. Revisamos si la web está lista para convertir y, si hace falta, proponemos ajustes antes o durante las campañas.",
+          },
+        ],
+      },
       cta: "REVISAR PUBLICIDAD →",
       ctaHref: bookingHref,
+      whatsappCta: "HABLEMOS POR WHATSAPP →",
+      whatsappHref: whatsappHrefWithText(
+        "Hola! Vengo de la web de Katem, me interesa publicidad digital"
+      ),
     },
     automatizaciones: {
       meta: {
-        title: "Automatizaciones · KATEM®",
+        title: "Automatizamos tu operación · KATEM®",
         description:
-          "Bots, integraciones y flujos que automatizan conversaciones, tareas y seguimiento comercial.",
+          "Automatizamos conversaciones, tareas y seguimiento comercial con bots, integraciones y flujos claros.",
       },
       label: "SERVICIO / 04",
-      title: "AUTOMATIZACIONES",
+      title: "Automatizamos\ntu operación.",
       lead: "Flujos que responden, agendan y hacen seguimiento cuando vos no estás frente a la pantalla.",
       visual: {
         windowTitle: "FLOW_RUNTIME.exe",
@@ -605,8 +681,37 @@ const es = {
           "Handoff claro al equipo humano",
         ],
       },
+      faq: {
+        label: "PREGUNTAS FRECUENTES",
+        items: [
+          {
+            question: "¿Qué se puede automatizar?",
+            answer:
+              "Respuestas iniciales, captura de leads, reservas, recordatorios y seguimiento comercial. Todo lo que hoy se repite y se pierde entre chats.",
+          },
+          {
+            question: "¿Reemplaza al equipo humano?",
+            answer:
+              "No. Automatizamos lo repetitivo y dejamos handoff claro para que una persona tome las conversaciones que importan.",
+          },
+          {
+            question: "¿Con qué herramientas se integran?",
+            answer:
+              "Según el stack del negocio: CRM, calendarios, WhatsApp, formularios y otras herramientas clave del proceso.",
+          },
+          {
+            question: "¿Cuánto tarda implementar un flujo?",
+            answer:
+              "Primero mapeamos el proceso real. Un flujo acotado puede salir rápido; uno con varias integraciones lleva más iteraciones.",
+          },
+        ],
+      },
       cta: "AUTOMATIZAR UN FLUJO →",
       ctaHref: bookingHref,
+      whatsappCta: "HABLEMOS POR WHATSAPP →",
+      whatsappHref: whatsappHrefWithText(
+        "Hola! Vengo de la web de Katem, me interesan las automatizaciones"
+      ),
     },
     proyectos: {
       meta: {
@@ -619,38 +724,24 @@ const es = {
       cta: "HABLAR POR WHATSAPP →",
       ctaHref: whatsappHref,
     },
-    contacto: {
-      meta: {
-        title: "Contacto · KATEM®",
-        description:
-          "Pedí un análisis gratuito de tu web o agendá una llamada para conseguir más clientes con Katem.",
-      },
-      label: "CONTACTO",
-      title: "EMPECEMOS.",
-      lead: "Contanos qué estás construyendo. Si hay fit, agendamos una llamada de descubrimiento.",
-      primary: "AGENDAR LLAMADA →",
-      secondary: "ESCRIBIR POR EMAIL →",
-      note: "Buenos Aires / Argentina / Mundo.",
-      primaryHref: bookingHref,
-      secondaryHref: emailHref,
-      form: {
-        eyebrow: "· ANÁLISIS GRATUITO",
-        title: "Ingresá tu web y te hacemos un breve análisis",
-        subtitle:
-          "Revisamos tu sitio y te damos recomendaciones concretas para mejorar tu presencia digital y conseguir más clientes.",
-        firstName: "Nombre",
-        lastName: "Apellido",
-        email: "Email",
-        phone: "Teléfono (opcional)",
-        website: "URL de tu web",
-        submit: "Analizar ahora",
-        sending: "Enviando…",
-        success: "STATUS · SENT — Te escribimos pronto.",
-        error: "No se pudo enviar. Probá de nuevo o escribinos por email.",
-        subject: "Nuevo análisis web — Katem",
-      },
-    },
   },
+  analysisForm: {
+    eyebrow: "· ANÁLISIS GRATUITO",
+    title: "Ingresá tu web y te hacemos un breve análisis",
+    subtitle:
+      "Revisamos tu sitio y te damos recomendaciones concretas para mejorar tu presencia digital y conseguir más clientes.",
+    firstName: "Nombre",
+    lastName: "Apellido",
+    email: "Email",
+    phone: "Teléfono (opcional)",
+    website: "URL de tu web",
+    submit: "Analizar ahora",
+    sending: "Enviando…",
+    success: "STATUS · SENT — Te escribimos pronto.",
+    error: "No se pudo enviar. Probá de nuevo o escribinos por email.",
+    subject: "Nuevo análisis web — Katem",
+  },
+
 
   privacy: {
     meta: {

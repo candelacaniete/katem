@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Dictionary } from "@/i18n/dictionaries/es";
 import { KatemButton } from "@/components/katem/KatemButton";
 import { KatemLabel } from "@/components/katem/KatemLabel";
+import { ServiceFaq } from "@/components/pages/ServiceFaq";
 import {
   ServiceVisual,
   type ServiceVisualId,
@@ -35,13 +36,13 @@ export function ServicePageView({ copy, visualId }: Props) {
       if (reduce) return;
       gsap.from("[data-service-reveal]", {
         opacity: 0,
-        y: 28,
-        duration: 0.65,
-        stagger: 0.1,
+        y: 24,
+        duration: 0.6,
+        stagger: 0.08,
         ease: "power2.out",
         scrollTrigger: {
           trigger: root.current,
-          start: "top 78%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
       });
@@ -51,9 +52,15 @@ export function ServicePageView({ copy, visualId }: Props) {
 
   return (
     <div ref={root} className="section section--page relative z-10">
-      <div className="section__inner max-w-6xl">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-14">
-          <div>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[min(70vh,40rem)] service-hero-texture"
+      />
+
+      <div className="section__inner relative z-10 max-w-6xl">
+        {/* title | terminal */}
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 xl:gap-16">
+          <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-3">
               <KatemLabel>{copy.label}</KatemLabel>
               <span className="tech-label text-pink/70">STATUS · ONLINE</span>
@@ -67,12 +74,22 @@ export function ServicePageView({ copy, visualId }: Props) {
             </p>
           </div>
 
-          <ServiceVisual id={visualId} copy={copy.visual} className="mt-0 max-w-none" />
+          <div className="relative z-0 min-w-0 w-full max-w-[20rem] justify-self-start overflow-hidden lg:justify-self-end lg:max-w-[18rem] xl:max-w-[20rem]">
+            <ServiceVisual
+              id={visualId}
+              copy={copy.visual}
+              className="mt-0 w-full max-w-full"
+            />
+          </div>
         </div>
 
-        <div className="mt-14 grid gap-8 border-t border-off-white/10 pt-10 lg:mt-16 lg:grid-cols-3 lg:gap-8 lg:pt-12">
+        {/* info | info */}
+        <div
+          data-service-reveal
+          className="mt-14 grid gap-8 border-t border-off-white/10 pt-10 sm:grid-cols-2 lg:mt-16 lg:gap-12 lg:pt-12"
+        >
           {[paraQue, como].map((section, index) => (
-            <section key={section.title} data-service-reveal>
+            <section key={section.title}>
               <div className="flex items-baseline gap-3">
                 <span className="tech-label text-pink/80">
                   {String(index + 1).padStart(2, "0")}
@@ -86,28 +103,21 @@ export function ServicePageView({ copy, visualId }: Props) {
               </p>
             </section>
           ))}
-
-          <aside
-            data-service-reveal
-            className="flex flex-col justify-between gap-6 border border-off-white/10 bg-off-white/[0.02] p-5 sm:p-6"
-          >
-            <div>
-              <p className="tech-label text-pink/80">NEXT · STEP</p>
-              <p className="mt-3 font-display text-lg font-semibold tracking-tight text-off-white sm:text-xl">
-                {copy.cta.replace(" →", "")}
-              </p>
-            </div>
-            <KatemButton
-              href={copy.ctaHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              {copy.cta}
-            </KatemButton>
-          </aside>
         </div>
 
+        {/* mid cta — own row */}
+        <div data-service-reveal className="mt-10 sm:mt-12">
+          <KatemButton
+            href={copy.ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            {copy.cta}
+          </KatemButton>
+        </div>
+
+        {/* info blocks */}
         <div
           data-service-reveal
           className="mt-12 border-t border-off-white/10 pt-8 sm:mt-14"
@@ -142,26 +152,34 @@ export function ServicePageView({ copy, visualId }: Props) {
           </ul>
         </div>
 
-        {"faq" in copy && copy.faq ? (
-          <div
-            data-service-reveal
-            className="mt-12 border-t border-off-white/10 pt-8 sm:mt-14"
-          >
-            <p className="tech-label">{copy.faq.label}</p>
-            <div className="mt-5 space-y-5">
-              {copy.faq.items.map((item) => (
-                <div key={item.question}>
-                  <h3 className="font-display text-base font-semibold tracking-tight text-off-white sm:text-lg">
-                    {item.question}
-                  </h3>
-                  <p className="mt-2 max-w-3xl text-sm leading-relaxed text-off-white/65 sm:text-base">
-                    {item.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+        {/* whatsapp cta */}
+        <div
+          data-service-reveal
+          className="mt-12 flex flex-col items-start gap-4 border border-off-white/10 bg-off-white/[0.02] p-5 sm:mt-14 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+        >
+          <div>
+            <p className="tech-label text-pink/80">WHATSAPP · DIRECT</p>
+            <p className="mt-2 font-display text-lg font-semibold tracking-tight text-off-white sm:text-xl">
+              {copy.whatsappCta.replace(" →", "")}
+            </p>
           </div>
-        ) : null}
+          <KatemButton
+            href={copy.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            {copy.whatsappCta}
+          </KatemButton>
+        </div>
+
+        {/* faq accordion */}
+        <div
+          data-service-reveal
+          className="mt-12 border-t border-off-white/10 pt-8 sm:mt-14"
+        >
+          <ServiceFaq label={copy.faq.label} items={copy.faq.items} />
+        </div>
       </div>
     </div>
   );

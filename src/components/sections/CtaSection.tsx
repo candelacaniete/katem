@@ -1,26 +1,17 @@
 "use client";
 
 import type { Dictionary } from "@/i18n/dictionaries/es";
-import type { Locale } from "@/i18n/config";
 import { KatemButton } from "@/components/katem/KatemButton";
-import { localePath } from "@/lib/seo";
 
 type Props = {
   dict: Dictionary["cta"];
-  locale: Locale;
+  locale?: string;
 };
 
-function resolveHref(locale: Locale, value: string) {
-  if (value.startsWith("/") && !value.startsWith("//")) {
-    return localePath(locale, value);
-  }
-  return value;
-}
-
-export function CtaSection({ dict, locale }: Props) {
+export function CtaSection({ dict }: Props) {
   return (
     <section
-      id="contacto"
+      id="empezar"
       className="section relative overflow-hidden bg-black"
       aria-labelledby="cta-heading"
     >
@@ -57,7 +48,9 @@ export function CtaSection({ dict, locale }: Props) {
             {dict.button}
           </KatemButton>
           <KatemButton
-            href={resolveHref(locale, dict.secondaryHref)}
+            href={dict.secondaryHref}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="ghost"
           >
             {dict.secondary}
